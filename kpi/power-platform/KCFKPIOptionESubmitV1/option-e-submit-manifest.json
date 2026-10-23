@@ -1,0 +1,74 @@
+{
+  "contractVersion": "kcf.kpi.option-e.submit.package.v3",
+  "submitContractVersion": "kcf.kpi.option-e.submit.v3",
+  "generationEpoch": "2000-01-01T00:00:00Z",
+  "deterministic": true,
+  "selfExcluded": true,
+  "disabled": true,
+  "unbound": true,
+  "solutionUniqueName": "KCFKPIOptionESubmitV1",
+  "solutionDisplayName": "KCF KPI Option E Submit v1",
+  "version": "1.0.3.0",
+  "workflowUniqueName": "KCFKPIOptionESubmitProcessorV1",
+  "workflowDisplayName": "KCF KPI Option E Submit Processor v1",
+  "workflowId": "c583eeae-ad13-4e91-ac90-88f908d7ebf4",
+  "stateCode": 0,
+  "statusCode": 1,
+  "packageName": "KCFKPIOptionESubmitV1_1_0_3_0.zip",
+  "connectionReferences": [
+    "kcfkpi_optione_contentprocessor_sp",
+    "kcfkpi_optione_aclreconciler_sp"
+  ],
+  "triggerCount": 1,
+  "triggerConcurrency": 1,
+  "writeRetryPolicy": "none",
+  "zipEntries": [
+    "Other/Customizations.xml",
+    "Other/Solution.xml",
+    "Workflows/KCFKPIOptionESubmitProcessorV1-c583eeae-ad13-4e91-ac90-88f908d7ebf4.json",
+    "Workflows/KCFKPIOptionESubmitProcessorV1-c583eeae-ad13-4e91-ac90-88f908d7ebf4.json.data.xml",
+    "[Content_Types].xml"
+  ],
+  "generatedFiles": [
+    {
+      "file": "Configuration/option-e-submit.binding.template.json",
+      "bytes": 1346,
+      "sha256": "8C9A649D420DBED35DE3636169B2D1B5B171BEA2775C603749185FB3F1D7A3C6"
+    },
+    {
+      "file": "Definitions/option-e-submit.disabled.definition.json",
+      "bytes": 635413,
+      "sha256": "3901333304E61941C5FCF991B19BD445ABF5B6865B21A85ECE01C6A3AA98AC1C"
+    },
+    {
+      "file": "Package/KCFKPIOptionESubmitV1_1_0_3_0.zip",
+      "bytes": 640095,
+      "sha256": "822FA46BC1BFB0BD76608E47DC432AFC5B4077F50F4D5CB3DCD624D228BB0F83"
+    },
+    {
+      "file": "PackageSource/[Content_Types].xml",
+      "bytes": 264,
+      "sha256": "ADB3AD9765864F31075247E6F757BEC2EF844CB9037FDCCBB93983B98B3DB16C"
+    },
+    {
+      "file": "PackageSource/Other/Customizations.xml",
+      "bytes": 1158,
+      "sha256": "4EEACF65608148C3F254B93AEC6ECC1373BCB22DBA09A93AF1079647AD620419"
+    },
+    {
+      "file": "PackageSource/Other/Solution.xml",
+      "bytes": 1223,
+      "sha256": "1728801B525AD5F8C703ED04DD3AC7D406E12E9CC20F106BB5200A1C9FC3A069"
+    },
+    {
+      "file": "PackageSource/Workflows/KCFKPIOptionESubmitProcessorV1-c583eeae-ad13-4e91-ac90-88f908d7ebf4.json",
+      "bytes": 635443,
+      "sha256": "13785ECBE2BB96AEADE236F03811345FF585C1B9F91840D041F1107B0D3ECE6A"
+    },
+    {
+      "file": "PackageSource/Workflows/KCFKPIOptionESubmitProcessorV1-c583eeae-ad13-4e91-ac90-88f908d7ebf4.json.data.xml",
+      "bytes": 1137,
+      "sha256": "346C88B6CFA2A5F1AF4969051F5ACAFC9498D7D823CAC64735CFFEE2482C7C55"
+    }
+  ]
+}

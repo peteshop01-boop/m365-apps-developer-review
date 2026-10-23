@@ -1,0 +1,132 @@
+$navy: #0b2a4a;
+$blue: #1f5f91;
+$cherry: #b3263e;
+$cream: #dce9f3;
+$line: #b7cad8;
+$muted: #4e6477;
+$green: #177245;
+$amber: #b86a00;
+$surface: #d4e2ec;
+$panel: #e8f2f8;
+$field: #f8fbfe;
+$gold: #d6a833;
+$focusGold: #9a6f00;
+
+.adminShell { background: $surface; color: #17212b; min-height: 100%; }
+.adminShell button:focus-visible, .adminShell input:focus-visible, .adminShell select:focus-visible, .adminShell textarea:focus-visible { outline: 3px solid $focusGold; outline-offset: 2px; }
+.adminHeader { align-items: center; background: linear-gradient(120deg, $navy, #123e66); color: #fff; display: flex; gap: 24px; justify-content: space-between; padding: 24px 30px; }
+.adminHeader h1 { font-size: 29px; margin: 3px 0; }
+.adminHeader p, .adminHeader span { margin: 0; opacity: .84; }
+.adminHeader > div:last-child { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); border-radius: 8px; display: grid; gap: 4px; max-width: 360px; padding: 12px 15px; }
+.identityBar { background: $panel; border-bottom: 1px solid $line; display: flex; flex-wrap: wrap; gap: 8px 26px; padding: 10px 30px; }
+.identityBar > span, .identityBar strong { min-width: 0; overflow-wrap: anywhere; }
+.warningBanner { background: #fff3cd; border-bottom: 1px solid #e1b967; color: #633c00; padding: 10px 30px; }
+.adminNav { background: $panel; border-bottom: 1px solid $line; display: grid; gap: 0; grid-template-columns: repeat(8, minmax(110px, 1fr)); overflow-x: auto; padding: 0 20px; }
+.adminNav button { background: $panel; border: 0; border-bottom: 4px solid transparent; color: $navy; cursor: pointer; min-height: 68px; padding: 10px 12px; text-align: left; }
+.adminNav button:hover, .adminNav .activeNav { background: #d1e4f1; border-bottom-color: $blue; }
+.adminNav strong, .adminNav small { display: block; }
+.adminNav small { color: $muted; line-height: 1.25; margin-top: 3px; }
+.statusBar { background: $cream; border-bottom: 1px solid #e6dfd3; color: $muted; min-height: 20px; padding: 8px 30px; }
+.adminContent { margin: 0 auto; max-width: 1440px; padding: 26px 30px 46px; }
+.sectionHeader { margin-bottom: 20px; }
+.sectionHeader > span { color: $cherry; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.sectionHeader h2 { color: $navy; font-size: 25px; margin: 4px 0; }
+.sectionHeader p { color: $muted; line-height: 1.55; margin: 0; max-width: 880px; }
+.attentionGrid { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.attentionGrid button { background: $panel; border: 1px solid $line; border-left: 5px solid $blue; border-radius: 8px; cursor: pointer; display: grid; gap: 5px; min-height: 138px; padding: 18px; text-align: left; }
+.attentionGrid button:hover { border-color: $blue; box-shadow: 0 5px 16px rgba(23,42,58,.11); }
+.attentionGrid span { color: $muted; font-weight: 700; }
+.attentionGrid strong { color: $navy; font-size: 30px; }
+.attentionGrid small { color: $muted; line-height: 1.4; }
+.futureNote { background: #eaf0f4; border-left: 4px solid $navy; margin-top: 18px; padding: 14px 16px; }
+.statStrip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.statStrip > span { background: $panel; border: 1px solid $line; border-radius: 999px; padding: 7px 12px; }
+.good { color: $green; font-weight: 800; }
+.warning { color: $amber; font-weight: 800; }
+.twoColumn { display: grid; gap: 18px; grid-template-columns: minmax(280px, .85fr) minmax(380px, 1.45fr); }
+.listPanel, .detailPanel { background: $panel; border: 1px solid $line; border-radius: 8px; min-width: 0; padding: 16px; }
+.detailPanel h3 { color: $navy; margin: 0 0 14px; }
+.cardList { display: grid; gap: 8px; margin-top: 12px; max-height: 670px; overflow: auto; }
+.selectCard, .selectedCard { background: $field; border: 1px solid $line; border-left: 4px solid #6f93ad; border-radius: 6px; cursor: pointer; display: grid; gap: 3px; padding: 12px; text-align: left; }
+.selectedCard { background: #d1e4f1; border-color: $blue; border-left-color: $blue; }
+.selectCard span, .selectedCard span { overflow-wrap: anywhere; }
+.selectCard small, .selectedCard small { color: $muted; line-height: 1.35; }
+.formGrid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.field { display: grid; gap: 5px; min-width: 0; }
+.field > span { color: $muted; font-size: 11px; font-weight: 800; text-transform: uppercase; }
+.field input, .field select, .field textarea { background: $field; border: 1px solid #879fb2; border-radius: 4px; box-sizing: border-box; font: inherit; min-height: 42px; padding: 8px 10px; width: 100%; }
+.field input:focus, .field select:focus { border-color: $focusGold; box-shadow: none; outline: 3px solid $focusGold; outline-offset: 2px; }
+.actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 15px; }
+.actions button, .addPanel button, .configGroups button, .filterGrid button { background: $blue; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-weight: 800; min-height: 42px; padding: 8px 14px; }
+.actions button:disabled, .addPanel button:disabled, .configGroups button:disabled { cursor: not-allowed; opacity: .52; }
+.actions .secondary, .secondary { background: $field; border: 1px solid $blue; color: $blue; }
+.addPanel { border-top: 1px solid $line; margin-top: 22px; padding-top: 14px; }
+.addPanel summary { color: $cherry; cursor: pointer; font-weight: 800; margin-bottom: 13px; }
+.addPanel > button { margin-top: 12px; }
+.hierarchyList { background: $panel; border: 1px solid $line; border-radius: 8px; overflow: hidden; }
+.hierarchyList > div { align-items: center; border-bottom: 1px solid #edf0f2; display: grid; gap: 10px; grid-template-columns: 34px 1fr auto; min-height: 58px; padding-bottom: 7px; padding-right: 12px; padding-top: 7px; }
+.hierarchyList > div:last-child { border-bottom: 0; }
+.hierarchyList button { background: #edf2f5; border: 0; border-radius: 50%; color: $navy; font-size: 18px; height: 30px; width: 30px; }
+.hierarchyList span { display: grid; gap: 3px; }
+.hierarchyList small, .hierarchyList em { color: $muted; font-size: 11px; font-style: normal; }
+.issueBox, .emptyState { background: #fff8e6; border: 1px solid #e2bc66; border-radius: 7px; margin-bottom: 18px; padding: 14px 16px; }
+.issueBox h3 { margin: 0 0 7px; }
+.issueBox p { margin: 6px 0; }
+.emptyState { display: grid; gap: 4px; }
+.configGroups { display: grid; gap: 18px; }
+.configGroups > section { background: $panel; border: 1px solid $line; border-radius: 8px; overflow: hidden; }
+.configGroups h3 { align-items: center; background: #eef3f6; color: $navy; display: flex; justify-content: space-between; margin: 0; padding: 13px 16px; }
+.configGroups h3 span { color: $muted; font-size: 11px; }
+.configGroupActions { align-items: center; background: $field; border-top: 1px solid $line; display: flex; gap: 14px; justify-content: space-between; padding: 10px 16px; }
+.configGroupActions > span { color: $muted; font-size: 12px; line-height: 1.4; }
+.configGroups article { align-items: end; border-top: 1px solid $line; display: grid; gap: 16px; grid-template-columns: minmax(260px, 1.5fr) minmax(220px, 1fr) minmax(160px, .7fr); padding: 14px 16px; }
+.configGroups article:first-of-type { border-top: 0; }
+.configGroups article > div { display: grid; gap: 5px; min-width: 0; }
+.configGroups code { color: $blue; overflow-wrap: anywhere; }
+.configGroups p, .configGroups small { color: $muted; line-height: 1.4; margin: 0; }
+.filterGrid { align-items: end; background: $panel; border: 1px solid $line; border-radius: 8px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr)); margin-bottom: 16px; padding: 14px; }
+.issueList { display: grid; gap: 12px; }
+.issueList article { background: $panel; border: 1px solid $line; border-left: 5px solid $amber; border-radius: 7px; padding: 14px 16px; }
+.issueList header { align-items: center; display: flex; gap: 12px; justify-content: space-between; }
+.issueList header span { background: #eef2f5; border-radius: 999px; color: $navy; font-size: 10px; font-weight: 800; padding: 5px 8px; }
+.issueList p { line-height: 1.45; }
+.issueList dl { display: grid; gap: 10px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 10px 0; }
+.issueList dl div { min-width: 0; }
+.issueList dt { color: $muted; font-size: 9px; font-weight: 800; text-transform: uppercase; }
+.issueList dd { margin: 3px 0 0; overflow-wrap: anywhere; }
+.issueList small { color: $muted; line-height: 1.45; }
+
+@media (max-width: 980px) {
+  .adminNav { grid-template-columns: repeat(4, minmax(130px, 1fr)); }
+  .attentionGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .twoColumn { grid-template-columns: 1fr; }
+  .filterGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .configGroups article { grid-template-columns: 1fr 1fr; }
+  .configGroups article > div:first-child { grid-column: 1 / -1; }
+  .issueList dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .adminHeader { align-items: flex-start; flex-direction: column; padding: 18px 14px; }
+  .adminHeader h1 { font-size: 24px; }
+  .adminHeader > div:last-child { box-sizing: border-box; max-width: none; width: 100%; }
+  .identityBar, .warningBanner, .statusBar { padding-left: 14px; padding-right: 14px; }
+  .identityBar { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .adminNav { grid-template-columns: repeat(8, minmax(112px, 1fr)); padding: 0; }
+  .adminNav button { min-height: 62px; }
+  .adminContent { padding: 18px 10px 36px; }
+  .attentionGrid, .formGrid, .filterGrid, .configGroups article, .issueList dl { grid-template-columns: 1fr; }
+  .configGroupActions { align-items: stretch; flex-direction: column; }
+  .attentionGrid button { min-height: 118px; }
+  .listPanel, .detailPanel { padding: 12px; }
+  .cardList { max-height: 480px; }
+  .actions button, .addPanel button, .configGroups button, .filterGrid button { min-height: 44px; width: 100%; }
+  .configGroups article > div:first-child { grid-column: auto; }
+  .issueList header { align-items: flex-start; flex-direction: column; }
+  .hierarchyList > div { grid-template-columns: 34px 1fr; }
+  .hierarchyList em { grid-column: 2; }
+}
+
+// Keep shared catalogue and foundation filter controls inside intrinsic tracks.
+.filterGrid > * { min-width: 0; overflow-wrap: anywhere; }
+.filterGrid button { box-sizing: border-box; max-width: 100%; white-space: normal; }

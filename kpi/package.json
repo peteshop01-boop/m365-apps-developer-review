@@ -1,0 +1,64 @@
+{
+  "name": "kcf-performance-hub",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=22.14.0 < 23.0.0"
+  },
+  "scripts": {
+    "build": "npm run test:fixtures && heft test --clean --production --disable-code-coverage && npm run package:deterministic",
+    "clean": "heft clean",
+    "eject-webpack": "heft eject-webpack",
+    "package:deterministic": "heft package-solution --production && node scripts/normalise-sppkg.mjs",
+    "start": "heft start --clean",
+    "serve:coverage-025-r1": "node scripts/start-coverage-025-r1.mjs",
+    "serve:integrated-026-r1": "node scripts/start-integrated-026-r1.mjs",
+    "serve:integrated-026-r2": "node scripts/start-integrated-026-r2.mjs",
+    "serve:integrated-026-r3": "node scripts/start-integrated-026-r2.mjs",
+    "preview:workplan": "node scripts/start-workplan-preview.mjs",
+    "validate:sec006": "node scripts/validate-sec006-nonproduction-manifest.mjs",
+    "validate:tenant-layer": "node power-platform/KCFKPIEmployeeTESTProcessor/TenantLayer/Tools/build-tenant-layer.mjs --check",
+    "package:option-e-tenant-executor": "node scripts/build-option-e-tenant-executor-package.mjs --out dist/option-e-tenant-executor",
+    "test:option-e-tenant-executor": "pwsh -NoProfile -File tools/option-e-tenant-executor/Tests/Invoke-ExecutorContractTests.ps1",
+    "test:privacy": "node scripts/check-source-privacy.mjs",
+    "test:fixtures": "node scripts/prepare-test-fixtures.mjs && node scripts/prepare-review-fixtures.mjs && node scripts/prepare-package-fixtures.mjs && node power-platform/KCFKPIOptionESubmitExactBodyV4/Tools/build-option-e-exactbody-v4.mjs",
+    "test:coverage": "npm run test:fixtures && heft test --clean --production"
+  },
+  "dependencies": {
+    "tslib": "2.3.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "@fluentui/react": "^8.106.4",
+    "@microsoft/sp-core-library": "1.23.2",
+    "@microsoft/sp-http": "1.23.2",
+    "@microsoft/sp-component-base": "1.23.2",
+    "@microsoft/sp-property-pane": "1.23.2",
+    "@microsoft/sp-webpart-base": "1.23.2",
+    "@microsoft/sp-lodash-subset": "1.23.2",
+    "@microsoft/sp-office-ui-fabric-core": "1.23.2"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-plugin-spfx": "1.23.2",
+    "@microsoft/eslint-config-spfx": "1.23.2",
+    "@microsoft/spfx-web-build-rig": "1.23.2",
+    "@microsoft/spfx-heft-plugins": "1.23.2",
+    "@rushstack/heft": "1.2.17",
+    "@types/jest": "30.0.0",
+    "@types/node": "22.10.10",
+    "@types/webpack-env": "~1.15.2",
+    "css-loader": "~7.1.2",
+    "eslint": "9.37.0",
+    "jszip": "3.8.0",
+    "typescript": "~5.8.0",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "@microsoft/sp-module-interfaces": "1.23.2"
+  },
+  "overrides": {
+    "@rushstack/heft": "1.2.17"
+  },
+  "resolutions": {
+    "@types/react": "17.0.45"
+  }
+}

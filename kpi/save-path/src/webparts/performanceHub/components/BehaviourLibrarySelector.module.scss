@@ -1,0 +1,19 @@
+.selector {
+  width: 100%;
+  min-width: 0;
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  fieldset { min-width: 0; margin: 8px 0; padding: 12px; border: 1px solid #b5c3c9; border-radius: 6px; }
+  legend { max-width: 100%; white-space: normal; font-weight: 600; padding: 0 4px; }
+  .choice { display: flex; align-items: flex-start; gap: 10px; padding: 10px 4px; cursor: pointer; }
+  .choice input { flex: 0 0 18px; width: 18px; height: 18px; min-height: 18px; margin: 2px 0; accent-color: #00684b; }
+  .choice span { min-width: 0; line-height: 1.5; }
+  .choice strong { display: block; }
+  input:focus-visible { outline: 3px solid #005ca9; outline-offset: 3px; }
+  .guidance { padding: 12px; margin: 12px 0; background: #f2f6f4; border-left: 3px solid #00684b; }
+  h4 { margin: 0 0 12px; }
+  dl { margin: 0; }
+  dt { font-weight: 600; margin-top: 8px; }
+  dd { margin: 2px 0 10px; }
+}

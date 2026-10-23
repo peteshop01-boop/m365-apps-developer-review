@@ -1,0 +1,27 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "receiptSchemaVersion": "kcf.kpi.wib12.provisioning-receipt.v1",
+  "revision": null,
+  "previousReceiptSha256": null,
+  "receiptSha256": null,
+  "mode": "DryRun",
+  "applyExplicitlyEnabled": false,
+  "receiptKey": null,
+  "status": "InProgress",
+  "startedAt": null,
+  "completedAt": null,
+  "planSha256": null,
+  "plan": null,
+  "beforeStateSha256": null,
+  "confirmations": [],
+  "stopCode": null,
+  "pendingOperation": null,
+  "unknownOperation": null,
+  "afterStateSha256": null,
+  "rollback": {
+    "requiredFirstAction": "TurnNewFlowOff",
+    "flowMustRemainOff": true,
+    "entries": [],
+    "ambiguityOutcome": "BLOCKED_OFF"
+  }
+}

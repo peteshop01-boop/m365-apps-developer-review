@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "demo-performance-hub-client-side-solution",
+    "id": "ea088aa6-fd71-4939-a37d-2939515e31af",
+    "version": "1.0.3.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "demo-performance-hub description"
+      },
+      "longDescription": {
+        "default": "demo-performance-hub description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "demo-performance-hub Feature",
+        "description": "The feature that activates elements of the demo-performance-hub solution.",
+        "id": "a2cb8e01-c339-40b0-94df-3e80e178bf29",
+        "version": "1.0.3.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/demo-performance-hub.sppkg"
+  }
+}

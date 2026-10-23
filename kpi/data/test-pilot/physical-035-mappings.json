@@ -1,0 +1,1252 @@
+{
+  "sourceSha256": "663aaf7866ea0f67d2e85ee731744ddef9fce393bdefd5242f2179c0326f3842",
+  "lineageOnly": true,
+  "lists": [
+    {
+      "title": "KCFKPI_TEST_Workplans",
+      "historicalListId": "47210791-25f1-416e-ab24-832c8b6448ec",
+      "installationListId": null,
+      "fields": [
+        {
+          "displayName": "AccessState",
+          "internalName": "AccessState",
+          "staticName": "AccessState",
+          "type": "Choice",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "EmployeeEdit",
+          "choices": [
+            "EmployeeEdit",
+            "ManagerDecision",
+            "ReadOnly",
+            "RecoveryHold"
+          ]
+        },
+        {
+          "displayName": "ApprovedAt",
+          "internalName": "ApprovedAt",
+          "staticName": "ApprovedAt",
+          "type": "DateTime",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ApprovedByEmail",
+          "internalName": "ApprovedByEmail",
+          "staticName": "ApprovedByEmail",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourCategoryWeight",
+          "internalName": "BehaviourCategoryWeight",
+          "staticName": "BehaviourCategoryWeight",
+          "type": "Number",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "10",
+          "choices": []
+        },
+        {
+          "displayName": "CategoryWeightingReason",
+          "internalName": "CategoryWeightingReason",
+          "staticName": "CategoryWeightingReason",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "CoreCategoryWeight",
+          "internalName": "CoreCategoryWeight",
+          "staticName": "CoreCategoryWeight",
+          "type": "Number",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "70",
+          "choices": []
+        },
+        {
+          "displayName": "CoreWeightingMode",
+          "internalName": "CoreWeightingMode",
+          "staticName": "CoreWeightingMode",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "Equal",
+          "choices": [
+            "Equal",
+            "Custom"
+          ]
+        },
+        {
+          "displayName": "EmployeeDisplayName",
+          "internalName": "EmployeeDisplayName",
+          "staticName": "EmployeeDisplayName",
+          "type": "Text",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "EmployeeEmail",
+          "internalName": "EmployeeEmail",
+          "staticName": "EmployeeEmail",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LockedAt",
+          "internalName": "LockedAt",
+          "staticName": "LockedAt",
+          "type": "DateTime",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LockedByEmail",
+          "internalName": "LockedByEmail",
+          "staticName": "LockedByEmail",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ManagerDecisionComment",
+          "internalName": "ManagerDecisionComment",
+          "staticName": "ManagerDecisionComment",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ManagerDisplayName",
+          "internalName": "ManagerDisplayName",
+          "staticName": "ManagerDisplayName",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ManagerEmail",
+          "internalName": "ManagerEmail",
+          "staticName": "ManagerEmail",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ManagerPersonKey",
+          "internalName": "ManagerPersonKey",
+          "staticName": "ManagerPersonKey",
+          "type": "Text",
+          "required": false,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "PerformanceYear",
+          "internalName": "PerformanceYear",
+          "staticName": "PerformanceYear",
+          "type": "Number",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "PersonalCategoryWeight",
+          "internalName": "PersonalCategoryWeight",
+          "staticName": "PersonalCategoryWeight",
+          "type": "Number",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "20",
+          "choices": []
+        },
+        {
+          "displayName": "PersonKey",
+          "internalName": "PersonKey",
+          "staticName": "PersonKey",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "RowVersionToken",
+          "internalName": "RowVersionToken",
+          "staticName": "RowVersionToken",
+          "type": "Number",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "1",
+          "choices": []
+        },
+        {
+          "displayName": "State",
+          "internalName": "State",
+          "staticName": "State",
+          "type": "Choice",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": "Draft",
+          "choices": [
+            "Draft",
+            "Submitted",
+            "ChangesRequested",
+            "Approved",
+            "Locked",
+            "Archived"
+          ]
+        },
+        {
+          "displayName": "SubmissionComment",
+          "internalName": "SubmissionComment",
+          "staticName": "SubmissionComment",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "SubmittedAt",
+          "internalName": "SubmittedAt",
+          "staticName": "SubmittedAt",
+          "type": "DateTime",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "SubmittedByEmail",
+          "internalName": "SubmittedByEmail",
+          "staticName": "SubmittedByEmail",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "TeamSnapshot",
+          "internalName": "TeamSnapshot",
+          "staticName": "TeamSnapshot",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "TestRunKey",
+          "internalName": "TestRunKey",
+          "staticName": "TestRunKey",
+          "type": "Text",
+          "required": false,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Title",
+          "internalName": "Title",
+          "staticName": "Title",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "TransitionCorrelationKey",
+          "internalName": "TransitionCorrelationKey",
+          "staticName": "TransitionCorrelationKey",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "TransitionStatus",
+          "internalName": "TransitionStatus",
+          "staticName": "TransitionStatus",
+          "type": "Choice",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": "Ready",
+          "choices": [
+            "Ready",
+            "InProgress",
+            "Failed"
+          ]
+        },
+        {
+          "displayName": "WorkplanKey",
+          "internalName": "WorkplanKey",
+          "staticName": "WorkplanKey",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": true,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "WorkplanVersion",
+          "internalName": "WorkplanVersion",
+          "staticName": "WorkplanVersion",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "1",
+          "choices": []
+        }
+      ]
+    },
+    {
+      "title": "KCFKPI_TEST_WorkplanItems",
+      "historicalListId": "98f2a280-46a7-40b5-a37d-db97b02fc826",
+      "installationListId": null,
+      "fields": [
+        {
+          "displayName": "ActiveInWorkplan",
+          "internalName": "ActiveInWorkplan",
+          "staticName": "ActiveInWorkplan",
+          "type": "Boolean",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "1",
+          "choices": []
+        },
+        {
+          "displayName": "AddedAt",
+          "internalName": "AddedAt",
+          "staticName": "AddedAt",
+          "type": "DateTime",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "[today]",
+          "choices": []
+        },
+        {
+          "displayName": "AddedByEmail",
+          "internalName": "AddedByEmail",
+          "staticName": "AddedByEmail",
+          "type": "Text",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "AdditiveApproved",
+          "internalName": "AdditiveApproved",
+          "staticName": "AdditiveApproved",
+          "type": "Boolean",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "0",
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourCustomObjective",
+          "internalName": "BehaviourCustomObjective",
+          "staticName": "BehaviourCustomObjective",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourEvidenceDefinition",
+          "internalName": "BehaviourEvidenceDefinition",
+          "staticName": "BehaviourEvidenceDefinition",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourID",
+          "internalName": "BehaviourID",
+          "staticName": "BehaviourID",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourItemWeight",
+          "internalName": "BehaviourItemWeight",
+          "staticName": "BehaviourItemWeight",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourMeasure",
+          "internalName": "BehaviourMeasure",
+          "staticName": "BehaviourMeasure",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourObjectiveDescription",
+          "internalName": "BehaviourObjectiveDescription",
+          "staticName": "BehaviourObjectiveDescription",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourObjectiveKey",
+          "internalName": "BehaviourObjectiveKey",
+          "staticName": "BehaviourObjectiveKey",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourObjectiveSource",
+          "internalName": "BehaviourObjectiveSource",
+          "staticName": "BehaviourObjectiveSource",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "Library",
+            "Custom"
+          ]
+        },
+        {
+          "displayName": "BehaviourObjectiveTitle",
+          "internalName": "BehaviourObjectiveTitle",
+          "staticName": "BehaviourObjectiveTitle",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourSelectedSuggestionKeysJson",
+          "internalName": "BehaviourSelectedSuggestionKeysJ",
+          "staticName": "BehaviourSelectedSuggestionKeysJson",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "[]",
+          "choices": []
+        },
+        {
+          "displayName": "BehaviourVersionKey",
+          "internalName": "BehaviourVersionKey",
+          "staticName": "BehaviourVersionKey",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionApprovalReference",
+          "internalName": "ContributionApprovalReference",
+          "staticName": "ContributionApprovalReference",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionApprovalState",
+          "internalName": "ContributionApprovalState",
+          "staticName": "ContributionApprovalState",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "Draft",
+          "choices": [
+            "Draft",
+            "Pending",
+            "Approved",
+            "Retired"
+          ]
+        },
+        {
+          "displayName": "ContributionApprovedAt",
+          "internalName": "ContributionApprovedAt",
+          "staticName": "ContributionApprovedAt",
+          "type": "DateTime",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionAuditReference",
+          "internalName": "ContributionAuditReference",
+          "staticName": "ContributionAuditReference",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionEffectiveFrom",
+          "internalName": "ContributionEffectiveFrom",
+          "staticName": "ContributionEffectiveFrom",
+          "type": "DateTime",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionEffectiveTo",
+          "internalName": "ContributionEffectiveTo",
+          "staticName": "ContributionEffectiveTo",
+          "type": "DateTime",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionGovernanceReference",
+          "internalName": "ContributionGovernanceReference",
+          "staticName": "ContributionGovernanceReference",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "ContributionMethod",
+          "internalName": "ContributionMethod",
+          "staticName": "ContributionMethod",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "AdditiveDirect",
+            "SharedTarget",
+            "WeightedDenominator",
+            "AccountableOwner",
+            "CompletionOversight"
+          ]
+        },
+        {
+          "displayName": "ContributionWeight",
+          "internalName": "ContributionWeight",
+          "staticName": "ContributionWeight",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "CoreWorkplanWeight",
+          "internalName": "CoreWorkplanWeight",
+          "staticName": "CoreWorkplanWeight",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "DenominatorNumerator",
+          "internalName": "DenominatorNumerator",
+          "staticName": "DenominatorNumerator",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "DenominatorRuleReference",
+          "internalName": "DenominatorRuleReference",
+          "staticName": "DenominatorRuleReference",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "DenominatorSourceReference",
+          "internalName": "DenominatorSourceReference",
+          "staticName": "DenominatorSourceReference",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "DenominatorUnit",
+          "internalName": "DenominatorUnit",
+          "staticName": "DenominatorUnit",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "DenominatorValue",
+          "internalName": "DenominatorValue",
+          "staticName": "DenominatorValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "DirectContributionEligible",
+          "internalName": "DirectContributionEligible",
+          "staticName": "DirectContributionEligible",
+          "type": "Boolean",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "0",
+          "choices": []
+        },
+        {
+          "displayName": "DisplayOrder",
+          "internalName": "DisplayOrder",
+          "staticName": "DisplayOrder",
+          "type": "Number",
+          "required": true,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "0",
+          "choices": []
+        },
+        {
+          "displayName": "EmployeeKpiRole",
+          "internalName": "EmployeeKpiRole",
+          "staticName": "EmployeeKpiRole",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "AccountableOwner",
+            "DeliveryLead",
+            "Contributor",
+            "Oversight",
+            "EvidenceProvider"
+          ]
+        },
+        {
+          "displayName": "ItemType",
+          "internalName": "ItemType",
+          "staticName": "ItemType",
+          "type": "Choice",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "CoreGold",
+            "LocalPersonal",
+            "Behaviour"
+          ]
+        },
+        {
+          "displayName": "KPIID",
+          "internalName": "KPIID",
+          "staticName": "KPIID",
+          "type": "Text",
+          "required": false,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "KPIVersionKey",
+          "internalName": "KPIVersionKey",
+          "staticName": "KPIVersionKey",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LocalBaselineValue",
+          "internalName": "LocalBaselineValue",
+          "staticName": "LocalBaselineValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LocalKPIDescription",
+          "internalName": "LocalKPIDescription",
+          "staticName": "LocalKPIDescription",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LocalKPIWording",
+          "internalName": "LocalKPIWording",
+          "staticName": "LocalKPIWording",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LocalMeasure",
+          "internalName": "LocalMeasure",
+          "staticName": "LocalMeasure",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "LocalMetricType",
+          "internalName": "LocalMetricType",
+          "staticName": "LocalMetricType",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "Count",
+            "Number",
+            "Percentage",
+            "Currency",
+            "Rate",
+            "Days",
+            "Score",
+            "Milestone",
+            "Other",
+            "TextStatus"
+          ]
+        },
+        {
+          "displayName": "LocalPercentageScale",
+          "internalName": "LocalPercentageScale",
+          "staticName": "LocalPercentageScale",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "Fraction",
+            "Whole"
+          ]
+        },
+        {
+          "displayName": "LocalScoringDirection",
+          "internalName": "LocalScoringDirection",
+          "staticName": "LocalScoringDirection",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "HigherIsBetter",
+            "LowerIsBetter",
+            "TargetRange",
+            "Milestone",
+            "TBC"
+          ]
+        },
+        {
+          "displayName": "NonOverlapApproved",
+          "internalName": "NonOverlapApproved",
+          "staticName": "NonOverlapApproved",
+          "type": "Boolean",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "0",
+          "choices": []
+        },
+        {
+          "displayName": "NonOverlapRequired",
+          "internalName": "NonOverlapRequired",
+          "staticName": "NonOverlapRequired",
+          "type": "Boolean",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "0",
+          "choices": []
+        },
+        {
+          "displayName": "PerformanceYear",
+          "internalName": "PerformanceYear",
+          "staticName": "PerformanceYear",
+          "type": "Number",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "PersonalItemWeight",
+          "internalName": "PersonalItemWeight",
+          "staticName": "PersonalItemWeight",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "PersonKey",
+          "internalName": "PersonKey",
+          "staticName": "PersonKey",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q1BehaviourTargetRating",
+          "internalName": "Q1BehaviourTargetRating",
+          "staticName": "Q1BehaviourTargetRating",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q1SuccessDefinition",
+          "internalName": "Q1SuccessDefinition",
+          "staticName": "Q1SuccessDefinition",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q1TargetText",
+          "internalName": "Q1TargetText",
+          "staticName": "Q1TargetText",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q1TargetValue",
+          "internalName": "Q1TargetValue",
+          "staticName": "Q1TargetValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q2BehaviourTargetRating",
+          "internalName": "Q2BehaviourTargetRating",
+          "staticName": "Q2BehaviourTargetRating",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q2SuccessDefinition",
+          "internalName": "Q2SuccessDefinition",
+          "staticName": "Q2SuccessDefinition",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q2TargetText",
+          "internalName": "Q2TargetText",
+          "staticName": "Q2TargetText",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q2TargetValue",
+          "internalName": "Q2TargetValue",
+          "staticName": "Q2TargetValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q3BehaviourTargetRating",
+          "internalName": "Q3BehaviourTargetRating",
+          "staticName": "Q3BehaviourTargetRating",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q3SuccessDefinition",
+          "internalName": "Q3SuccessDefinition",
+          "staticName": "Q3SuccessDefinition",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q3TargetText",
+          "internalName": "Q3TargetText",
+          "staticName": "Q3TargetText",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q3TargetValue",
+          "internalName": "Q3TargetValue",
+          "staticName": "Q3TargetValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q4BehaviourTargetRating",
+          "internalName": "Q4BehaviourTargetRating",
+          "staticName": "Q4BehaviourTargetRating",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q4SuccessDefinition",
+          "internalName": "Q4SuccessDefinition",
+          "staticName": "Q4SuccessDefinition",
+          "type": "Note",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q4TargetText",
+          "internalName": "Q4TargetText",
+          "staticName": "Q4TargetText",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Q4TargetValue",
+          "internalName": "Q4TargetValue",
+          "staticName": "Q4TargetValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "SharedApportionmentPercent",
+          "internalName": "SharedApportionmentPercent",
+          "staticName": "SharedApportionmentPercent",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "SharedTargetRule",
+          "internalName": "SharedTargetRule",
+          "staticName": "SharedTargetRule",
+          "type": "Choice",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": [
+            "VisibleOnly",
+            "ApprovedApportionment"
+          ]
+        },
+        {
+          "displayName": "TargetVersionKey",
+          "internalName": "TargetVersionKey",
+          "staticName": "TargetVersionKey",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "TestRunKey",
+          "internalName": "TestRunKey",
+          "staticName": "TestRunKey",
+          "type": "Text",
+          "required": false,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "Title",
+          "internalName": "Title",
+          "staticName": "Title",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "UnitLabel",
+          "internalName": "UnitLabel",
+          "staticName": "UnitLabel",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "WorkplanItemKey",
+          "internalName": "WorkplanItemKey",
+          "staticName": "WorkplanItemKey",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": true,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "WorkplanItemNaturalKey",
+          "internalName": "WorkplanItemNaturalKey",
+          "staticName": "WorkplanItemNaturalKey",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": true,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "WorkplanKey",
+          "internalName": "WorkplanKey",
+          "staticName": "WorkplanKey",
+          "type": "Text",
+          "required": true,
+          "indexed": true,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "WorkplanVersion",
+          "internalName": "WorkplanVersion",
+          "staticName": "WorkplanVersion",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": "1",
+          "choices": []
+        },
+        {
+          "displayName": "YearEndTargetText",
+          "internalName": "YearEndTargetText",
+          "staticName": "YearEndTargetText",
+          "type": "Text",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        },
+        {
+          "displayName": "YearEndTargetValue",
+          "internalName": "YearEndTargetValue",
+          "staticName": "YearEndTargetValue",
+          "type": "Number",
+          "required": false,
+          "indexed": false,
+          "unique": false,
+          "defaultValue": null,
+          "choices": []
+        }
+      ]
+    }
+  ]
+}

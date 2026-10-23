@@ -1,0 +1,20 @@
+{
+  "state": "Unbound",
+  "capability": {
+    "protocol": "kcf.kpi.option-e.submit.v4",
+    "integrity": "exact-body/v1",
+    "wire": "canonical-draft/v1",
+    "storage": "kcf.kpi.option-e.storage.v4",
+    "receipt": "immutable-receipt/v4"
+  },
+  "storageEvidence": null,
+  "hostParityEvidence": null,
+  "installedReady": "NOT_ADMITTED",
+  "required": [
+    "Separately versioned v4 native storage",
+    "Protected host origin",
+    "Standard hosted complete wire parity",
+    "Independent gates",
+    "Native least privilege and immutable history"
+  ]
+}

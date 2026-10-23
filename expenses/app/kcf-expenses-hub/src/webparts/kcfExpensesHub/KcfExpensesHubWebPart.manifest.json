@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "35e9b851-3004-405a-af1c-cfbc54f28858",
+  "alias": "KcfExpensesHubWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart",
+    "SharePointFullPage"
+  ],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "d9e2faf0-abf0-4d80-ad17-b6a1f365589c",
+      "group": {
+        "default": "Advanced"
+      },
+      "title": {
+        "default": "KCF Expenses DEMO"
+      },
+      "description": {
+        "default": "KCF Expenses Hub — synthetic DEMO, no SharePoint Save"
+      },
+      "officeFabricIconFontName": "Page",
+      "properties": {
+        "view": "expenses",
+        "expensesUrl": ""
+      }
+    },
+    {
+      "groupId": "d9e2faf0-abf0-4d80-ad17-b6a1f365589c",
+      "group": {
+        "default": "Advanced"
+      },
+      "title": {
+        "default": "KCF Apps TEST landing"
+      },
+      "description": {
+        "default": "Page-local TEST presentation. No site-wide changes or backend operations."
+      },
+      "officeFabricIconFontName": "Page",
+      "properties": {
+        "view": "apps",
+        "expensesUrl": ""
+      }
+    },
+    {
+      "groupId": "d9e2faf0-abf0-4d80-ad17-b6a1f365589c",
+      "group": {
+        "default": "Advanced"
+      },
+      "title": {
+        "default": "KCF Expenses TEST entry"
+      },
+      "description": {
+        "default": "Page-local TEST presentation. No site-wide changes or backend operations."
+      },
+      "officeFabricIconFontName": "Page",
+      "properties": {
+        "view": "entry",
+        "expensesUrl": ""
+      }
+    }
+  ],
+  "supportsFullBleed": true
+}

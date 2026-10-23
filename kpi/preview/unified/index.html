@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KCF KPI Performance Hub · Unified local preview</title><link rel="stylesheet" href="/preview.css"></head>
+<body>
+<div class="preview-banner" role="status"><strong>LOCAL SYNTHETIC PREVIEW</strong><span id="preview-role">Synthetic actor loading</span><span>One browser session · Start, Save and Submit are disabled · session changes are never written to SharePoint</span></div>
+<div class="preview-directory"><div class="directory-intro"><h1>Performance Hub sections</h1><p>Select a section to open the actual integrated application where the local fixture supports it. Unavailable journeys give a plain reason.</p></div>
+<nav id="section-navigation" aria-label="Unified preview sections">
+<button data-native="Employee">Home <small>Integrated</small></button>
+<button data-native="Build My Workplan">Annual Workplan <small>Integrated draft builder</small></button>
+<button data-native="Core KPIs" data-parent="Build My Workplan">Core KPIs <small>Integrated</small></button>
+<button data-native="IMPACT KPIs" data-parent="Build My Workplan">Impact KPIs <small>Integrated</small></button>
+<button data-native="Behaviours" data-parent="Build My Workplan">Behaviours <small>Integrated</small></button>
+<button data-native="Review &amp; Weight" data-parent="Build My Workplan">Review &amp; Weight <small>Integrated check</small></button>
+<button data-unavailable="A whole-plan Draft save and reopen needs a canonical persisted aggregate. This local fixture cannot prove that round trip.">Save Draft / reopen <small>NOT YET INTEGRATED</small></button>
+<button data-unavailable="Submission needs a governed command processor and canonical receipt; the local fixture has neither.">Review / Submit <small>NOT YET INTEGRATED</small></button>
+<button data-native="My Team">Manager Draft / Review <small>Synthetic team view only</small></button>
+<button data-unavailable="No synthetic manager review history or governed review event adapter is supplied.">Manager History <small>NOT YET INTEGRATED</small></button>
+<button data-unavailable="Quarterly entry requires an approved Workplan and a canonical quarterly review; this fixture has neither.">Quarterly Performance <small>NOT YET INTEGRATED</small></button>
+<button data-native="People">Administration <small>Synthetic people view only</small></button>
+<button data-native="KPI Master">KPI Master <small>Read-only synthetic catalogue</small></button>
+<button data-native="Performance reporting views">Performance reporting views <small>SYNTHETIC LOCAL DEMONSTRATION</small></button>
+<button data-unavailable="Operational GOLD and dashboard need governed reporting snapshots. No operational reporting snapshot is supplied.">Operational KPI GOLD / Dashboard <small>NOT YET INTEGRATED</small></button>
+<button data-unavailable="Year-end and rollover have no integrated local fixture or authorised transition adapter.">Year-End / Rollover <small>NOT YET INTEGRATED</small></button>
+<button data-native="Employee">Help / supporting UX <small>Integrated contextual guidance</small></button>
+</nav></div>
+<div id="section-status" role="status">Opening the integrated Performance Hub…</div>
+<section id="unavailable" hidden aria-live="polite"><h2>NOT YET INTEGRATED</h2><p id="unavailable-reason"></p><button id="back-home" type="button">Return to Home</button></section>
+<div id="integrated-root"></div>
+<script src="/integrated.js"></script><script src="/preview.js"></script>
+</body></html>

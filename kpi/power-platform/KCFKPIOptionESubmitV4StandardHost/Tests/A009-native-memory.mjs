@@ -1,0 +1,50 @@
+/** Synthetic existing native sources + real old-codec SHA golden artefacts.
+ * No network, publisher admission, clock-policy or hosted-parity credit.
+ */
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {NativeMemory,canonical} from './native-memory.mjs';
+import {load} from '../Tools/build-standard-host.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../..');
+const protectedModule=name=>load(path.join(root,'src/webparts/performanceHub/'+name+'.ts'));
+export const sha=async text=>createHash('sha256').update(text).digest('hex').toUpperCase();
+export async function a009Native({core=true,catalogue=true,successor=true}={}){
+  const n=new NativeMemory(),native=(Id,extra={})=>({Id,AuthorId:101,Created:'2026-10-02T02:00:00.000Z',Modified:'2026-10-02T02:00:00.000Z',OData__UIVersionString:'1.0','@odata.etag':'"1"',...extra});
+  n.clock='2026-11-16T02:00:00.000Z';n.lists.get(n.listIds.Draft)[0].Modified=n.clock;
+  let refs=JSON.parse(n.request.referenceBody).rows;
+  const row=(kind,r,value)=>({kind,key:kind+'|'+(value.targetKey||value.focusKey||value.behaviourKey||r.Id),itemId:r.Id,etag:r['@odata.etag'],version:r.OData__UIVersionString,body:canonical(value)});
+  if(core){
+    const kpi=native(1,{KPIID:'K',KPIVersionKey:'KV',DefinitionStatus:'Active',IsCurrent:true,UnitLabel:'count',RAGParametersJSON:JSON.stringify({directContributionEligible:true,additiveEligible:true,nonOverlapRequired:true})}),target=native(1,{KPIID:'K',TargetVersionKey:'TV',PerformanceYear:2026,TargetStatus:'Approved',IsCurrent:true,YearEndTargetValue:999,Q1TargetValue:111,Q2TargetValue:222,Q3TargetValue:333,Q4TargetValue:444});
+    n.lists.set(n.refIds.Kpi,[kpi]);n.lists.set(n.refIds.Target,[target]);n.kpi=kpi;n.target=target;
+    n.draft.core.entries=[{coreId:'C',kpiId:'K',kpiVersionKey:'KV',targetVersionKey:'TV',role:'Delivery',contributionMethod:'AdditiveDirect',weightPercent:100,annual:{value:0,success:''},q1:{value:0},q2:{value:2,success:'two'},q3:{value:3},q4:{value:4}}];
+    n.personTarget={targetVersionKey:'TV',kpiId:'K',performanceYear:2026,status:'Approved',...Object.fromEntries(['role','annual','q1','q2','q3','q4'].map(k=>[k,n.draft.core.entries[0][k]]))};
+    refs=[row('Kpi',kpi,{kpiId:'K',kpiVersionKey:'KV',active:true}),row('Target',target,n.personTarget),...refs];
+  }
+  if(catalogue){
+    const source=protectedModule('testing/BehaviourFrameworkV1ApprovedData'),framework=protectedModule('services/BehaviourFrameworkV2'),admin=protectedModule('services/BehaviourCatalogueAdministration'),codec=protectedModule('services/SharePointBehaviourCatalogueAdministrationStore');
+    const approved=framework.createBehaviourFrameworkV2Catalogue(source.APPROVED_BEHAVIOUR_V1_SOURCE_ROWS,{catalogueVersion:'KCF-BHV-PD03-2026.09-v1',revision:1,status:'Published',effectiveFrom:'2026-11-01'});
+    const authority={approvalReference:'KCF-KPI-Sponsor-BEH-V02-001',approvedV1Catalogue:approved,approvedV1ContentSha256:await sha(JSON.stringify(approved))};
+    const original=await admin.createBehaviourCatalogueAdministrationBaseline(authority,{personKey:'ADMIN',email:'admin@example.invalid'},'2026-10-01T02:00:00.000Z','golden-native-publisher','de8fc527-fa58-4b8a-ae63-818822015746',sha);
+    const originalFields=await codec.encodeBehaviourCatalogueSharePointFields(original,authority,sha);let current=structuredClone(original);
+    if(successor){const next=structuredClone(approved);next.catalogueVersion='KCF-BHV-PD03-2026.09-v2';next.revision=2;next.rows[0].status='Retired';const contentSha256=await sha(JSON.stringify(next)),version={versionKey:next.catalogueVersion,previousVersionKey:approved.catalogueVersion,action:'Retire',catalogue:next,contentSha256,createdByPersonKey:'ADMIN',createdByEmail:'admin@example.invalid',createdAt:'2026-11-15T03:00:00.000Z',reason:'Synthetic later retirement',changeReference:'synthetic-later-publication'},event={auditKey:'e1131bea-4068-43d4-acac-e325ae4caad4',idempotencyKey:'e1131bea-4068-43d4-acac-e325ae4caad4',sequence:2,action:'Retire',actorPersonKey:'ADMIN',actorEmail:'admin@example.invalid',occurredAt:version.createdAt,reason:version.reason,changeReference:version.changeReference,before:{catalogueVersion:approved.catalogueVersion,catalogueRevision:1,contentSha256:authority.approvedV1ContentSha256},after:{catalogueVersion:next.catalogueVersion,catalogueRevision:2,contentSha256}};current={...current,rowVersion:2,currentVersionKey:next.catalogueVersion,versions:[...current.versions,version],events:[...current.events,event]};}
+    const fields=await codec.encodeBehaviourCatalogueSharePointFields(current,authority,sha);n.oldDecoded=await codec.decodeBehaviourCatalogueSharePointFields(fields,'"2"',authority,sha);n.originalFields=originalFields;n.catalogueState=current;n.catalogueAuthority=authority;
+    n.catalogueId='094ae5f7-ea13-44c9-a9b1-6863e144bf53';n.publisherId='9ab38c6d-b9f7-4c6e-a3c4-39b10fe18818';n.captureId='a43afb76-f56b-4016-a860-8b8039ace574';
+    const physical=native(17,{...fields,'@odata.etag':'"2"',OData__UIVersionString:'2.0'});n.catalogueNative=physical;n.lists.set(n.catalogueId,[physical]);
+    const nativeCoordinates={siteId:'SITE',webId:'WEB',listId:n.catalogueId,itemId:17,version:'1.0',etag:'"1"'};
+    const authorityWire={catalogueId:approved.catalogueKey,catalogueVersion:approved.catalogueVersion,catalogueRevision:1,catalogueEtag:'"1"',catalogueContentSha256:authority.approvedV1ContentSha256,approvalReference:authority.approvalReference};
+    const selected=approved.rows.filter(r=>r.roleLevelCode==='L1').slice(0,3);n.selected=selected;
+    n.draft.behaviours.governedExtension={schemaVersion:'kcf.option-e.behaviours/v02',authority:authorityWire,roleLevelCode:'L1',headlines:approved.headlineBehaviours.map(h=>({behaviourKey:h.behaviourKey,headlineTitle:h.title,selections:selected.filter(r=>r.behaviourKey===h.behaviourKey).map(r=>({selectionKey:r.targetKey,source:'Catalogue',behaviourKey:r.behaviourKey,headlineTitle:h.title,focusKey:r.focusKey,focusTitle:r.focusArea,roleLevelCode:r.roleLevelCode,selectedWording:r.suggestedTarget,targetKey:r.targetKey,...Object.fromEntries(Object.entries(authorityWire).filter(([k])=>k!=='approvalReference')),myCommitment:'Native employee commitment',howWillWeKnow:'Native evidence'}))})),immutableSelectionSnapshots:true,legacyTargetRatingWeightFieldsWritten:false,deliveryArithmeticAffected:false};
+    const historicRow=native(17),catalogueBody={...authorityWire,published:true,immutable:true,asOfDate:'2026-11-15',effectiveFrom:approved.effectiveFrom};delete catalogueBody.approvalReference;catalogueBody.approvalReference=authority.approvalReference;
+    refs.push(row('Catalogue',historicRow,catalogueBody),...approved.headlineBehaviours.map(h=>row('Headline',historicRow,{behaviourKey:h.behaviourKey,headlineTitle:h.title,governedOrder:h.sortOrder})));
+    const focuses=new Map();for(const r of selected)focuses.set(r.behaviourKey+'|'+r.focusKey,{behaviourKey:r.behaviourKey,focusKey:r.focusKey,focusTitle:r.focusArea,roleLevelCode:r.roleLevelCode,status:r.status,effectiveFrom:r.effectiveFrom,...(r.effectiveTo?{effectiveTo:r.effectiveTo}:{})});refs.push(...[...focuses.values()].map(v=>row('Focus',historicRow,v)),...selected.map(r=>row('BehaviourTarget',historicRow,{...focuses.get(r.behaviourKey+'|'+r.focusKey),targetKey:r.targetKey,selectedWording:r.suggestedTarget})));
+    n.publisherReceipt={contract:'kcf.option-e.catalogue-publisher-readback/v4',native:{...nativeCoordinates,version:'2.0',etag:'"2"'},fields:structuredClone(fields),authority,counts:{versions:current.versions.length,events:current.events.length,targets:current.versions.at(-1).catalogue.rows.length},publisherPrincipal:101};
+    n.capture={contract:'kcf.option-e.historical-selection-origin/v4',person:'P',workplan:'W',year:2026,draftOrigin:{itemId:1,etag:'"1"',version:'1.0',createdBy:11,body:canonical(n.draft)},...Object.fromEntries(Object.entries(authorityWire).filter(([k])=>k!=='approvalReference')),asOfDate:'2026-11-15',draftOriginalReadback:{contract:'kcf.option-e.original-saved-draft-readback/v4',native:{siteId:'SITE',webId:'WEB',listId:n.listIds.Draft,itemId:1,version:'1.0',etag:'"1"'},authorId:11,createdAt:'2026-10-02T02:00:00.000Z',body:canonical(n.draft)},catalogueNativeOrigin:nativeCoordinates,catalogueOriginalFields:structuredClone(originalFields),originalCataloguePublisherReadback:{contract:'kcf.option-e.catalogue-publisher-readback/v4',native:nativeCoordinates,fields:structuredClone(originalFields),authority,counts:{versions:1,events:1,targets:75},publisherPrincipal:101},selectedCatalogueBody:JSON.stringify(approved),selectedTargetKeys:selected.map(r=>r.targetKey),captureAt:'2026-11-15T02:00:00.000Z',producerPrincipal:101};
+    n.lists.set(n.publisherId,[native(1,{FileRef:'/test/upstream/publisher.json'})]);n.lists.set(n.captureId,[native(1,{FileRef:'/test/upstream/capture.json',Created:n.capture.captureAt})]);
+    n.files.set('/test/upstream/publisher.json',JSON.stringify(n.publisherReceipt));n.files.set('/test/upstream/capture.json',JSON.stringify(n.capture));
+    Object.assign(n.parameters,{catalogueStoreListId:n.catalogueId,catalogueStoreItemId:17});Object.assign(n.parameters.binding,{siteId:'SITE',webId:'WEB',cataloguePublisher:{admitted:true,listId:n.publisherId,itemId:1,producerPrincipal:101},historicalSelection:{admitted:true,listId:n.captureId,itemId:1,producerPrincipal:101}});
+  }
+  n.request.source.body=canonical(n.draft);n.request.referenceBody=canonical({asOf:n.clock,rows:refs});n.files.set(n.paths.Draft+'/draft.json',n.request.source.body);n.files.set(n.paths.Request+'/request.json',canonical(n.request));
+  const base=n.http.bind(n);n.http=async(p,name,e)=>{const result=await base(p,name,e);if(p['parameters/method']==='POST'&&result.statusCode<400){for(const kind of ['Admission','Snapshot','Receipt','History'])for(const r of n.lists.get(n.listIds[kind])||[])r.Created=n.clock;for(const r of n.lists.get(n.listIds.Operation))r.Created=n.clock;}return result;};
+  return n;
+}

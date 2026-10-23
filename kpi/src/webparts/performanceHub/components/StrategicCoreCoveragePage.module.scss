@@ -1,0 +1,108 @@
+$navy: #0b2a4a;
+$blue: #1f5f91;
+$cherry: #b3263e;
+$line: #b7cad8;
+$muted: #4e6477;
+$cream: #dce9f3;
+$surface: #d4e2ec;
+$panel: #e8f2f8;
+$field: #f8fbfe;
+$gold: #d6a833;
+$focusGold: #9a6f00;
+
+.shell { background: $surface; color: #17212b; min-height: 100%; }
+.shell button:focus-visible, .shell select:focus-visible { outline: 3px solid $focusGold; outline-offset: 2px; }
+.header { align-items: center; background: linear-gradient(120deg, $navy, #123e66); color: #fff; display: flex; gap: 24px; justify-content: space-between; padding: 24px 30px; }
+.header h1 { font-size: 30px; line-height: 1.1; margin: 4px 0 6px; }
+.header p, .header span { margin: 0; opacity: .88; }
+.identity { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); border-radius: 8px; display: grid; gap: 4px; max-width: 430px; min-width: 0; padding: 12px 15px; }
+.identity span { overflow-wrap: anywhere; }
+.boundary { background: #fff3cd; border-bottom: 1px solid #e1b967; color: #633c00; padding: 11px 30px; }
+.message { background: #edf5fa; border-bottom: 1px solid #a9c6d8; color: #183c55; padding: 9px 30px; }
+.uatScenarios { align-items: center; background: $panel; border-bottom: 1px solid $line; display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 10px 30px; }
+.uatScenarios > span { color: $muted; font-size: 12px; }
+.uatScenarios > div { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; }
+.uatScenarios button { background: $field; border: 1px solid $blue; border-radius: 4px; color: $blue; cursor: pointer; font-weight: 800; min-height: 40px; padding: 7px 11px; }
+.uatScenarios button[aria-pressed='true'] { background: $blue; color: #fff; }
+.content { margin: 0 auto; max-width: 1500px; padding: 26px 30px 48px; }
+.intro { align-items: flex-start; display: flex; gap: 24px; justify-content: space-between; margin-bottom: 18px; }
+.intro > div > span { color: $blue; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.intro h2 { color: $navy; font-size: 26px; margin: 4px 0; }
+.intro p { color: $muted; line-height: 1.5; margin: 0; max-width: 920px; }
+.intro aside { background: $panel; border: 1px solid $line; border-radius: 7px; display: grid; flex: 0 0 auto; gap: 4px; max-width: 360px; padding: 12px; }
+.intro aside span { color: $muted; font-size: 12px; overflow-wrap: anywhere; }
+.unavailable, .empty { background: #fff8e6; border: 1px solid #e2bc66; border-radius: 8px; padding: 16px; }
+.unavailable h3, .unavailable p { margin: 4px 0; }
+.stats { display: grid; gap: 10px; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-bottom: 16px; }
+.stats article { background: $panel; border: 1px solid $line; border-left: 4px solid $blue; border-radius: 7px; display: grid; gap: 4px; min-width: 0; padding: 13px; }
+.stats strong { color: $navy; font-size: 25px; }
+.stats span { color: $muted; font-size: 12px; }
+.filters { align-items: end; background: $panel; border: 1px solid $line; border-radius: 8px; display: grid; gap: 9px; grid-template-columns: repeat(4, minmax(150px, 1fr)); margin-bottom: 14px; padding: 14px; }
+.filters label { display: grid; gap: 5px; min-width: 0; }
+.filters label > span { color: $muted; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.filters select { background: $field; border: 1px solid #879fb2; border-radius: 4px; box-sizing: border-box; font: inherit; min-height: 42px; padding: 7px 9px; width: 100%; }
+.filters button, .viewTabs button, .backButton { background: $blue; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-weight: 800; min-height: 42px; padding: 8px 13px; }
+.viewTabs { background: $panel; border: 1px solid $line; border-radius: 8px; display: flex; gap: 4px; margin-bottom: 20px; overflow-x: auto; padding: 6px; }
+.viewTabs button { background: $field; color: $blue; flex: 0 0 auto; }
+.viewTabs button:hover, .viewTabs .activeView { background: #d1e4f1; box-shadow: inset 0 -3px $blue; color: $navy; }
+.sectionHeader { align-items: baseline; display: flex; gap: 16px; justify-content: space-between; margin-bottom: 10px; }
+.sectionHeader h2 { color: $navy; margin: 0; }
+.sectionHeader span { color: $muted; }
+.summaryList, .detailList { display: grid; gap: 12px; }
+.summaryCard, .detailCard { background: $panel; border: 1px solid $line; border-radius: 8px; min-width: 0; overflow: hidden; }
+.kpiButton { background: $field; border: 0; border-bottom: 1px solid $line; box-sizing: border-box; color: $navy; cursor: pointer; display: grid; gap: 3px; padding: 13px 15px; text-align: left; width: 100%; }
+.kpiButton > span { color: $blue; font-size: 11px; font-weight: 800; letter-spacing: .05em; }
+.kpiButton > strong { font-size: 16px; }
+.kpiButton > small { color: $muted; }
+.kpiButton:hover { background: #d1e4f1; }
+.kpiButton:focus-visible { background: #d1e4f1; outline: 3px solid $focusGold; outline-offset: 2px; }
+.summaryGrid, .detailGrid { display: grid; gap: 0; grid-template-columns: repeat(9, minmax(100px, 1fr)); margin: 0; }
+.summaryGrid > div, .detailGrid > div { border-right: 1px solid #edf0f2; min-width: 0; padding: 11px 12px; }
+.summaryGrid dt, .detailGrid dt { color: $muted; font-size: 9px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; }
+.summaryGrid dd, .detailGrid dd { color: $navy; font-weight: 700; margin: 4px 0 0; overflow-wrap: anywhere; }
+.summaryCard footer { align-items: center; border-top: 1px solid $line; display: flex; gap: 12px; justify-content: space-between; padding: 9px 13px; }
+.summaryCard footer > span { border: 1px solid currentColor; border-radius: 999px; font-size: 11px; font-weight: 900; letter-spacing: .04em; padding: 5px 9px; }
+.summaryCard footer small { color: $muted; text-align: right; }
+.stateNOT_READY { color: #7b4b00; }
+.stateUNDER_ALLOCATED { color: #8a3e18; }
+.stateCOVERED { color: #17603d; }
+.stateOVER_ALLOCATED { color: #58428c; }
+.stateNOT_APPLICABLE { color: #5d6974; }
+.backButton { background: $field; border: 1px solid $blue; color: $blue; margin-bottom: 12px; }
+.detailCard header { align-items: flex-start; background: $field; border-bottom: 1px solid $line; display: flex; gap: 12px; justify-content: space-between; padding: 13px 15px; }
+.detailCard header > div { display: grid; gap: 3px; }
+.detailCard header span { color: $muted; font-size: 12px; }
+.included, .excluded { border-radius: 999px; font-size: 11px !important; font-weight: 900; padding: 5px 9px; }
+.included { background: #e4f4e8; color: #17603d !important; }
+.excluded { background: #f4ece5; color: #733913 !important; }
+.detailGrid { grid-template-columns: repeat(10, minmax(90px, 1fr)); }
+.exclusionReason { border-top: 1px solid $line; color: #733913; margin: 0; padding: 11px 14px; }
+.actualBoundary { background: $cream; border: 1px solid #ddd1bc; border-radius: 8px; color: $muted; margin-top: 18px; padding: 13px 15px; }
+.actualBoundary strong { color: $navy; }
+
+@media (max-width: 1150px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .summaryGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .detailGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .summaryGrid > div, .detailGrid > div { border-bottom: 1px solid #edf0f2; }
+}
+
+@media (max-width: 650px) {
+  .header { align-items: flex-start; flex-direction: column; padding: 18px 14px; }
+  .header h1 { font-size: 25px; }
+  .identity { box-sizing: border-box; max-width: none; width: 100%; }
+  .boundary, .message, .uatScenarios { padding-left: 14px; padding-right: 14px; }
+  .uatScenarios { align-items: flex-start; display: grid; }
+  .uatScenarios > div { display: grid; margin-left: 0; }
+  .content { padding: 18px 10px 36px; }
+  .intro { display: grid; }
+  .intro aside { box-sizing: border-box; max-width: none; width: 100%; }
+  .stats, .filters, .summaryGrid, .detailGrid { grid-template-columns: minmax(0, 1fr); }
+  .filters button { min-height: 44px; width: 100%; }
+  .viewTabs { scroll-snap-type: x mandatory; }
+  .viewTabs button { min-height: 44px; scroll-snap-align: start; }
+  .summaryCard footer, .detailCard header, .sectionHeader { align-items: flex-start; flex-direction: column; }
+  .summaryCard footer small { text-align: left; }
+  .included, .excluded { box-sizing: border-box; width: 100%; }
+}

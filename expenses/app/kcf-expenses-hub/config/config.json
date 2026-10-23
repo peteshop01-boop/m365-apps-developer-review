@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "kcf-expenses-hub-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/kcfExpensesHub/KcfExpensesHubWebPart.js",
+          "manifest": "./src/webparts/kcfExpensesHub/KcfExpensesHubWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "KcfExpensesHubWebPartStrings": "lib/webparts/kcfExpensesHub/loc/{locale}.js"
+  }
+}

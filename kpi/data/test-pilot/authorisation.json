@@ -1,0 +1,235 @@
+{
+  "environment": "TEST",
+  "year": 2027,
+  "revision": 1,
+  "phase": "Active",
+  "actors": [
+    {
+      "personKey": "LOCAL-P01",
+      "email": "actor01@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee",
+        "Manager",
+        "SLT"
+      ],
+      "managerPersonKey": null
+    },
+    {
+      "personKey": "LOCAL-P02",
+      "email": "actor02@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee",
+        "Manager",
+        "SLT"
+      ],
+      "managerPersonKey": "LOCAL-P01"
+    },
+    {
+      "personKey": "LOCAL-P03",
+      "email": "actor03@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee",
+        "Manager",
+        "SLT"
+      ],
+      "managerPersonKey": "LOCAL-P01"
+    },
+    {
+      "personKey": "LOCAL-P04",
+      "email": "actor04@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee",
+        "Manager",
+        "SLT",
+        "AppAdmin"
+      ],
+      "managerPersonKey": "LOCAL-P01"
+    },
+    {
+      "personKey": "LOCAL-P05",
+      "email": "actor05@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P01"
+    },
+    {
+      "personKey": "LOCAL-P06",
+      "email": "actor06@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P03"
+    },
+    {
+      "personKey": "LOCAL-P07",
+      "email": "actor07@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P03"
+    },
+    {
+      "personKey": "LOCAL-P08",
+      "email": "actor08@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P03"
+    },
+    {
+      "personKey": "LOCAL-P09",
+      "email": "actor09@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P04"
+    },
+    {
+      "personKey": "LOCAL-P10",
+      "email": "actor10@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P04"
+    },
+    {
+      "personKey": "LOCAL-P11",
+      "email": "actor11@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P04"
+    },
+    {
+      "personKey": "LOCAL-P12",
+      "email": "actor12@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P04"
+    },
+    {
+      "personKey": "LOCAL-P13",
+      "email": "actor13@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee",
+        "Manager"
+      ],
+      "managerPersonKey": "LOCAL-P04"
+    },
+    {
+      "personKey": "LOCAL-P14",
+      "email": "actor14@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P02"
+    },
+    {
+      "personKey": "LOCAL-P15",
+      "email": "actor15@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P02"
+    },
+    {
+      "personKey": "LOCAL-P16",
+      "email": "actor16@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P02"
+    },
+    {
+      "personKey": "LOCAL-P17",
+      "email": "actor17@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P02"
+    },
+    {
+      "personKey": "LOCAL-P18",
+      "email": "actor18@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee",
+        "Manager"
+      ],
+      "managerPersonKey": "LOCAL-P02"
+    },
+    {
+      "personKey": "LOCAL-P19",
+      "email": "actor19@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P18"
+    },
+    {
+      "personKey": "LOCAL-P20",
+      "email": "actor20@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P18"
+    },
+    {
+      "personKey": "LOCAL-P21",
+      "email": "actor21@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P13"
+    },
+    {
+      "personKey": "LOCAL-P22",
+      "email": "actor22@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P13"
+    },
+    {
+      "personKey": "LOCAL-P23",
+      "email": "actor23@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P13"
+    },
+    {
+      "personKey": "LOCAL-P24",
+      "email": "actor24@example.invalid",
+      "active": true,
+      "roles": [
+        "Employee"
+      ],
+      "managerPersonKey": "LOCAL-P13"
+    }
+  ]
+}

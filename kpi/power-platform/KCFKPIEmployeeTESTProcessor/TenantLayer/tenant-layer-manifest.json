@@ -1,0 +1,92 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "schemaRevision": "kcf-behaviour-v2-tenant-1",
+  "generationEpoch": "2000-01-01T00:00:00Z",
+  "deterministic": true,
+  "selfExcluded": true,
+  "baseDefinitionSha256": "B0317B71405F55929AD7ADAB8218D73B1A229E7200F5B10BEB6F8E444ED048BE",
+  "targetEvidenceSha256": "2BED23BF19E22C6FB3288036CB5426217574F056D7CF649C4AD43EC8E8B64825",
+  "solution": {
+    "uniqueName": "KCFKPIEmployeeC2bTenantLayerDisabled",
+    "version": "1.0.1.0",
+    "workflowId": "3db97504-0731-4134-af1a-27e467d23b28",
+    "workflowName": "KCF KPI Employee C2b Tenant Layer Disabled"
+  },
+  "disabled": true,
+  "triggerCount": 0,
+  "connectionReferenceCount": 0,
+  "applyDefaultEnabled": false,
+  "productRowCount": 0,
+  "generatedFiles": [
+    {
+      "file": "Configuration/tenant-binding.template.json",
+      "bytes": 10853,
+      "sha256": "6C2E56A7E8C73E136EB741EAE7FEB28F0E6126FCD563402A39FBF22FA361615B"
+    },
+    {
+      "file": "Data/product-data.template.json",
+      "bytes": 722,
+      "sha256": "83226D0FEEC89CA628373A0E62F9E928A47A0CFEBD68531C9BF9A9E746F0691A"
+    },
+    {
+      "file": "Definitions/C2b.tenant-layer.disabled.definition.json",
+      "bytes": 301618,
+      "sha256": "391B6A249345EF600AD91A94640B15A9E3FDE3A408FC83616F006649ADFD5D5D"
+    },
+    {
+      "file": "Package/KCFKPIEmployeeC2bTenantLayerDisabled_1_0_1_0.zip",
+      "bytes": 305460,
+      "sha256": "DE4EF8A90E61CDBAF8EAAFFCE1BCD0E60E352004615385B1DC1B07ABFFFAE39F"
+    },
+    {
+      "file": "PackageSource/[Content_Types].xml",
+      "bytes": 264,
+      "sha256": "ADB3AD9765864F31075247E6F757BEC2EF844CB9037FDCCBB93983B98B3DB16C"
+    },
+    {
+      "file": "PackageSource/Other/Customizations.xml",
+      "bytes": 402,
+      "sha256": "D095C894AA916CF8918BA912A877C041CA4410069BEF07A9FE66C1C233A5556F"
+    },
+    {
+      "file": "PackageSource/Other/Solution.xml",
+      "bytes": 1097,
+      "sha256": "572EDE86F1645F1CF23771FB8265FD92AD8FF1E5B9D92CAE936D26C63B9C7A21"
+    },
+    {
+      "file": "PackageSource/Workflows/KCFKPIEmployeeC2bTenantLayerDisabled-3db97504-0731-4134-af1a-27e467d23b28.json",
+      "bytes": 301648,
+      "sha256": "AC7ABEF53F6F86F1B31202ED7FCEE0FD4E5E18523EF41CCF8EC0248404778C41"
+    },
+    {
+      "file": "PackageSource/Workflows/KCFKPIEmployeeC2bTenantLayerDisabled-3db97504-0731-4134-af1a-27e467d23b28.json.data.xml",
+      "bytes": 1155,
+      "sha256": "F1B0B2CBE212779E3B08546C1090B35B03820C1A8CDE8CD85BFD852675B8591A"
+    },
+    {
+      "file": "Receipts/after-state.template.json",
+      "bytes": 238,
+      "sha256": "031FC91AA41F5D57E5F78E503537FAEA22C19AA6C9B0EE8C8C22ECBB69052621"
+    },
+    {
+      "file": "Receipts/before-state.template.json",
+      "bytes": 238,
+      "sha256": "031FC91AA41F5D57E5F78E503537FAEA22C19AA6C9B0EE8C8C22ECBB69052621"
+    },
+    {
+      "file": "Receipts/operation-receipt.template.json",
+      "bytes": 697,
+      "sha256": "AE63833F30CE303A8ACD1BAD4F8487A7068C72F592BF06D7F70C22E547B28CD0"
+    },
+    {
+      "file": "Receipts/rollback-manifest.template.json",
+      "bytes": 582,
+      "sha256": "AAC90455C63C7CBFCE6C8F9FFF353286636B34519157F6A7BFEB0C4EE9233DF7"
+    },
+    {
+      "file": "Schema/behaviour-v2-sharepoint-schema.json",
+      "bytes": 42644,
+      "sha256": "4555FB68ED76E3D5240AD4CD1C1D040C739AEF8D7BE87BE7D371A2C01BD84B66"
+    }
+  ]
+}

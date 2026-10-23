@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LOCAL fictional package journey</title><link rel="stylesheet" href="/package-host/host.css"></head>
+<body><header id="lab-banner"><strong>LOCAL / NOT INSTALLED · Fictional private Draft simulation</strong>
+<p>SharePoint reads/writes are rejected. This page retains one fictional Draft in browser memory while Close app unmounts it. Reloading the page or restarting the preview loses that memory. No M365 or cross-device persistence claim.</p>
+<details><summary>Loaded package and fixture provenance</summary><pre id="provenance"></pre></details>
+<div class="controls"><label>Fictional actor <select id="actor"><option value="0">Employee</option><option value="1">Manager</option><option value="2">Other employee</option></select></label>
+<label>Fixture response <select id="outcome"><option value="success">Ordinary matching readback</option><option value="deny">Save denied (403)</option><option value="conflict">Save conflict (412)</option><option value="commitThen500">Committed, response lost (500)</option><option value="denyReadback">Committed, readback denied (403)</option></select></label>
+<button id="close">Close app</button><button id="reopen">Reopen app</button><button id="reset">Reset fictional memory</button></div>
+<nav class="controls" aria-label="Local journey routes"><button data-screen="employeeLanding">Employee landing</button><button data-screen="CoreBuilder">Core Builder</button><button data-screen="ImpactBuilder">IMPACT Builder + Save</button><button data-screen="BehaviourBuilder">Behaviour Builder</button><button data-screen="SavedSummary">Saved summary</button><button data-screen="ManagerScreen">Manager screen (held)</button></nav>
+<p id="lifetime" role="status">Starting local package…</p><p id="fixture-status"></p><p id="retained-limit" role="status">Retained fixture includes historical HISTORIC-KPI and historical Behaviour claims. A missing current catalogue match must remain a scoped mismatch; these fields are preserved in the Draft, without invented current authority.</p>
+</header><div id="host-error" role="alert"></div><main id="package-root"></main>
+<script src="/vendor/require.js"></script><script type="module" src="/package-host/host.mjs"></script></body></html>

@@ -1,0 +1,11 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "capturedAt": null,
+  "targetEvidenceSha256": null,
+  "package": null,
+  "flows": [],
+  "lists": [],
+  "bindings": null,
+  "permissions": [],
+  "productionChangeObserved": false
+}

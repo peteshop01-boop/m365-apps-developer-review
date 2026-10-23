@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "kcf-performance-hub-client-side-solution",
+    "id": "34bee229-16d5-4ecb-a2f8-a7ae2353c3bf",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "kcf-performance-hub description"
+      },
+      "longDescription": {
+        "default": "kcf-performance-hub description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "kcf-performance-hub Feature",
+        "description": "The feature that activates elements of the kcf-performance-hub solution.",
+        "id": "1ef5c0e3-c97c-43c7-a7a9-453d401964c8",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/kcf-performance-hub.sppkg"
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kcf.example/contracts/kcf-gold-001.schema.json",
+  "title": "KCF GOLD OUTPUT quarterly result",
+  "description": "One immutable Core GOLD result per opaque KPIID, numeric production year and quarter. Optional hierarchy keys and organisational weights reflect current physical-schema gaps and must not be invented.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataContractVersion",
+    "goldResultKey",
+    "kpiId",
+    "kpiVersionKey",
+    "kpiWordingReference",
+    "kpiWording",
+    "scope",
+    "performanceYear",
+    "quarter",
+    "pillar",
+    "workstream",
+    "accountableOwnerReference",
+    "target",
+    "actual",
+    "calculatedRag",
+    "finalApprovedRag",
+    "aggregationMethod",
+    "organisationalWeights",
+    "approval",
+    "publication",
+    "sourceQuarterReviewIds",
+    "evidenceReferences",
+    "kpiLifecycleStatus",
+    "reportingStatus",
+    "audit"
+  ],
+  "properties": {
+    "dataContractVersion": { "const": "KCF-GOLD-001" },
+    "goldResultKey": { "type": "string", "minLength": 1 },
+    "kpiId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque controlled KPI ID; no SO-number pattern is imposed."
+    },
+    "kpiVersionKey": { "type": "string", "minLength": 1 },
+    "kpiWordingReference": { "type": "string", "minLength": 1 },
+    "kpiWording": { "type": "string", "minLength": 1 },
+    "scope": { "const": "CoreGold" },
+    "performanceYear": { "type": "integer", "minimum": 2000, "maximum": 2100 },
+    "performanceYearLabel": { "type": "string", "minLength": 1 },
+    "quarter": { "$ref": "#/$defs/quarter" },
+    "pillar": { "$ref": "#/$defs/reportingGroup" },
+    "workstream": { "$ref": "#/$defs/reportingGroup" },
+    "accountableOwnerReference": { "type": "string", "minLength": 1 },
+    "target": { "$ref": "#/$defs/metricValue" },
+    "actual": { "$ref": "#/$defs/metricValue" },
+    "rawProgressPercent": { "type": "number" },
+    "scoredProgressPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+    "calculatedRag": { "$ref": "#/$defs/rag" },
+    "finalApprovedRag": { "$ref": "#/$defs/rag" },
+    "aggregationMethod": {
+      "enum": [
+        "DirectMetric",
+        "Additive",
+        "WeightedContribution",
+        "Composite",
+        "Milestone",
+        "AccountableOwner"
+      ]
+    },
+    "organisationalWeights": { "$ref": "#/$defs/organisationalWeights" },
+    "approval": { "$ref": "#/$defs/approval" },
+    "publication": { "$ref": "#/$defs/publication" },
+    "sourceQuarterReviewIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "commentary": { "type": "string", "minLength": 1 },
+    "btgRecovery": { "$ref": "#/$defs/btgRecovery" },
+    "evidenceReferences": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "kpiLifecycleStatus": { "enum": ["Active", "Retired", "Excluded"] },
+    "reportingStatus": { "enum": ["Included", "ContextOnly", "Excluded"] },
+    "excludedFromBoard": { "type": "boolean" },
+    "audit": { "$ref": "#/$defs/audit" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "calculatedRag": { "const": "NotRated" } }, "required": ["calculatedRag"] },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["rawProgressPercent"] },
+            { "required": ["scoredProgressPercent"] }
+          ]
+        }
+      }
+    },
+    {
+      "if": { "required": ["rawProgressPercent"] },
+      "then": { "required": ["scoredProgressPercent"] }
+    },
+    {
+      "if": { "required": ["scoredProgressPercent"] },
+      "then": { "required": ["rawProgressPercent"] }
+    },
+    {
+      "if": {
+        "anyOf": [
+          { "properties": { "kpiLifecycleStatus": { "enum": ["Retired", "Excluded"] } }, "required": ["kpiLifecycleStatus"] },
+          { "properties": { "reportingStatus": { "enum": ["ContextOnly", "Excluded"] } }, "required": ["reportingStatus"] },
+          { "properties": { "finalApprovedRag": { "const": "NotRated" } }, "required": ["finalApprovedRag"] }
+        ]
+      },
+      "then": {
+        "properties": { "excludedFromBoard": { "const": true } },
+        "required": ["excludedFromBoard"]
+      }
+    }
+  ],
+  "$defs": {
+    "quarter": { "enum": ["Q1", "Q2", "Q3", "Q4"] },
+    "rag": { "enum": ["Green", "Amber", "Red", "NotRated"] },
+    "reportingGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional until a CONTROL-supplied opaque stable key exists; never derive it from the label."
+        },
+        "label": { "type": "string", "minLength": 1 }
+      }
+    },
+    "metricValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "value"],
+          "properties": {
+            "kind": { "const": "Numeric" },
+            "value": { "type": "number" },
+            "unit": { "type": "string", "minLength": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "value"],
+          "properties": {
+            "kind": { "const": "Text" },
+            "value": { "type": "string", "minLength": 1 },
+            "unit": { "type": "string", "minLength": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "value", "reason"],
+          "properties": {
+            "kind": { "const": "NotAvailable" },
+            "value": { "type": "null" },
+            "reason": { "type": "string", "minLength": 1 },
+            "unit": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "organisationalWeights": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Values remain optional because current production organisational weights are blank and KPIWeightWithinWorkstream is not physically present. Missing values must make weighted publication NOT READY.",
+      "properties": {
+        "weightingVersion": { "type": "string", "minLength": 1 },
+        "approvalReference": { "type": "string", "minLength": 1 },
+        "kpiWeightWithinWorkstreamPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "workstreamWeightWithinPillarPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pillarWeightWithinBoardPercent": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "dependentRequired": {
+        "kpiWeightWithinWorkstreamPercent": ["weightingVersion", "approvalReference"],
+        "workstreamWeightWithinPillarPercent": ["weightingVersion", "approvalReference"],
+        "pillarWeightWithinBoardPercent": ["weightingVersion", "approvalReference"]
+      }
+    },
+    "ragOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason", "approvedByReference", "approvedAt", "auditEventReference"],
+      "properties": {
+        "reason": { "type": "string", "minLength": 1 },
+        "approvedByReference": { "type": "string", "minLength": 1 },
+        "approvedAt": { "type": "string", "format": "date-time" },
+        "auditEventReference": { "type": "string", "minLength": 1 }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["Draft", "Validated", "Approved", "Rejected"] },
+        "approvedByReference": { "type": "string", "minLength": 1 },
+        "approvedAt": { "type": "string", "format": "date-time" },
+        "approvalReference": { "type": "string", "minLength": 1 },
+        "ragOverride": { "$ref": "#/$defs/ragOverride" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "Approved" } }, "required": ["status"] },
+          "then": { "required": ["approvedByReference", "approvedAt", "approvalReference"] }
+        }
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["Unpublished", "Published", "Superseded"] },
+        "publishBatchKey": { "type": "string", "minLength": 1 },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "publishedByReference": { "type": "string", "minLength": 1 },
+        "snapshotKey": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["Published", "Superseded"] } }, "required": ["status"] },
+          "then": { "required": ["publishBatchKey", "publishedAt", "publishedByReference", "snapshotKey"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "Unpublished" } }, "required": ["status"] },
+          "then": {
+            "not": {
+              "anyOf": [
+                { "required": ["publishBatchKey"] },
+                { "required": ["publishedAt"] },
+                { "required": ["publishedByReference"] },
+                { "required": ["snapshotKey"] }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "btgRecovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {
+        "state": { "enum": ["None", "Required", "Active", "Complete", "Overdue"] },
+        "action": { "type": "string", "minLength": 1 },
+        "ownerReference": { "type": "string", "minLength": 1 },
+        "dueDate": { "type": "string", "format": "date" },
+        "recoveryCommentary": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "state": { "enum": ["Active", "Complete", "Overdue"] } }, "required": ["state"] },
+          "then": { "required": ["action", "ownerReference", "dueDate"] }
+        }
+      ]
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordVersion",
+        "aggregationVersion",
+        "calculationVersion",
+        "sourceVersion",
+        "generatedAt",
+        "generatedByReference"
+      ],
+      "properties": {
+        "recordVersion": { "type": "integer", "minimum": 1 },
+        "aggregationVersion": { "type": "string", "minLength": 1 },
+        "calculationVersion": { "type": "string", "minLength": 1 },
+        "sourceVersion": { "type": "string", "minLength": 1 },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "generatedByReference": { "type": "string", "minLength": 1 },
+        "sourceDataHash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" }
+      }
+    }
+  }
+}

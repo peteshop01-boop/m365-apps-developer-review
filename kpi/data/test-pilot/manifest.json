@@ -1,0 +1,94 @@
+{
+  "version": "kcf.test-pilot.v3",
+  "date": "2026-09-08",
+  "synthetic": true,
+  "installationClaim": false,
+  "selfExcluded": "manifest.json",
+  "counts": {
+    "profiles": 24,
+    "actors": 24,
+    "explicitSLT": 4,
+    "initialAppAdmins": 1,
+    "roleScenarioGroups": 30,
+    "numericCoreKpis": 1,
+    "annualTargets": 1,
+    "quarterTargets": 4,
+    "publishedBehaviours": 5,
+    "behaviourFrameworkV2Sets": 1,
+    "behaviourFrameworkV2SyntheticAssignments": 1,
+    "behaviourLibrary": 0,
+    "behaviourLibraryV2Suggestions": 75,
+    "kpiStages": 0
+  },
+  "behaviourLibraryV2": {
+    "file": "behaviour-library-v2.synthetic.json",
+    "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+    "published": false,
+    "productionSafe": false,
+    "synthetic": true
+  },
+  "provenance": {
+    "contract": "CORE_CONTRACT_V3.md",
+    "contractSha256": "9bbc3383c815639a06921a6e1e9f3339ab41713e27d0f64c6d2e57b4b1a0d10d",
+    "schema035Sha256": "663aaf7866ea0f67d2e85ee731744ddef9fce393bdefd5242f2179c0326f3842",
+    "policy": "PM TL-M025; synthetic actor graph, no real names/email",
+    "candidateParent": "12378a6d494c4dffa4c08f518fcb3f29982d5da4"
+  },
+  "files": [
+    {
+      "file": "authorisation.json",
+      "bytes": 4895,
+      "sha256": "75c6779fe9bdc4a43f018cbfbd71c6e5a1bccf2acc9e408d0a1a9f0d0b82e291"
+    },
+    {
+      "file": "behaviour-framework-v2.synthetic.json",
+      "bytes": 4099,
+      "sha256": "edbcaf79741d1e0ccb822d2ce8a554572f5e0fad812e6c3eea70f0b6e3d2f9de"
+    },
+    {
+      "file": "behaviour-library-v2.synthetic.json",
+      "bytes": 54711,
+      "sha256": "d33924304dbe538572f431bbbe9a74415291a3749df3a3dc0ce3fc90b3443457"
+    },
+    {
+      "file": "command-fixtures.json",
+      "bytes": 2188,
+      "sha256": "f3f86d59062be9555bff50af6911d9982f350d528aa5a6f2fc139079c4a6b224"
+    },
+    {
+      "file": "failure-scenarios.json",
+      "bytes": 625,
+      "sha256": "7d965636ff70c16f14ac8a8656f15952ff15bb686478a2d39f4307f10f3633f8"
+    },
+    {
+      "file": "installation.json",
+      "bytes": 2434,
+      "sha256": "cfafc92bbe2ce68dca42ce1ee48f72e61978a2f51082f61b8dbdeeb397ff1b6a"
+    },
+    {
+      "file": "physical-035-mappings.json",
+      "bytes": 36515,
+      "sha256": "3eb30d29f0dfb111a5108d0cbedbe6a3d1668613afa328dd4cde604b7f45c0fd"
+    },
+    {
+      "file": "profiles.json",
+      "bytes": 10552,
+      "sha256": "50fddf669b40235cee502de86a01412323fc78fc0cc428cd6ed45fa6b4cdee3f"
+    },
+    {
+      "file": "proposed-safe-schema.json",
+      "bytes": 6993,
+      "sha256": "a0b8c75a8e4a64b2b293bea9181d72db2ce8827d9aa6ab90c6d423877ac75b15"
+    },
+    {
+      "file": "references.json",
+      "bytes": 5793,
+      "sha256": "8bcce251845fe755a18e5e7dc91d4bf0e82c67d7ff87a97b06df1f769cb6022b"
+    },
+    {
+      "file": "role-scenarios.json",
+      "bytes": 3411,
+      "sha256": "6f8ca9c48e79ab8b634a30d0829e511abcc201ecef23a426ba440fbb55598f70"
+    }
+  ]
+}

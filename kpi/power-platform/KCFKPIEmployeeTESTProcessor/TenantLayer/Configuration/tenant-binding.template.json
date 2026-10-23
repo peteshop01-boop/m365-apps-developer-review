@@ -1,0 +1,393 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "enabled": false,
+  "bindingReceiptSha256": null,
+  "bindingAuthority": {
+    "contractVersion": "kcf.kpi.wib12.binding-authority.v1",
+    "authorityReference": null,
+    "expectedBindingSha256": null,
+    "expectedBinding": null,
+    "aclAuthority": {
+      "authorised": false,
+      "identitySeparationEvidenceSha256": null,
+      "rollbackActorPrincipalId": null,
+      "rollbackRegistryReference": null
+    }
+  },
+  "schemaAuthority": {
+    "authorityReference": null,
+    "schemaSha256": null,
+    "listInventorySha256": null
+  },
+  "receiptAuthority": {
+    "contractVersion": "kcf.kpi.wib12.receipt-authority.v1",
+    "authorityReference": null,
+    "receiptListId": null,
+    "receiptListTitle": null,
+    "schemaRevision": null,
+    "baseTemplate": null,
+    "majorVersioningEnabled": null,
+    "foldersEnabled": null,
+    "keyField": "ReceiptRevisionKey",
+    "seriesKeyField": "ReceiptKey",
+    "chunkPrefix": "ReceiptChunk",
+    "chunkCount": 16,
+    "maximumCodeUnits": 960000,
+    "fieldInventory": [],
+    "fieldInventorySha256": null,
+    "writerPrincipalKey": null,
+    "writerPrincipalId": null
+  },
+  "packageTransitionAuthority": {
+    "contractVersion": "kcf.kpi.wib12.package-transition-authority.v1",
+    "authorityReference": null,
+    "targetCandidate": {
+      "sourceCommit": null,
+      "sourceTree": null,
+      "tenantPacketManifestSha256": null,
+      "companionPackageSha256": null
+    },
+    "targetBasePackage": {
+      "productId": null,
+      "version": null,
+      "binarySha256": null
+    },
+    "allowedPriorBasePackages": []
+  },
+  "frozenBase": {
+    "commit": "30caa68738681cda364db52d478138fde7bbc53a",
+    "tree": "688b09d841a74adb064c230ced8a90072a256f2c",
+    "packageSha256": "CE91E398B38DE312E2AC5E5731F93AF5D6263BC53C08E3C349CEA745262C3EB6"
+  },
+  "builtCandidate": {
+    "commit": null,
+    "tree": null,
+    "tenantPacketManifestSha256": null,
+    "companionPackageSha256": null
+  },
+  "targetEvidence": null,
+  "deploymentClassification": "Unknown",
+  "expectedTargetEvidenceSha256": "2BED23BF19E22C6FB3288036CB5426217574F056D7CF649C4AD43EC8E8B64825",
+  "isolationAuthorityReference": "KCF-KPI-Sponsor-M013",
+  "appCatalogue": {
+    "scope": "SiteCollection",
+    "id": null,
+    "priorPackageIdentity": null,
+    "installScope": null
+  },
+  "baseSpfxPackage": {
+    "productId": "34bee229-16d5-4ecb-a2f8-a7ae2353c3bf",
+    "version": "1.0.0.0",
+    "binarySha256": "CE91E398B38DE312E2AC5E5731F93AF5D6263BC53C08E3C349CEA745262C3EB6",
+    "priorInstalledVersion": null,
+    "receiptReference": null
+  },
+  "package": {
+    "companionSolutionUniqueName": "KCFKPIEmployeeC2bTenantLayerDisabled",
+    "version": "1.0.1.0",
+    "workflowId": "3db97504-0731-4134-af1a-27e467d23b28",
+    "workflowName": "KCF KPI Employee C2b Tenant Layer Disabled",
+    "binarySha256": null,
+    "priorInstalledVersion": null
+  },
+  "connectionReference": {
+    "id": null,
+    "connector": "shared_sharepointonline",
+    "primaryOwnerPrincipalId": null,
+    "backupOwnerPrincipalId": null,
+    "continuityReference": null
+  },
+  "nativeStorageFields": {
+    "sourcePayloadJson": "PayloadJSON",
+    "journalKey": "CommandKey",
+    "effectKey": "EffectKey",
+    "workplanKey": "WorkplanKey",
+    "workplanItemKey": "WorkplanItemNaturalKey",
+    "auditKey": "AuditKey",
+    "receiptKey": "ReceiptKey",
+    "controlCaseKey": "ControlCaseKey",
+    "provisioningReceiptKey": "ReceiptRevisionKey"
+  },
+  "planningAuthority": {
+    "schemaRevision": "c2b-annual-v2",
+    "behaviourContractVersion": null,
+    "initialState": "Draft",
+    "initialAccessState": "EmployeeEdit",
+    "initialTransitionStatus": "Ready",
+    "processorPrincipalKey": null,
+    "adminPrincipalKeys": [],
+    "coreCatalogueProviderReference": null,
+    "coreKpiMasterListId": null,
+    "coreAnnualTargetsListId": null
+  },
+  "lists": [
+    {
+      "purpose": "People",
+      "title": "KCFKPI_TEST_People",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "EmployeeCommands",
+      "title": "KCFKPI_TEST_EmployeeCommands",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "ManagerCommands",
+      "title": "KCFKPI_TEST_ManagerCommands",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "CommandJournal",
+      "title": "KCFKPI_TEST_CommandJournal",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "CommandEffects",
+      "title": "KCFKPI_TEST_CommandEffects",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "CommandReceipts",
+      "title": "KCFKPI_TEST_CommandReceipts",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "Workplans",
+      "title": "KCFKPI_TEST_Workplans",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "WorkplanItems",
+      "title": "KCFKPI_TEST_WorkplanItems",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "Audit",
+      "title": "KCFKPI_TEST_Audit",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "BehaviourFrameworkSets",
+      "title": "KCFKPI_BehaviourFrameworkSets",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "BehaviourFrameworkValues",
+      "title": "KCFKPI_BehaviourFrameworkValues",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "PersonBehaviourAssignments",
+      "title": "KCFKPI_PersonBehaviourAssignments",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "BehaviourObjectiveLibrary",
+      "title": "KCFKPI_BehaviourObjectiveLibrary",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "ControlCases",
+      "title": "KCFKPI_TEST_ControlCases",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    },
+    {
+      "purpose": "TenantProvisioningReceipts",
+      "title": "KCFKPI_TEST_TenantProvisioningReceipts",
+      "listId": null,
+      "schemaRevision": null,
+      "observedFields": [],
+      "beforeETag": null,
+      "afterETag": null,
+      "beforeCount": null,
+      "afterCount": null
+    }
+  ],
+  "provisioningLists": [
+    {
+      "purpose": "BehaviourFrameworkSets",
+      "title": "KCFKPI_BehaviourFrameworkSets",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "BehaviourFrameworkValues",
+      "title": "KCFKPI_BehaviourFrameworkValues",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "PersonBehaviourAssignments",
+      "title": "KCFKPI_PersonBehaviourAssignments",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "BehaviourObjectiveLibrary",
+      "title": "KCFKPI_BehaviourObjectiveLibrary",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "People",
+      "title": "KCFKPI_TEST_People",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "Workplans",
+      "title": "KCFKPI_TEST_Workplans",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "WorkplanItems",
+      "title": "KCFKPI_TEST_WorkplanItems",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "QuarterReviews",
+      "title": "KCFKPI_TEST_QuarterReviews",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "QuarterReviewItems",
+      "title": "KCFKPI_TEST_QuarterReviewItems",
+      "listId": null,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1"
+    },
+    {
+      "purpose": "CommandReceipts",
+      "title": "KCFKPI_TEST_CommandReceipts",
+      "listId": null,
+      "schemaRevision": "c2b-annual-v2"
+    },
+    {
+      "purpose": "ControlCases",
+      "title": "KCFKPI_TEST_ControlCases",
+      "listId": null,
+      "schemaRevision": "c2b-control-case-v1"
+    },
+    {
+      "purpose": "TenantProvisioningReceipts",
+      "title": "KCFKPI_TEST_TenantProvisioningReceipts",
+      "listId": null,
+      "schemaRevision": "kcf-wib12-provisioning-receipt-v1"
+    }
+  ],
+  "principals": {
+    "processor": null,
+    "administrators": [],
+    "submitters": [],
+    "actors": [],
+    "negative": [],
+    "visitorsGroup": null,
+    "visitorsRole": "Read",
+    "processorRoleId": null,
+    "administratorRoleId": null,
+    "submitterRoleId": null,
+    "actorReadRoleId": null,
+    "visitorsRoleId": null,
+    "roleDefinitions": [],
+    "principalKeyBindings": []
+  },
+  "catalogue": {
+    "frameworkVersion": null,
+    "published": null,
+    "productionSafe": null,
+    "synthetic": null,
+    "expectedRowCount": 75,
+    "canonicalDigestSha256": null
+  },
+  "productData": {
+    "approvalReference": null,
+    "importedStableKeys": []
+  },
+  "activated": false
+}

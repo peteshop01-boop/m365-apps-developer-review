@@ -1,0 +1,45 @@
+{
+  "purpose": "SourceDeclarationOnly",
+  "enabled": false,
+  "installedReady": "NOT_ADMITTED",
+  "sourceInventory": [
+    {
+      "path": "src/webparts/performanceHub/models/OptionEWorkplanSubmitExactBodyV4Models.ts",
+      "sha256": "5FDB032E37CCF4E5C0C4ED34971545007D591AEF14B0932FD40DE1F506860183"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanSubmitExactBodyV4Wire.ts",
+      "sha256": "11E7314D97950D34EE525636D21E2A42E1E29959E6B3B203678A39D7F93BE0C8"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanSubmitExactBodyV4.ts",
+      "sha256": "8E45A93CE6E3BE35F4F1852F81EE8591E96826F15456038A0AAB3E3DBB9C97BB"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanSubmitExactBodyV4PackageContract.ts",
+      "sha256": "590593AF3DD99B84029483EBE6A69D8A609AB8FE9594A0FF8BB6625FD8D6B2D8"
+    },
+    {
+      "path": "src/webparts/performanceHub/models/OptionEWorkplanDraftModels.ts",
+      "sha256": "947D2E4D796514B6C52D97972640EB73925E6F0FD0714EE2B92765B6C3410ADB"
+    },
+    {
+      "path": "src/webparts/performanceHub/models/OptionEWorkplanSubmitModels.ts",
+      "sha256": "071341694F7407D919F5BCC6A5DBDD3213302DA9849EEF9BF813B341A71E8B65"
+    }
+  ],
+  "generator": {
+    "path": "Tools/build-option-e-exactbody-v4.mjs",
+    "sha256": "1E2CCADCE1CC08D5E75AA4B0C88A81DE45BFD2E69099618E496FD2AA545A7F19"
+  },
+  "files": [
+    {
+      "path": "exact-body-v4.disabled.fixture.json",
+      "sha256": "61689B52B5F811E2EF72D67796BA29BCCD524ED9127A4E8A0AF74B0B88FF62FC"
+    },
+    {
+      "path": "exact-body-v4.binding.template.json",
+      "sha256": "8DED734CDA2F74B0D36319FB431D1D83A8E6932DB00F2E2EF1AF9DC444EB9A3F"
+    }
+  ]
+}

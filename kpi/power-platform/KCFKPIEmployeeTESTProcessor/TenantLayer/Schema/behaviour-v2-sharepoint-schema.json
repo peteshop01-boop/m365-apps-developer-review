@@ -1,0 +1,1593 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "schemaRevision": "kcf-behaviour-v2-tenant-1",
+  "operationPolicy": {
+    "modeDefault": "DryRun",
+    "applyRequiresExplicitEnable": true,
+    "addOnly": true,
+    "overwriteAllowed": false,
+    "deleteAllowed": false,
+    "stableKeyImport": true,
+    "exactReadbackRequired": true
+  },
+  "lists": [
+    {
+      "purpose": "BehaviourFrameworkSets",
+      "title": "KCFKPI_BehaviourFrameworkSets",
+      "createIfMissing": true,
+      "description": "Versioned Behaviour framework envelopes.",
+      "stableKey": "FrameworkVersion",
+      "fields": [
+        {
+          "internalName": "FrameworkVersion",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "Published",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Immutable",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": true,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Current",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ProductionSafe",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Synthetic",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": true,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "EffectiveFrom",
+          "type": "Date",
+          "required": true,
+          "dateOnly": true,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "EffectiveTo",
+          "type": "Date",
+          "required": false,
+          "dateOnly": true,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "RatingLabelsJSON",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ApprovalReference",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "BehaviourFrameworkValues",
+      "title": "KCFKPI_BehaviourFrameworkValues",
+      "createIfMissing": true,
+      "description": "Versioned Behaviour Values and tier descriptors.",
+      "stableKey": "FrameworkValueKey",
+      "fields": [
+        {
+          "internalName": "FrameworkValueKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "FrameworkVersion",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ValueID",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ValueTitle",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "CorporateValue",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ICOfficerDescriptor",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "PeopleManagerDescriptor",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "SeniorLeaderDescriptor",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "PersonBehaviourAssignments",
+      "title": "KCFKPI_PersonBehaviourAssignments",
+      "createIfMissing": true,
+      "description": "Explicit person Behaviour version, role tier and cadence assignments.",
+      "stableKey": "AssignmentKey",
+      "fields": [
+        {
+          "internalName": "AssignmentKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "PersonKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "FrameworkVersion",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "RoleTier",
+          "type": "Choice",
+          "required": true,
+          "choices": [
+            "IC_OFFICER",
+            "PEOPLE_MANAGER",
+            "SENIOR_LEADER"
+          ],
+          "fillInChoice": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "Cadence",
+          "type": "Choice",
+          "required": true,
+          "choices": [
+            "Quarterly",
+            "TwiceYearly"
+          ],
+          "fillInChoice": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "PeriodKeysJSON",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Active",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": true,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "BehaviourObjectiveLibrary",
+      "title": "KCFKPI_BehaviourObjectiveLibrary",
+      "createIfMissing": false,
+      "description": "Existing governed 16-field Behaviour catalogue.",
+      "stableKey": "BehaviourObjectiveKey",
+      "fields": [
+        {
+          "internalName": "BehaviourObjectiveKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "BehaviourKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourTitle",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "CorporateValue",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "RoleLevelName",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "DropdownLabel",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ObjectiveTitle",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "SuggestedUnit",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "RoleLevelCode",
+          "type": "Choice",
+          "required": true,
+          "choices": [
+            "L1",
+            "L2",
+            "L3"
+          ],
+          "fillInChoice": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ObjectiveDescription",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "SuggestedMeasure",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "SuggestedEvidence",
+          "type": "Note",
+          "required": true,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Active",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "SortOrder",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 5,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "EffectiveFrom",
+          "type": "Date",
+          "required": true,
+          "dateOnly": true,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "EffectiveTo",
+          "type": "Date",
+          "required": false,
+          "dateOnly": true,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        }
+      ],
+      "exactCustomFieldSet": true,
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "People",
+      "title": "KCFKPI_TEST_People",
+      "createIfMissing": false,
+      "stableKey": "PersonKey",
+      "requiredExistingFields": [
+        {
+          "internalName": "PersonKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        }
+      ],
+      "fields": [
+        {
+          "internalName": "BehaviourFrameworkVersionV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourRoleTierV2",
+          "type": "Choice",
+          "required": false,
+          "choices": [
+            "IC_OFFICER",
+            "PEOPLE_MANAGER",
+            "SENIOR_LEADER"
+          ],
+          "fillInChoice": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCadenceV2",
+          "type": "Choice",
+          "required": false,
+          "choices": [
+            "Quarterly",
+            "TwiceYearly"
+          ],
+          "fillInChoice": false,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "Workplans",
+      "title": "KCFKPI_TEST_Workplans",
+      "createIfMissing": false,
+      "stableKey": "WorkplanKey",
+      "requiredExistingFields": [
+        {
+          "internalName": "WorkplanKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        }
+      ],
+      "fields": [
+        {
+          "internalName": "BehaviourContractVersion",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "SchemaRevision",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "WorkplanItems",
+      "title": "KCFKPI_TEST_WorkplanItems",
+      "createIfMissing": false,
+      "stableKey": "WorkplanItemNaturalKey",
+      "requiredExistingFields": [
+        {
+          "internalName": "WorkplanItemNaturalKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        }
+      ],
+      "fields": [
+        {
+          "internalName": "BehaviourFrameworkVersion",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourValueTitleSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCorporateValueSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourRoleTierSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCadenceSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourDescriptorSnapshot",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourPeriodKeysSnapshotJSON",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourRatingLabelsSnapshotJSON",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCommitmentV2",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourPeriodCommitmentsV2JSON",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourV2SelectedSuggestionKeysJSON",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourPlanningContractVersion",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCurrentLevelV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourTargetLevelV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourTargetLevelReasonV2",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "RowVersionToken",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "QuarterReviews",
+      "title": "KCFKPI_TEST_QuarterReviews",
+      "createIfMissing": false,
+      "stableKey": "QuarterReviewKey",
+      "requiredExistingFields": [
+        {
+          "internalName": "QuarterReviewKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        }
+      ],
+      "fields": [
+        {
+          "internalName": "BehaviourFrameworkVersionSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourRoleTierSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCadenceSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "QuarterReviewItems",
+      "title": "KCFKPI_TEST_QuarterReviewItems",
+      "createIfMissing": false,
+      "stableKey": "QuarterReviewItemKey",
+      "requiredExistingFields": [
+        {
+          "internalName": "QuarterReviewItemKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        }
+      ],
+      "fields": [
+        {
+          "internalName": "BehaviourFrameworkVersionSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourValueTitleSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCorporateValueSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourRoleTierSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourCadenceSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourPeriodSnapshot",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourDescriptorSnapshot",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourPeriodKeysSnapshotJSON",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourRatingLabelsSnapshotJSON",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "EmployeeBehaviourEvidenceV2",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "EmployeeBehaviourAssessmentV2",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 3,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ManagerBehaviourEvidenceV2",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ManagerBehaviourAssessmentV2",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 3,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "FinalBehaviourEvidenceV2",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "FinalBehaviourAssessmentV2",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 3,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourAnnualTargetLevelV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourAnnualTargetJustificationV2",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourAnnualTargetSourceWorkplanItemKeyV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourAnnualTargetSourceEtagV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourAnnualTargetSourceWorkplanVersionV2",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "BehaviourAnnualTargetSourceApprovalKeyV2",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "schemaRevision": "kcf-behaviour-v2-tenant-1",
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "CommandReceipts",
+      "title": "KCFKPI_TEST_CommandReceipts",
+      "createIfMissing": false,
+      "schemaRevision": "c2b-annual-v2",
+      "stableKey": "ReceiptKey",
+      "requiredExistingFields": [
+        {
+          "internalName": "ReceiptKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "CommandKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        }
+      ],
+      "fields": [
+        {
+          "internalName": "NativeReceiptPayloadKind",
+          "type": "Choice",
+          "required": false,
+          "choices": [
+            "C2bTerminal"
+          ],
+          "fillInChoice": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptContractVersion",
+          "type": "Text",
+          "required": false,
+          "maxLength": 100,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptStateSHA256",
+          "type": "Text",
+          "required": false,
+          "maxLength": 64,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptStateLength",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 2,
+          "maximum": 480000,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunkCount",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 8,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk01",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk02",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk03",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk04",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk05",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk06",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk07",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "NativeReceiptChunk08",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "ControlCases",
+      "title": "KCFKPI_TEST_ControlCases",
+      "createIfMissing": true,
+      "schemaRevision": "c2b-control-case-v1",
+      "description": "Processor-private authoritative C2b control cases.",
+      "permissionCapability": "PrivateProcessorOnly",
+      "stableKey": "ControlCaseKey",
+      "fields": [
+        {
+          "internalName": "ControlCaseKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "ControlReference",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "AuthorisedAction",
+          "type": "Choice",
+          "required": true,
+          "choices": [
+            "CreateWorkplanAmendmentV2"
+          ],
+          "fillInChoice": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "SubjectKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "WorkplanKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "WorkplanVersion",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ExpectedETag",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ExpectedRowVersionToken",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Active",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ValidFromUtc",
+          "type": "Date",
+          "required": true,
+          "dateOnly": false,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ValidToUtc",
+          "type": "Date",
+          "required": true,
+          "dateOnly": false,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "Revoked",
+          "type": "Boolean",
+          "required": true,
+          "defaultValue": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "RevokedAtUtc",
+          "type": "Date",
+          "required": false,
+          "dateOnly": false,
+          "utcNormalisedInput": true,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "RevocationReason",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ConsumedAtUtc",
+          "type": "Date",
+          "required": false,
+          "dateOnly": false,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ConsumedCommandKey",
+          "type": "Text",
+          "required": false,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ConsumedSourceListId",
+          "type": "Text",
+          "required": false,
+          "maxLength": 36,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ConsumedSourceItemId",
+          "type": "Number",
+          "required": false,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ConsumedSourceItemVersion",
+          "type": "Text",
+          "required": false,
+          "maxLength": 64,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "RecoveryHoldAtUtc",
+          "type": "Date",
+          "required": false,
+          "dateOnly": false,
+          "utcNormalisedInput": true,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "RecoveryHoldReason",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "RowVersionToken",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ControlCaseContentSHA256",
+          "type": "Text",
+          "required": true,
+          "maxLength": 64,
+          "indexed": true,
+          "unique": false
+        }
+      ],
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    },
+    {
+      "purpose": "TenantProvisioningReceipts",
+      "title": "KCFKPI_TEST_TenantProvisioningReceipts",
+      "createIfMissing": true,
+      "schemaRevision": "kcf-wib12-provisioning-receipt-v1",
+      "description": "Processor-private append-only WI-B12 provisioning receipt revisions.",
+      "permissionCapability": "PrivateProcessorOnly",
+      "stableKey": "ReceiptRevisionKey",
+      "fields": [
+        {
+          "internalName": "ReceiptRevisionKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 255,
+          "indexed": true,
+          "unique": true
+        },
+        {
+          "internalName": "ReceiptKey",
+          "type": "Text",
+          "required": true,
+          "maxLength": 100,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "Revision",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptSHA256",
+          "type": "Text",
+          "required": true,
+          "maxLength": 64,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "PreviousReceiptSHA256",
+          "type": "Text",
+          "required": false,
+          "maxLength": 64,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "Status",
+          "type": "Choice",
+          "required": true,
+          "choices": [
+            "InProgress",
+            "Completed",
+            "BlockedOff"
+          ],
+          "fillInChoice": false,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "PlanSHA256",
+          "type": "Text",
+          "required": true,
+          "maxLength": 64,
+          "indexed": true,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptStateLength",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 2,
+          "maximum": 960000,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunkCount",
+          "type": "Number",
+          "required": true,
+          "decimals": 0,
+          "minimum": 1,
+          "maximum": 16,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk01",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk02",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk03",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk04",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk05",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk06",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk07",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk08",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk09",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk10",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk11",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk12",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk13",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk14",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk15",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        },
+        {
+          "internalName": "ReceiptChunk16",
+          "type": "Note",
+          "required": false,
+          "plainText": true,
+          "appendOnly": false,
+          "versionHistory": false,
+          "indexed": false,
+          "unique": false
+        }
+      ],
+      "baseTemplate": 100,
+      "titleRequired": false,
+      "majorVersioningEnabled": true,
+      "foldersEnabled": false
+    }
+  ]
+}

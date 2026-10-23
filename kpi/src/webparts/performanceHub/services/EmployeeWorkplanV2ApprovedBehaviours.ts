@@ -1,0 +1,10 @@
+export interface IApprovedBehaviourDefinitionV2 { behaviourId: string; title: string; corporateValue: string; prompts: string[]; }
+
+/** Approved current Behaviour framework from the controlled KPI Master import. */
+export const EMPLOYEE_V2_APPROVED_BEHAVIOURS: IApprovedBehaviourDefinitionV2[] = [
+  { behaviourId: 'BHV-01', title: 'Work as One Team', corporateValue: 'We unite as one Club', prompts: ['Shares information openly across teams.', 'Offers help outside their immediate remit when it benefits KCF.', 'Collaborates constructively with colleagues and departments.', 'Challenges respectfully and accepts challenge.', 'Puts Kent Cricket/Foundation outcomes ahead of silo interests.'] },
+  { behaviourId: 'BHV-02', title: 'Improve and Move Forward', corporateValue: 'We build the next chapter', prompts: ['Looks for better ways of working.', 'Learns from mistakes and adjusts.', 'Welcomes constructive ideas and change.', 'Uses evidence and feedback to improve.', "Thinks beyond today's task to longer-term impact."] },
+  { behaviourId: 'BHV-03', title: 'Show Respect and Listen', corporateValue: 'We respect the game and each other', prompts: ['Treats colleagues, participants and partners professionally.', 'Listens before forming conclusions.', 'Communicates openly and clearly.', 'Values different perspectives.', 'Handles disagreement and challenge constructively.'] },
+  { behaviourId: 'BHV-04', title: 'Bring Energy and Commitment', corporateValue: 'We work & play with energy', prompts: ['Brings enthusiasm and commitment.', 'Follows through on agreed actions.', 'Responds positively to setbacks.', 'Contributes energy to the wider team.', 'Represents Kent Cricket with pride and professionalism.'] },
+  { behaviourId: 'BHV-05', title: 'Own It and Put It Right', corporateValue: 'We take responsibility', prompts: ['Owns their work and its consequences.', 'Raises risks/issues early.', 'Seeks advice when needed.', 'Acts to put problems right.', 'Learns from successes and failures rather than repeating them.'] }
+];

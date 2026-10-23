@@ -1,0 +1,228 @@
+{
+  "contractVersion": "KCF-KPI-SEC-006-1.0",
+  "sourceSha": "60eb20ea5354704ba740909da2489f1242fd004f",
+  "securityDecisionSha": "1c914990de76db47f508ae9815c8334760eeb5f0",
+  "mode": "NON_PRODUCTION_ONLY",
+  "target": {
+    "siteUrl": null,
+    "automationEnvironmentId": null,
+    "classification": "UNPROVED",
+    "isolationApprovalReference": null,
+    "liveProvisioningAllowed": false,
+    "blockReason": "No isolated non-production SharePoint/Automation target is identified. REVIEW-TEST-SITE is Production and forbidden."
+  },
+  "migration": {
+    "strategy": "ADDITIVE_ONLY",
+    "repurposeExistingFields": false,
+    "provisionOptionalFirst": true,
+    "backfill": "WorkplanVersion=1 by the dedicated Automation identity after target and ownership gates pass",
+    "customFieldCount": 27,
+    "fields": {
+      "KCFKPI_Workplans": [
+        { "name": "CoreWeightingMode", "type": "Choice", "choices": ["Equal", "Custom"], "default": "Equal" },
+        { "name": "WorkplanVersion", "type": "NumberInteger", "default": 1 }
+      ],
+      "KCFKPI_WorkplanItems": [
+        { "name": "ContributionMethod", "type": "Choice", "choices": ["AdditiveDirect", "SharedTarget", "WeightedDenominator", "AccountableOwner", "CompletionOversight"] },
+        { "name": "Q1SuccessDefinition", "type": "NotePlainText" },
+        { "name": "Q2SuccessDefinition", "type": "NotePlainText" },
+        { "name": "Q3SuccessDefinition", "type": "NotePlainText" },
+        { "name": "Q4SuccessDefinition", "type": "NotePlainText" },
+        { "name": "SharedTargetRule", "type": "Choice", "choices": ["VisibleOnly", "ApprovedApportionment"] },
+        { "name": "SharedApportionmentPercent", "type": "Number", "minimum": 0, "maximum": 100 },
+        { "name": "ContributionGovernanceReference", "type": "Text" },
+        { "name": "DenominatorNumerator", "type": "Number" },
+        { "name": "DenominatorValue", "type": "Number", "minimumExclusive": 0 },
+        { "name": "DenominatorUnit", "type": "Text" },
+        { "name": "DenominatorRuleReference", "type": "Text" },
+        { "name": "DenominatorSourceReference", "type": "Text" },
+        { "name": "DirectContributionEligible", "type": "Boolean", "default": false, "authority": "AutomationDerived" },
+        { "name": "ContributionApprovalState", "type": "Choice", "choices": ["Draft", "Pending", "Approved", "Retired"], "default": "Draft" },
+        { "name": "AdditiveApproved", "type": "Boolean", "default": false },
+        { "name": "NonOverlapRequired", "type": "Boolean", "default": false, "authority": "AutomationDerived" },
+        { "name": "NonOverlapApproved", "type": "Boolean", "default": false },
+        { "name": "ContributionEffectiveFrom", "type": "DateOnly", "authority": "AutomationOnly" },
+        { "name": "ContributionEffectiveTo", "type": "DateOnly", "authority": "AutomationOnly" },
+        { "name": "ContributionApprovalReference", "type": "Text", "authority": "AutomationOnly" },
+        { "name": "ContributionApprovedAt", "type": "DateTimeUTC", "authority": "AutomationOnly" },
+        { "name": "ContributionAuditReference", "type": "Text", "authority": "AutomationOnly" },
+        { "name": "WorkplanVersion", "type": "NumberInteger", "default": 1, "authority": "AutomationOnly" }
+      ],
+      "KCFKPI_QuarterReviewItems": [
+        { "name": "ContextMitigation", "type": "NotePlainText" }
+      ]
+    }
+  },
+  "controlLists": {
+    "KCFKPI_EmployeeCommands": {
+      "provision": "CREATE_IN_ISOLATED_TARGET_ONLY",
+      "choices": ["CreateWorkplanDraft", "UpdateWorkplanDraft", "UpsertWorkplanItem", "DeactivateWorkplanItem", "SubmitWorkplan", "CreateQuarterDraft", "UpdateQuarterItem", "SaveProgressEntry", "RegisterEvidence", "SubmitQuarterReview", "UpdateWorkplanDraftV2", "UpsertCoreContributionV2", "UpsertPersonalItemV2", "UpsertBehaviourCommitmentV2", "SetCoreWeightingV2", "UpdateQuarterItemV2"]
+    },
+    "KCFKPI_ManagerCommands": {
+      "provision": "CREATE_IN_ISOLATED_TARGET_ONLY",
+      "choices": ["RequestWorkplanChanges", "ApproveAndLockWorkplan", "RequestQuarterChanges", "SetQuarterManagerReview", "SetQuarterRAGOverride", "DecideReforecast", "ApproveAndLockQuarter", "CreateWorkplanAmendmentV2"]
+    },
+    "KCFKPI_CommandReceipts": {
+      "provision": "CREATE_IN_ISOLATED_TARGET_ONLY",
+      "unique": ["ReceiptKey"],
+      "indexedNonUnique": ["CommandKey", "SubjectKey", "PersonKey", "PerformanceYear", "ProcessedAt"],
+      "trustedSourceFields": ["SourceListId", "SourceItemId", "SourceItemVersion"],
+      "receiptKey": "lowercase trusted SourceListId GUID + '|' + trusted SourceItemId",
+      "commandKeyAuthority": "CORRELATION_ONLY"
+    }
+  },
+  "acl": {
+    "breakInheritanceOnEveryPrivateRoot": true,
+    "copyAssignments": false,
+    "clearSubscopes": true,
+    "recalculate2027FromCurrentPeopleAndDelegations": true,
+    "copy2026Permissions": false,
+    "privateRoots": ["KCFKPI_EmployeeCommands", "KCFKPI_ManagerCommands", "KCFKPI_CommandReceipts", "KCFKPI_Workplans", "KCFKPI_WorkplanItems", "KCFKPI_QuarterReviews", "KCFKPI_QuarterReviewItems", "KCFKPI_Evidence", "KCFKPI_Audit"],
+    "delegateDirectPrivateRootGrantAllowed": false,
+    "delegatedOperationsMediatedBy": "A1_COMMAND_PROCESSOR",
+    "permanentHumanCanonicalFullControlAllowed": false,
+    "systemAdminPrivateRootGrantAllowed": false,
+    "canonicalHumanWriteAllowed": false,
+    "receiptHumanWriteAllowed": false,
+    "auditHumanWriteAllowed": false,
+    "auditAppendAuthority": "A1_ONLY",
+    "auditCreateRoute": "GOVERNED_PROCESSOR_ONLY",
+    "auditPatchAllowed": false,
+    "auditDeleteAllowed": false,
+    "receiptCreateRoute": "GOVERNED_PROCESSOR_ONLY",
+    "receiptPatchAllowed": false,
+    "receiptDeleteAllowed": false,
+    "recoveryOrBreakGlassMayWeakenImmutability": false,
+    "automationRootPermissions": {
+      "commandRoots": "READ_ONLY",
+      "canonicalRoots": "PROCESSOR_NO_DELETE",
+      "Audit": "APPEND_ONLY",
+      "CommandReceipts": "APPEND_ONLY"
+    }
+  },
+  "automation": {
+    "identity": null,
+    "backupOwner": null,
+    "controlReference": null,
+    "enablementAllowed": false,
+    "processors": ["Employee Command Processor", "Manager Command Processor", "ACL Reconciler", "RPT-005 Projection Publisher"]
+  },
+  "securityRemediation": {
+    "action": "KCF-KPI-027F",
+    "baselineSha": "c173f8dd3d1c9b6f1468ef3bcc41381ba7b95c2b",
+    "sourceListIdentity": {
+      "requireExactGuidTitleBinding": true,
+      "allowTitleOnly": false,
+      "allowGuidSyntaxOnly": false,
+      "mappingAuthority": "SERVER_CONFIGURATION"
+    },
+    "systemAdmin": {
+      "businessDecisionAuthority": false,
+      "standingPrivateRootAccess": false,
+      "canonicalWriteAuthority": false,
+      "diagnosticScopes": ["Configuration", "ProcessorHealth", "RecoveryStatus"],
+      "controlledRoute": "CreateWorkplanAmendmentV2",
+      "requiresLockedApprovedWorkplan": true,
+      "requiresExactActiveControlCase": true,
+      "siteCollectionAdministratorIdentityMustBeSeparate": true
+    },
+    "amendmentReason": {
+      "required": true,
+      "trimBeforeValidation": true,
+      "allowNullEmptyOrWhitespace": false,
+      "normalisation": "NFC_BOUNDARY_ONLY",
+      "rejectUnicodeFormatOrDefaultIgnorableOnly": true,
+      "preserveMeaningfulInternalCharacters": true,
+      "preserveTrimmedReasonInHistoryAndAudit": true
+    },
+    "controlCase": {
+      "requiredBindings": ["ControlCaseKey", "SubjectKey", "WorkplanKey", "WorkplanVersion", "ETag", "RowVersionToken", "AuthorisedAction", "ValidFrom", "ValidTo"],
+      "serverResolved": true,
+      "singleUse": true,
+      "clientBindingOverrideAllowed": false,
+      "consumeWithAcceptedAmendment": true,
+      "consumedSourceIdentityRequired": true,
+      "revocationStateRequired": true,
+      "replayAfterPartialIoAllowed": false,
+      "authoritativeStoreRequired": true,
+      "atomicConditionalConsumeRequired": true,
+      "storageConcurrency": ["ETag", "RowVersionToken"],
+      "readThenUnconditionalWriteAllowed": false,
+      "concurrentSuccessLimit": 1,
+      "consumedIdentityAndTimestampImmutable": true,
+      "partialIoRecoveryHoldRequired": true
+    },
+    "stableKeys": {
+      "requireServerBinding": true,
+      "rejectCrossSubject": true,
+      "resultKeysBoundToCanonicalSubject": true
+    },
+    "delegation": {
+      "requiredScope": ["SubjectPersonKey", "PerformanceYear", "Partition", "ResourceType", "ResourceKey", "SubjectType", "SubjectKey", "CommandType", "ValidFrom", "ValidTo", "Active", "Revoked"],
+      "unscopedDelegationAllowed": false,
+      "currentManagerResolvedServerSide": true,
+      "directPrivateRootGrantAllowed": false,
+      "commandMediatedByAutomation": true,
+      "minimumReadbackOnly": true,
+      "revocationTimestampRequiredWhenRevoked": true,
+      "revocationReasonRequiredWhenRevoked": true,
+      "clientRevocationOverrideAllowed": false,
+      "exactCrossBindingRequired": true,
+      "aclAndProcessorSharedScopeResolver": true
+    },
+    "payload": {
+      "recursiveAllowList": true,
+      "rejectCyclesAndNonJson": true,
+      "maximumDepth": 6,
+      "maximumNodes": 1000
+    },
+    "people": {
+      "duplicateActivePersonKeyAllowed": false,
+      "duplicateActiveEmailAllowed": false
+    },
+    "correlationAuthority": "TRUSTED_SOURCE_GUID_ITEM_ID_AND_CAPTURED_VERSION",
+    "partialIo": {
+      "successBeforeCanonicalAuditReceiptReadback": false,
+      "recoveryHoldOnPartialWrite": true,
+      "recoveryJournalRequired": true,
+      "secondTransitionWhileRecoveryHold": false
+    },
+    "breakGlass": {
+      "standingPersonalAccountAuthority": false,
+      "timeLimited": true,
+      "caseAuthorised": true,
+      "mediatedByAutomation": true,
+      "immutableAuditRequired": true
+    }
+  },
+  "rpt005": {
+    "serverSideOnly": true,
+    "rawRowsToHumanBrowser": false,
+    "minimumSelectedCohort": 5,
+    "minimumComplementCohort": 5,
+    "suppressionAfterEveryFilter": true,
+    "suppressionRuleVersion": "SEC-006-K5-COMPLEMENT-2",
+    "filteredUniverseDimensions": ["PerformanceYear", "KPI", "Pillar", "Workstream", "Team", "Manager", "ReportingMembership"],
+    "suppressedRowsReturned": false,
+    "zeroToFourIndistinguishable": true,
+    "projections": ["CoverageSummaryProjection", "ManagerCoverageDetailProjection", "BusinessAdminExceptionProjection", "SystemRecoveryProjection"],
+    "officialActualIndependent": true
+  },
+  "uatIdentities": {
+    "E1": null,
+    "E2": null,
+    "M1": null,
+    "M2": null,
+    "D1": null,
+    "BA1": null,
+    "SA1": null,
+    "A1": null
+  },
+  "uatIdentityConstraints": {
+    "SA1SiteCollectionAdministratorAllowed": false,
+    "SA1CanonicalWriteAllowed": false,
+    "A1InteractiveSignInAllowed": false,
+    "A1MayOriginateBusinessDecision": false
+  },
+  "productionChanges": "NONE"
+}

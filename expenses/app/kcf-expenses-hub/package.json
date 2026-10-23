@@ -1,0 +1,57 @@
+{
+  "name": "kcf-expenses-hub",
+  "version": "0.0.5",
+  "private": true,
+  "engines": {
+    "node": "22.21.1",
+    "npm": "10.9.4"
+  },
+  "scripts": {
+    "preinstall": "node scripts/verify-toolchain.cjs",
+    "prepare:assets": "node scripts/sync-design-assets.cjs",
+    "build": "node scripts/verify-toolchain.cjs && node scripts/sync-design-assets.cjs && heft test --clean --production && heft package-solution --production",
+    "package": "npm run build",
+    "test": "node scripts/test-domain.cjs",
+    "verify": "npm run prepare:assets && npm run test && npm run build",
+    "clean": "heft clean",
+    "start": "node scripts/verify-toolchain.cjs && heft start --clean"
+  },
+  "dependencies": {
+    "tslib": "2.3.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "@fluentui/react": "8.106.4",
+    "@microsoft/sp-core-library": "1.23.2",
+    "@microsoft/sp-component-base": "1.23.2",
+    "@microsoft/sp-property-pane": "1.23.2",
+    "@microsoft/sp-webpart-base": "1.23.2",
+    "@microsoft/sp-lodash-subset": "1.23.2",
+    "@microsoft/sp-office-ui-fabric-core": "1.23.2"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-plugin-spfx": "1.23.2",
+    "@microsoft/eslint-config-spfx": "1.23.2",
+    "@microsoft/spfx-web-build-rig": "1.23.2",
+    "@microsoft/spfx-heft-plugins": "1.23.2",
+    "@rushstack/heft": "1.2.17",
+    "@types/jest": "30.0.0",
+    "@types/webpack-env": "1.15.3",
+    "css-loader": "7.1.5",
+    "eslint": "9.37.0",
+    "typescript": "5.8.3",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "@microsoft/sp-module-interfaces": "1.23.2"
+  },
+  "overrides": {
+    "@rushstack/heft": "1.2.17",
+    "@types/react": "17.0.45",
+    "qs": "6.16.0"
+  },
+  "resolutions": {
+    "@types/react": "17.0.45"
+  },
+  "description": "D00/S00-A native SPFx foundation. Synthetic in-memory DEMO only.",
+  "packageManager": "npm@10.9.4"
+}

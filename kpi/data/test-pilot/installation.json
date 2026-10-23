@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "kcf.test-pilot.v3",
+  "scope": "LOCAL SYNTHETIC ONLY; NOT AN INSTALLATION PACKAGE",
+  "performanceYear": 2027,
+  "binding": {
+    "environment": "TEST",
+    "performanceYear": 2027,
+    "schemaVersion": "kcf.test-pilot.v3",
+    "profileListId": null,
+    "statusListId": null,
+    "commandListId": null,
+    "workplansListId": null,
+    "workplanItemsListId": null
+  },
+  "proposedRestrictedLists": [
+    {
+      "title": "KCFKPI_TEST_EmployeeProfiles",
+      "id": null,
+      "versioned": true,
+      "listWideAppRead": false,
+      "listWideAppWrite": false
+    },
+    {
+      "title": "KCFKPI_TEST_EmployeeStatus",
+      "id": null,
+      "versioned": true,
+      "listWideAppRead": false,
+      "listWideAppWrite": false
+    }
+  ],
+  "referenceAssets": [
+    {
+      "name": "Config",
+      "id": null
+    },
+    {
+      "name": "KPIs",
+      "id": null
+    },
+    {
+      "name": "KPIAnnualTargets",
+      "id": null
+    },
+    {
+      "name": "Behaviours",
+      "id": null
+    },
+    {
+      "name": "BehaviourLibrary",
+      "id": null
+    },
+    {
+      "name": "KPIStages",
+      "id": null
+    }
+  ],
+  "historical035Lineage": [
+    {
+      "title": "KCFKPI_TEST_People",
+      "id": "c89a7c3c-4ad7-45ca-ae17-5c108c318598"
+    },
+    {
+      "title": "KCFKPI_TEST_Workplans",
+      "id": "47210791-25f1-416e-ab24-832c8b6448ec"
+    },
+    {
+      "title": "KCFKPI_TEST_WorkplanItems",
+      "id": "98f2a280-46a7-40b5-a37d-db97b02fc826"
+    },
+    {
+      "title": "KCFKPI_TEST_QuarterReviews",
+      "id": "71d7058c-d85b-48bb-ac3c-611615fb39dc"
+    },
+    {
+      "title": "KCFKPI_TEST_QuarterReviewItems",
+      "id": "d73c9d53-5ab8-4de3-a5a3-6f76afd05b30"
+    },
+    {
+      "title": "KCFKPI_TEST_ProgressNotes",
+      "id": "e3cf10ad-f942-46fa-a40f-1484f8275a9c"
+    },
+    {
+      "title": "KCFKPI_TEST_Evidence",
+      "id": "31fe4b7f-f5a0-48fc-a5f4-398822acbdc4"
+    },
+    {
+      "title": "KCFKPI_TEST_Audit",
+      "id": "59a00c55-5ceb-4561-a5d5-0942edb5ad6d"
+    },
+    {
+      "title": "KCFKPI_TEST_EmployeeCommands",
+      "id": "3e05ec37-95ce-4a30-a56c-ff2437bf9bed"
+    },
+    {
+      "title": "KCFKPI_TEST_ManagerCommands",
+      "id": "40ec1c73-a802-40ec-a6a2-cde0cba1d182"
+    },
+    {
+      "title": "KCFKPI_TEST_CommandReceipts",
+      "id": "3eb157c8-6290-4e1b-ad6b-d41e4a2293b9"
+    }
+  ],
+  "liveBinding": "NOT_ASSESSED",
+  "processorIdentity": null,
+  "appPrincipalIds": null
+}

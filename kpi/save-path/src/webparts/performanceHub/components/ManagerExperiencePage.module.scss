@@ -1,0 +1,301 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+$navy: #0b2a4a;
+$blue: #1f5f91;
+$pageBlue: #d4e2ec;
+$panelBlue: #e8f2f8;
+$lineBlue: #b7cad8;
+$fieldBlue: #f8fbfe;
+$gold: #d6a833;
+$focusGold: #9a6f00;
+$red: #b3263e;
+
+.page {
+  background: $pageBlue;
+  color: #17253d;
+  margin: 0 auto;
+  max-width: 1480px;
+  min-width: 0;
+  container-type: inline-size;
+  container-name: demo-manager-content;
+  padding: 24px;
+}
+
+.page button:focus-visible,
+.page input:focus-visible,
+.page select:focus-visible,
+.page textarea:focus-visible {
+  outline: 3px solid $focusGold;
+  outline-offset: 2px;
+}
+
+.page button,
+.page textarea {
+  min-height: 44px;
+}
+
+.pageHeader,
+.detailHeader,
+.cardHeader {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pageHeader {
+  border-bottom: 3px solid $gold;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+}
+
+.page h2,
+.page h3,
+.page p {
+  margin-top: 0;
+}
+
+.eyebrow {
+  color: $blue;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.modeTabs {
+  background: $panelBlue;
+  border-radius: 8px;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+}
+
+.modeTabs button,
+.openButton,
+.backButton {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.modeTabs button {
+  background: transparent;
+  border-radius: 6px;
+  color: $navy;
+  padding: 10px 14px;
+}
+
+.modeTabs button[aria-pressed='true'] {
+  background: $navy;
+  color: #fff;
+}
+
+.cardGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+}
+
+.queueList {
+  display: grid;
+  gap: 14px;
+}
+
+.teamCard,
+.queueCard,
+.statePanel,
+.errorPanel {
+  background: $panelBlue;
+  border: 1px solid $lineBlue;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgba(23, 37, 61, .08);
+  padding: 20px;
+}
+
+.teamCard,
+.queueCard {
+  border-top: 4px solid $navy;
+}
+
+.cardHeader h3 {
+  margin-bottom: 3px;
+}
+
+.cardHeader p,
+.roleLine {
+  color: #556176;
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+
+.roleLine {
+  border-bottom: 1px solid $lineBlue;
+  padding: 10px 0;
+}
+
+.cardFacts {
+  display: grid;
+  gap: 10px 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 16px 0;
+}
+
+.cardFacts div {
+  min-width: 0;
+}
+
+.cardFacts dt {
+  color: #647086;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.cardFacts dd {
+  font-weight: 650;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.rag,
+.priority {
+  border-radius: 999px;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 9px;
+}
+
+.ragRed {
+  background: #e5edf3;
+  color: #94192c;
+}
+
+.ragAmber {
+  background: #fff0cc;
+  color: #765000;
+}
+
+.ragGreen {
+  background: #dff4e5;
+  color: #146b36;
+}
+
+.ragNotRated,
+.priority {
+  background: #edf0f4;
+  color: #3e4b60;
+}
+
+.attentionList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.attentionList li {
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 8px;
+}
+
+.highAttention {
+  background: #e5edf3;
+  color: #94192c;
+}
+
+.mediumAttention {
+  background: #fff0cc;
+  color: #765000;
+}
+
+.noAttention {
+  color: #647086;
+  font-size: 13px;
+}
+
+.openButton,
+.backButton {
+  background: $blue;
+  border-radius: 6px;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.backButton {
+  margin-bottom: 18px;
+}
+
+.detailHeader {
+  margin-bottom: 14px;
+}
+
+.errorPanel {
+  background: #f6e6e9;
+  border-left: 5px solid $red;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 14px;
+  }
+
+  .pageHeader,
+  .detailHeader,
+  .cardHeader {
+    display: block;
+  }
+
+  .modeTabs {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 14px;
+    width: 100%;
+  }
+
+  .cardGrid,
+  .queueList,
+  .cardFacts {
+    grid-template-columns: 1fr;
+  }
+
+  .rag,
+  .priority {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .openButton,
+  .backButton {
+    min-height: 44px;
+    width: 100%;
+  }
+}
+
+// Follow the Manager content width when embedded in a wider browser.
+.pageHeader > *, .detailHeader > *, .cardHeader > *,
+.teamCard, .queueCard, .statePanel, .errorPanel, .modeTabs {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@container demo-manager-content (max-width: 600px) {
+  .pageHeader, .detailHeader, .cardHeader { display: block; }
+  .modeTabs {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 14px;
+    width: 100%;
+  }
+  .cardGrid, .queueList, .cardFacts { grid-template-columns: minmax(0, 1fr); }
+  .rag, .priority { display: inline-block; margin-top: 10px; }
+  .openButton, .backButton { min-height: 44px; width: 100%; }
+}

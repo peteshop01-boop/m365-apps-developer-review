@@ -1,0 +1,26 @@
+{
+  "effectKinds": [
+    "Claim",
+    "Canonical",
+    "Grant",
+    "Finalise",
+    "StatusCreate",
+    "StatusGrant"
+  ],
+  "roleEffects": [
+    "RoleMap",
+    "CacheInvalidate",
+    "Grant",
+    "Revoke"
+  ],
+  "invariants": [
+    "No Ready restoration after Unknown",
+    "No successor before Terminal",
+    "No canonical effect after Ready",
+    "Absent-key insert or delayed grant may still complete; hold remains",
+    "Incomplete pages and H1/H2 ABA cannot be saved",
+    "Claim intent and all effects journalled before issue",
+    "Status grant fixed to actor only",
+    "Local proof is not backend quiescence"
+  ]
+}

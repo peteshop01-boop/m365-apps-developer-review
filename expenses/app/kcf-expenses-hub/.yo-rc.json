@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "kcf-expenses-hub",
+    "environment": "spo",
+    "packageManager": "npm",
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "KcfExpensesHub",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.21.1",
+    "sdksVersions": {},
+    "version": "1.23.2",
+    "libraryName": "kcf-expenses-hub",
+    "libraryId": "a6b5c483-add9-4479-a8d1-275bb948713f",
+    "solutionShortDescription": "kcf-expenses-hub description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

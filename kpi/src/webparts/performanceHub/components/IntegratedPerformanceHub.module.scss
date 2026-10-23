@@ -1,0 +1,297 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+$navy: #0b2a4a;
+$navy2: #123e66;
+$blueStrong: #1f5f91;
+$blue: #dce9f3;
+$blue2: #c7ddea;
+$red: #b3263e;
+$gold: #d6a833;
+$focusGold: #9a6f00;
+$ink: #172436;
+$muted: #4e6477;
+$line: #b7cad8;
+$surface: #e8f2f8;
+$field: #f8fbfe;
+$white: #fff;
+
+.componentHost { container-type: inline-size; display: block; max-width: 100%; min-width: 0; overflow-x: clip; width: 100%; }
+.appShell { position: relative; min-width: 0; max-width: 100%; width: 100%; min-height: 820px; overflow-x: clip; color: $ink; background: linear-gradient(140deg, #e5edf3 0%, #f0f4f7 55%, #dce6ee 100%); font-family: Arial, Helvetica, sans-serif; display: grid; grid-template: 78px 1fr / 238px minmax(0, 1fr); }
+.appShell *, .appShell *::before, .appShell *::after { box-sizing: border-box; }
+.appShell button { min-height: 45px; min-width: 45px; }
+.appShell button:disabled { cursor: not-allowed; opacity: .55; }
+.appShell input, .appShell select, .appShell textarea { min-width: 0; max-width: 100%; min-height: 45px; }
+.appShell button:focus-visible, .appShell input:focus-visible, .appShell select:focus-visible, .appShell textarea:focus-visible, .appShell summary:focus-visible { outline: 3px solid $focusGold; outline-offset: 2px; }
+.topBar { grid-column: 1 / -1; background: linear-gradient(105deg, $navy 0%, $navy2 58%, #176b78 100%); color: $white; display: flex; align-items: center; gap: 20px; padding: 12px 24px; position: sticky; top: 0; z-index: 20; border-bottom: 3px solid #42b4bd; box-shadow: 0 3px 12px rgba(7, 26, 45, .22); }
+.topBar img { width: 188px; height: 52px; object-fit: contain; object-position: left center; }
+.productTitle { display: flex; flex-direction: column; padding-left: 20px; border-left: 1px solid rgba(255,255,255,.32); }
+.productTitle strong { font-size: 20px; }
+.productTitle span, .identity span { color: #c9d8e5; font-size: 13px; }
+.identity { margin-left: auto; display: flex; flex-direction: column; text-align: right; }
+.menuButton { display: none; }
+.sideNav { background: linear-gradient(180deg, #102f50, #143f62 58%, #155663); color: $white; padding: 18px 12px 40px; overflow-y: auto; }
+.sideNav section { margin: 0 0 14px; padding: 0 0 8px; border: 1px solid rgba(199,221,234,.18); border-radius: 10px; overflow: hidden; }
+.navEmployee, .navManager, .navAdministration, .navReporting { min-width: 0; }
+.sideNav section > strong { display: block; color: $white; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 12px; margin-bottom: 4px; border-left: 4px solid #42b4bd; background: linear-gradient(100deg, #174c74, #237784); }
+.sideNav .navManager > strong { background: linear-gradient(100deg, #183e66, #426b87); border-left-color: #84b5ca; }
+.sideNav .navAdministration > strong { background: linear-gradient(100deg, #142f51, #345371); border-left-color: #7899ba; }
+.sideNav .navReporting > strong { background: linear-gradient(100deg, #15445f, #19707a); border-left-color: #5bb9b7; }
+.sideNav button { width: 100%; min-height: 45px; color: $white; background: transparent; border: 0; border-radius: 8px; text-align: left; padding: 10px 12px; cursor: pointer; font: inherit; }
+.sideNav button:hover { background: rgba(255,255,255,.09); }
+.sideNav button[aria-current='page'] { background: $blueStrong; color: $white; font-weight: 700; box-shadow: inset 4px 0 $gold; }
+.main { max-width: 100%; min-width: 0; overflow-x: clip; padding: clamp(18px, 2.2vw, 30px); width: 100%; }
+.journeyNav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; padding: 6px; border: 1px solid $line; border-radius: 12px; background: rgba(232,242,248,.96); box-shadow: 0 2px 9px rgba(16,38,63,.07); }
+.journeyNav button { flex: 1 1 160px; min-width: 0; border: 0; border-radius: 8px; background: transparent; color: $navy; font-weight: 700; padding: 8px 12px; }
+.journeyNav button[aria-current='page'] { background: $navy; color: $white; }
+.home > header, .pageHero { position: relative; overflow: hidden; border-radius: 18px; padding: 28px 32px; background: linear-gradient(115deg, $navy, #245882 67%, #17747d); color: $white; margin-bottom: 22px; box-shadow: 0 8px 24px rgba(16,38,63,.12); }
+.home > header::after, .pageHero::after { content: ''; position: absolute; inset: 0 0 0 auto; width: 7px; background: linear-gradient(#78bed0, #1a8d92); }
+.home > header span, .pageHero span, .sectionHeader > div > span, .behaviourCard header span, .progressCard header span { text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.home h1, .pageHero h1 { margin: 5px 0 8px; font-size: 32px; }
+.home header p, .pageHero p { margin: 0; color: #d8e5ef; }
+.metricGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 18px 0; }
+.metricGrid article { min-height: 104px; padding: 18px; border: 1px solid rgba(16,38,63,.06); border-radius: 14px; background: $blue; display: flex; flex-direction: column; justify-content: center; }
+.metricGrid article:nth-child(2n) { background: $surface; }
+.metricGrid strong { font-size: 25px; color: $navy; }
+.metricGrid span { color: $muted; margin-top: 5px; }
+.quickActions { display: flex; flex-wrap: wrap; gap: 12px; }
+.quickActions button, .sectionHeader button, .kpiCard button, .selectedCard button, .behaviourCard button, .reviewCard button { min-height: 45px; border-radius: 8px; border: 0; background: $blueStrong; color: $white; font-weight: 700; padding: 9px 16px; cursor: pointer; }
+.notice { margin-top: 22px; background: #fff4cf; padding: 16px 18px; border-radius: 12px; }
+.pageTabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: $surface; border-radius: 12px; padding: 6px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(16,38,63,.07); }
+.pageTabs button, .quarterTabs button, .segmented button, .exceptionTabs button { min-height: 45px; border: 0; background: transparent; border-radius: 8px; color: $navy; font-weight: 700; cursor: pointer; padding: 8px 12px; }
+.pageTabs button[aria-pressed='true'], .quarterTabs button[aria-pressed='true'], .segmented button[aria-pressed='true'] { background: $navy; color: $white; }
+.builderColumns { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(330px, .75fr); gap: 18px; align-items: start; }
+.mobilePaneTabs { display: none; }
+.cataloguePane, .selectedPane, .singlePage { min-width: 0; background: rgba(232,242,248,.98); border: 1px solid rgba(16,38,63,.12); border-radius: 16px; padding: 22px; box-shadow: 0 4px 16px rgba(16,38,63,.08); }
+.selectedPane { position: sticky; top: 96px; max-height: calc(100vh - 120px); overflow-y: auto; background: $blue; }
+.sectionHeader { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 18px; padding: 16px 18px; border-radius: 12px; background: linear-gradient(110deg, $navy, #285d82 65%, #1b747e); color: $white; border-right: 5px solid #42b4bd; }
+.sectionHeader h2 { color: $white; font-size: 25px; margin: 4px 0; }
+.sectionHeader p { color: #deebf2; margin: 4px 0 0; }
+.sectionHeader > strong { color: $white; white-space: nowrap; }
+.filterGroup { border: 0; padding: 0; margin: 18px 0; }
+.filterGroup legend { font-weight: 700; color: $navy; margin-bottom: 9px; }
+.chipGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.chipGrid button { min-height: 54px; border-radius: 10px; border: 1px solid $line; background: $surface; color: $navy; text-align: left; display: flex; flex-direction: column; padding: 9px 12px; cursor: pointer; }
+.chipGrid button[aria-pressed='true'] { background: $navy; color: $white; border-color: $navy; }
+.chipGrid button span { font-size: 12px; line-height: 1.25; }
+.checkGrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px 12px; max-height: 170px; overflow-y: auto; background: $surface; padding: 12px; border-radius: 10px; }
+.checkGrid label, .checkboxLine { min-height: 45px; display: flex !important; flex-direction: row !important; gap: 8px; align-items: center; font-size: 13px; }
+.checkGrid input, .checkboxLine input { flex: 0 0 45px; width: 45px !important; height: 45px !important; min-height: 45px !important; margin: 0; }
+.checkGrid label > span { display: flex; flex-direction: column; gap: 2px; }
+.checkGrid label small { color: $muted; font-size: 11px; }
+.searchRow { display: grid; grid-template-columns: 1fr auto auto; gap: 9px; align-items: end; margin-bottom: 16px; }
+.searchRow label, .fullSearch, .editor label, .progressFields label, .categoryInputs label, .weightInputs label, .quarterInputs label { display: flex; flex-direction: column; gap: 5px; font-weight: 700; font-size: 12px; }
+.searchRow input, .fullSearch input, .fullSearch textarea, .editor input, .editor select, .editor textarea, .progressFields input, .progressFields select, .progressFields textarea, .categoryInputs input, .weightInputs input, .quarterInputs input, .quarterInputs textarea { min-height: 45px; box-sizing: border-box; border: 1px solid #879fb2; border-radius: 7px; padding: 9px 10px; font: inherit; background: $field; color: $ink; }
+.searchRow button, .secondaryButton { min-height: 45px; border: 1px solid $navy !important; background: $field !important; color: $navy !important; border-radius: 8px; padding: 8px 12px; font-weight: 700; cursor: pointer; }
+.searchRow button:disabled { opacity: .45; }
+.cardList { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; max-height: min(720px, 65vh); min-width: 0; overflow-y: auto; overscroll-behavior: contain; padding: 2px 6px 2px 2px; scrollbar-gutter: stable; }
+.cardList:focus-visible { outline: 3px solid $focusGold; outline-offset: 2px; }
+.kpiCard, .selectedCard, .behaviourCard, .progressCard, .reviewCard { border-radius: 12px; padding: 16px; background: $blue; }
+.kpiCard header, .selectedCard header, .behaviourCard > header, .progressCard header { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.kpiCard h3, .selectedCard h3, .behaviourCard h3, .progressCard h3 { color: $navy; font-size: 16px; margin: 10px 0; line-height: 1.35; }
+.kpiCard p, .selectedCard p, .behaviourCard p { color: $muted; font-size: 13px; }
+.kpiCard dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 7.5rem), 1fr)); margin: 10px 0 0; background: $field; border-radius: 8px; overflow: hidden; }
+.kpiCard dl div { padding: 8px; }
+.kpiCard dt, .progressCard dt { font-size: 10px; text-transform: uppercase; color: $muted; }
+.kpiCard dd, .progressCard dd { margin: 3px 0 0; font-weight: 700; }
+.fullSearch { margin-bottom: 14px; }
+.selectedCard { margin-bottom: 10px; background: $field; }
+.selectedCard header > div { display: flex; flex-direction: column; }
+.selectedTargetSummary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); margin: 10px 0 0; background: $blue; border-radius: 8px; overflow: hidden; }
+.selectedTargetSummary div { min-width: 0; padding: 8px; }
+.selectedTargetSummary dt { color: $muted; font-size: 10px; text-transform: uppercase; }
+.selectedTargetSummary dd { color: $navy; font-size: 12px; font-weight: 700; margin: 3px 0 0; overflow-wrap: anywhere; }
+.editor { margin-top: 14px; padding-top: 14px; border-top: 1px solid $line; display: grid; gap: 13px; }
+.editor fieldset { border: 0; padding: 0; margin: 0; }
+.editor legend { font-weight: 700; margin-bottom: 7px; }
+.roleChoices, .segmented { display: flex; flex-wrap: wrap; gap: 7px; }
+.roleChoices button { background: $blue2; color: $navy; }
+.roleChoices button[aria-pressed='true'] { background: $navy; color: $white; }
+.quarterInputs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
+.dangerButton { background: $white !important; color: $red !important; border: 1px solid $red !important; justify-self: start; }
+.behaviourCard { margin-bottom: 12px; background: $blue; }
+.behaviourCard > header > div { flex: 1; }
+.behaviourCues { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 8px 0; list-style: none; }
+.behaviourCues li { padding: 5px 8px; border-radius: 5px; background: #245d78; color: $white; font-size: 11px; font-weight: 700; }
+.promptList { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px 20px; padding-left: 20px; font-weight: 400; }
+.suggestionGrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.suggestionCard { min-height: 72px; display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 10px; padding: 12px; border: 1px solid $line; border-radius: 10px; background: $field; font-weight: 600 !important; }
+.suggestionCard input { flex: 0 0 45px; width: 45px !important; height: 45px !important; min-height: 45px !important; margin: 0; }
+.suggestionCard span { display: flex; flex-direction: column; gap: 4px; }
+.suggestionCard strong { color: $blueStrong; font-size: 11px; letter-spacing: .08em; }
+.suggestionCard small { color: $muted; font-weight: 400; line-height: 1.35; }
+.weightStack { display: grid; gap: 14px; }
+.weightBlock { border-radius: 14px; padding: 20px; background: $navy; color: $white; }
+.weightBlock:nth-child(2) { background: $blueStrong; }
+.weightBlock:nth-child(3) { background: #4d7391; }
+.weightBlock header, .categoryBalance header { display: flex; justify-content: space-between; align-items: center; }
+.weightBlock h3, .categoryBalance h3 { margin: 0; font-size: 23px; }
+.weightBlock .segmented { margin-top: 14px; }
+.weightBlock .segmented button { background: rgba(255,255,255,.17); color: $white; }
+.weightBlock .segmented button[aria-pressed='true'] { background: $white; color: $navy; }
+.weightInputs, .categoryInputs { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 8px; margin-top: 14px; }
+.weightGood { color: #d6f5df; }
+.weightBad { color: #ffdb6e; }
+.warning { background: #fff0bd; color: #5e4100; padding: 9px 12px; border-radius: 7px; font-weight: 700; }
+.correctionAlert { margin-bottom: 14px; border: 2px solid $red; border-radius: 10px; padding: 14px; background: #e5edf3; color: $navy; }
+.correctionAlert h2 { margin: 0 0 8px; font-size: 18px; }
+.correctionAlert p { margin: 7px 0; }
+.correctionAlert ul { margin: 8px 0; padding-left: 22px; }
+.correctionAlert button { background: $red; color: $white; border: 0; border-radius: 8px; padding: 9px 16px; font-weight: 700; cursor: pointer; }
+.categoryBalance { background: $blue; border-radius: 14px; padding: 20px; margin-top: 16px; }
+.categoryBalance .weightGood { color: #14733a; }
+.categoryBalance .weightBad { color: $red; }
+.quarterTabs { display: flex; background: $surface; padding: 5px; border-radius: 9px; }
+.progressSection { margin: 22px 0; }
+.progressSection > h2 { color: $navy; }
+.progressCard { background: $blue; margin-bottom: 12px; }
+.progressCard dl { display: flex; gap: 30px; }
+.progressFields { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 12px; }
+.progressFields output { min-height: 44px; box-sizing: border-box; border-radius: 7px; padding: 12px; background: $field; color: $navy; font-weight: 700; }
+.rag { background: $field; border-radius: 20px; padding: 7px 12px; color: $navy; font-weight: 700; }
+.dataGrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+.dataGrid article { background: $blue; border-radius: 12px; padding: 16px; }
+.dataGrid article:nth-child(2n) { background: $surface; }
+.dataGrid h3 { color: $navy; margin: 0 0 8px; }
+.tableWrap { max-width: 100%; min-width: 0; overflow-x: auto; overscroll-behavior-inline: contain; width: 100%; -webkit-overflow-scrolling: touch; }
+.tableWrap:focus-visible { outline: 3px solid $focusGold; outline-offset: 2px; }
+.tableHint { color: $muted; font-size: 12px; margin: 0 0 8px; }
+.tableWrap table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 13px; }
+.tableWrap th { position: sticky; top: 0; background: $navy; color: $white; text-align: left; padding: 11px; }
+.tableWrap td { padding: 10px 11px; border-bottom: 1px solid $line; vertical-align: top; }
+.tableWrap tr:nth-child(even) td { background: $blue; }
+.timeline { border-left: 3px solid $blue2; padding-left: 18px; }
+.timeline article { background: $field; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; box-shadow: 0 1px 5px rgba(16,38,63,.08); }
+.timeline h3 { margin: 4px 0; color: $navy; }
+.timeline p, .timeline time { color: $muted; }
+.issueList { background: #fff4cf; border-radius: 12px; padding: 16px 20px 16px 38px; }
+.exceptionTabs { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+.exceptionTabs button { background: $blue; }
+.notReady { display: inline-block; background: #e6e9ed; border-radius: 20px; padding: 6px 9px; font-weight: 700; white-space: nowrap; }
+.introText { color: $muted; }
+.reviewCard { margin-bottom: 12px; background: $blue; }
+.reviewCard h2 { color: $navy; }
+.integratedHelp { max-width: 100%; min-width: 0; }
+.statePanel { border-left: 5px solid $blueStrong; border-radius: 12px; background: $blue; padding: 22px; display: flex; flex-direction: column; gap: 8px; color: $navy; }
+.statePanel[data-experience-state='empty'] { background: $surface; border-left-color: $gold; }
+.statePanel[data-experience-state='denied'] { background: #fff4cf; border-left-color: $red; }
+.statePanel[data-experience-state='failed'] { background: #e5edf3; border-left-color: $red; }
+.statePanel > button { align-self: flex-start; background: $navy; border: 0; border-radius: 8px; color: $white; cursor: pointer; font-weight: 700; margin-top: 4px; padding: 9px 16px; }
+.sessionStatus, .persistenceWarning { border-radius: 10px; display: flex; flex-direction: column; gap: 3px; margin: 0 0 14px; min-width: 0; padding: 12px 14px; }
+.sessionStatus { background: $blue; border-left: 4px solid $navy2; }
+.sessionStatus[data-session-changed='true'] { background: #fff4cf; border-left-color: $gold; }
+.persistenceWarning { background: #fff4cf; border-left: 4px solid $red; }
+.sessionStatus span, .persistenceWarning span { color: $muted; overflow-wrap: break-word; }
+.appShell h1, .appShell h2, .appShell h3, .appShell p, .appShell label, .appShell strong, .appShell span, .appShell dd, .appShell dt { min-width: 0; overflow-wrap: break-word; word-break: normal; }
+.appShell button { min-width: 45px; }
+
+@mixin compactLayout {
+  .appShell { grid-template-columns: 148px minmax(0, 1fr); }
+  .sideNav { padding: 12px 6px 24px; }
+  .sideNav section > strong { padding: 10px 7px; letter-spacing: .06em; }
+  .sideNav button { padding: 9px 7px; }
+  .main { padding: 16px; }
+  .builderColumns { grid-template-columns: 1fr; }
+  .selectedPane { position: static; max-height: none; }
+  .dataGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .checkGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cardList { grid-template-columns: 1fr; max-height: min(680px, 62vh); }
+}
+
+@mixin phoneLayout {
+  .appShell { min-height: 760px; display: block; }
+  .topBar { min-height: 68px; padding: 9px 12px; gap: 10px; }
+  .topBar img { width: 130px; height: 44px; }
+  .menuButton { display: block; min-width: 45px; min-height: 45px; border: 0; border-radius: 8px; background: rgba(255,255,255,.14); color: $white; font-size: 22px; }
+  .productTitle { display: none; }
+  .identity { display: none; }
+  .sideNav { display: none; position: absolute; inset: 68px 0 auto 0; max-height: min(75vh, 720px); z-index: 30; box-shadow: 0 12px 20px rgba(7, 26, 45, .32); }
+  .sideNavOpen { display: block; }
+  .main { padding: 14px; }
+  .journeyNav { display: grid; grid-template-columns: 1fr; }
+  .home > header, .pageHero { padding: 22px 18px; border-radius: 14px; }
+  .home h1, .pageHero h1 { font-size: 25px; }
+  .metricGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .metricGrid article { min-width: 0; min-height: 90px; padding: 14px; box-sizing: border-box; }
+  .metricGrid strong { font-size: 20px; }
+  .metricGrid strong, .metricGrid span { overflow-wrap: anywhere; }
+  .pageTabs { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .builderColumns { display: block; }
+  .mobilePaneTabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; position: sticky; top: 68px; z-index: 10; margin-bottom: 10px; padding: 6px; border-radius: 10px; background: $surface; box-shadow: 0 2px 8px rgba(16,38,63,.12); }
+  .mobilePaneTabs button { border: 0; border-radius: 8px; background: $blue; color: $navy; font-weight: 700; }
+  .mobilePaneTabs button[aria-pressed='true'] { background: $navy; color: $white; }
+  .mobilePaneHidden { display: none; }
+  .cataloguePane, .selectedPane, .singlePage { padding: 15px; border-radius: 12px; }
+  .sectionHeader { flex-direction: column; }
+  .sectionHeader button { width: 100%; }
+  .chipGrid, .cardList, .dataGrid, .promptList, .progressFields, .suggestionGrid { grid-template-columns: 1fr; }
+  .cardList { max-height: 62vh; overflow-y: auto; overscroll-behavior: contain; }
+  .checkGrid { grid-template-columns: 1fr; max-height: 210px; }
+  .searchRow { grid-template-columns: 1fr 1fr; }
+  .searchRow label { grid-column: 1 / -1; }
+  .quarterInputs, .weightInputs, .categoryInputs { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .kpiCard dl, .selectedTargetSummary { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .behaviourCard > header { flex-direction: column; }
+  .behaviourCard > header button { width: 100%; }
+  .quarterTabs { width: 100%; }
+  .quarterTabs button { flex: 1; }
+  .tableWrap { max-width: 100%; }
+}
+
+@mixin narrowPhoneLayout {
+  .main { width: 100%; padding: 10px; }
+  .topBar { width: 100%; }
+  .topBar img { width: 112px; }
+  .pageTabs { grid-template-columns: 1fr; }
+  .cataloguePane, .selectedPane, .singlePage, .selectedCard, .kpiCard { width: 100%; min-width: 0; max-width: 100%; }
+  .cataloguePane, .selectedPane, .singlePage { padding: 12px; }
+  .cardList { max-height: 56vh; }
+  .selectedPane { max-height: none; overflow: visible; }
+  .selectedCard header { flex-wrap: wrap; }
+  .selectedCard header button { width: 100%; }
+  .quarterInputs, .weightInputs, .categoryInputs, .metricGrid, .selectedTargetSummary { grid-template-columns: 1fr; }
+  .searchRow { grid-template-columns: 1fr; }
+  .searchRow label { grid-column: auto; }
+  .searchRow button { width: 100%; }
+}
+
+@mixin smallPhoneLayout {
+  .topBar img { display: none; }
+  .main { padding: 10px; }
+  .appShell h1, .appShell h2, .appShell h3, .appShell button { overflow-wrap: break-word; word-break: normal; }
+  .pageTabs, .mobilePaneTabs { grid-template-columns: 1fr; }
+  .pageHero, .pageTabs, .mobilePaneTabs, .cataloguePane, .selectedPane, .selectedCard { min-width: 0; max-width: 100%; box-sizing: border-box; }
+  .cataloguePane, .selectedPane { padding: 10px; }
+  .selectedCard { padding: 10px; }
+  .selectedCard header { flex-wrap: wrap; }
+  .notice, .notice * { min-width: 0; overflow-wrap: anywhere; }
+  .notice ul { padding-left: 18px; }
+  .quarterInputs, .weightInputs, .categoryInputs, .metricGrid { grid-template-columns: 1fr; }
+  .searchRow { grid-template-columns: 1fr; }
+  .searchRow label { grid-column: auto; }
+  .searchRow button { width: 100%; }
+}
+
+@mixin verySmallPhoneLayout {
+  .main { padding: 8px; }
+  .topBar { min-height: 60px; padding: 8px; }
+  .sideNav { inset: 60px 0 0 0; }
+  .mobilePaneTabs { top: 60px; }
+  .journeyNav { padding: 5px; }
+  .cataloguePane, .selectedPane, .singlePage, .selectedCard, .kpiCard, .pageHero { padding-left: 8px; padding-right: 8px; }
+  .appShell button, .appShell input, .appShell select, .appShell textarea, .checkGrid label, .checkboxLine { min-height: 45px; }
+}
+
+@container (max-width: 1100px) { @include compactLayout; }
+@container (max-width: 800px) { @include phoneLayout; }
+@container (max-width: 390px) { @include narrowPhoneLayout; }
+@container (max-width: 360px) { @include smallPhoneLayout; }
+@container (max-width: 320px) { @include verySmallPhoneLayout; }
+
+.componentHost[data-component-layout='compact'] { @include compactLayout; }
+.componentHost[data-component-layout='phone'] { @include compactLayout; @include phoneLayout; @include narrowPhoneLayout; }
+.componentHost[data-component-layout='small-phone'] { @include compactLayout; @include phoneLayout; @include narrowPhoneLayout; @include smallPhoneLayout; @include verySmallPhoneLayout; }
+
+// M209 inline field help stays in document flow on every viewport.
+.impactField { min-width: 0; display: flex; flex-direction: column; gap: 6px; overflow-wrap: anywhere; }
+.impactHelp { min-width: 0; width: 100%; button { min-height: 44px; min-width: 44px; } }
+.impactHelpBody { box-sizing: border-box; max-width: 100%; padding: 12px; margin: 6px 0; border: 1px solid #8c99a5; border-radius: 6px; background: #f4f7fa; color: #162d45; overflow-wrap: anywhere; p { white-space: normal; } ul { padding-left: 20px; } }

@@ -1,0 +1,88 @@
+.framework {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  color: #18262d;
+  overflow-wrap: anywhere;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #0b2a4a, #285d82 65%, #1b747e);
+  color: #fff;
+  border-right: 5px solid #42b4bd;
+}
+
+.eyebrow { color: #dcecf3; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.header h2 { margin: 6px 0; font-size: clamp(24px, 3vw, 34px); }
+.header p { margin: 0; line-height: 1.55; color: #deebf2; }
+.guidance { padding: 16px; border-left: 4px solid #00684b; border-radius: 6px; background: #edf6f2; }
+.guidance strong, .guidance span { display: block; }
+.guidance span { margin-top: 4px; line-height: 1.4; }
+
+.behaviour { margin: 18px 0; padding: 18px; border: 1px solid #c2ced3; border-radius: 10px; background: #fff; }
+.behaviourHeading { display: flex; gap: 12px; align-items: baseline; }
+.behaviourHeading > span { flex: 0 0 auto; color: #00684b; font-weight: 800; }
+.behaviourHeading h3 { min-width: 0; margin: 0; font-size: 20px; }
+.focusCues { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 10px 0 0; list-style: none; }
+.focusCues li { padding: 5px 8px; border-radius: 5px; background: #245d78; color: #fff; font-size: 11px; font-weight: 700; }
+
+.choices { min-width: 0; margin: 16px 0 10px; padding: 12px; border: 1px solid #c2ced3; border-radius: 8px; }
+.choices legend { max-width: 100%; padding: 0 5px; white-space: normal; font-weight: 700; }
+.choice { display: flex; gap: 10px; align-items: flex-start; padding: 10px 4px; cursor: pointer; }
+.choice input { flex: 0 0 20px; width: 20px; height: 20px; margin: 2px 0 0; accent-color: #00684b; }
+.choice span { min-width: 0; }
+.choice strong, .choice small { display: block; line-height: 1.45; }
+.choice small { margin-top: 2px; color: #415762; }
+.choice input:focus-visible, .ownTargetButton:focus-visible, .assessment select:focus-visible,
+.quarterEvidence textarea:focus-visible, .commitmentEditor textarea:focus-visible,
+.managerReview textarea:focus-visible, .managerReview button:focus-visible { outline: 3px solid #005ca9; outline-offset: 3px; }
+
+.ownTargetButton { min-height: 44px; padding: 9px 14px; border: 1px solid #00684b; border-radius: 6px; color: #00684b; background: #fff; font-weight: 700; cursor: pointer; }
+.readback { margin-top: 18px; }
+.readback h4 { margin: 0 0 10px; }
+.targetGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.targetCard { min-width: 0; padding: 14px; border-radius: 8px; background: #f4f7f8; }
+.targetHeading { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.targetHeading span { flex: 0 0 auto; padding: 3px 7px; border-radius: 999px; background: #d9ece5; color: #004f39; font-size: 12px; font-weight: 700; }
+.targetCard p { line-height: 1.5; }
+.targetCard dl { margin: 0; }
+.targetCard dl div { margin-top: 8px; }
+.targetCard dt { font-weight: 700; }
+.targetCard dd { margin: 2px 0 0; }
+.commitmentEditor { display: grid; gap: 12px; margin-top: 12px; }
+.commitmentEditor label > strong, .commitmentEditor label > span, .managerReview label > strong { display: block; }
+.commitmentEditor label > span { margin: 3px 0 6px; color: #415762; line-height: 1.4; }
+.commitmentEditor textarea, .managerReview textarea { width: 100%; min-width: 0; box-sizing: border-box; padding: 9px; font: inherit; }
+.reviewHistory { margin: 14px 0 0; padding-left: 22px; }
+.reviewHistory li { margin-top: 9px; }
+.reviewHistory span, .reviewHistory small { display: block; margin-top: 2px; }
+.managerReview { margin-top: 14px; padding-top: 12px; border-top: 1px solid #c2ced3; }
+.managerReview label { display: block; }
+.managerReview > div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.managerReview button { min-height: 44px; padding: 8px 12px; border: 1px solid #00684b; border-radius: 6px; background: #fff; color: #004f39; font-weight: 800; }
+.managerReview button:disabled { border-color: #aab5ba; color: #6b777d; }
+.validationNotice { padding: 10px; border-left: 4px solid #a63d00; background: #fff4eb; font-weight: 700; }
+.evidenceReadback { margin-top: 12px; padding: 10px; border-left: 3px solid #00684b; background: #fff; }
+.evidenceReadback p { margin-bottom: 0; }
+
+.quarterEvidence { display: block; margin-top: 14px; }
+.quarterEvidence span { display: block; margin-bottom: 6px; font-weight: 700; }
+.quarterEvidence textarea { width: 100%; min-width: 0; box-sizing: border-box; padding: 9px; font: inherit; }
+.assessment { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.assessment label span { display: block; margin-bottom: 5px; font-weight: 700; }
+.assessment select { width: 100%; min-height: 42px; padding: 8px; font: inherit; }
+
+@media (max-width: 600px) {
+  .header, .targetGrid, .assessment { grid-template-columns: minmax(0, 1fr); }
+  .behaviour { padding: 14px; }
+  .behaviourHeading { align-items: flex-start; }
+  .targetHeading { flex-direction: column; }
+  .targetHeading span { flex-basis: auto; }
+}

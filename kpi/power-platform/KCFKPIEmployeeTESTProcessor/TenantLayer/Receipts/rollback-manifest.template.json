@@ -1,0 +1,18 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "requiredFirstAction": "TurnNewFlowOff",
+  "flowMustRemainOff": true,
+  "rollbackRegistryAuthority": {
+    "authorityReference": null,
+    "registryReference": null,
+    "identitySeparationEvidenceSha256": null,
+    "rollbackActorPrincipalId": null
+  },
+  "restoreReceiptedPriorPackageOnly": true,
+  "restorePriorBindingsAndPermissions": true,
+  "preserveRunAndEvidenceIds": true,
+  "actionCreatedAssetsOnly": [],
+  "preExistingAssetsProtected": [],
+  "ambiguityOutcome": "BLOCKED_OFF",
+  "productionChangeAllowed": false
+}

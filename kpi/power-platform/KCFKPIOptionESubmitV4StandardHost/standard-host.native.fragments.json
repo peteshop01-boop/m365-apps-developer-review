@@ -1,0 +1,234 @@
+{
+  "purpose": "Integration primitives only; not the complete host",
+  "cas": {
+    "Control_Intent": {
+      "type": "Compose",
+      "inputs": {
+        "beforeEtag": "@variables('ExactControlETag')",
+        "plannedBody": "@variables('CompletePlannedControl')"
+      },
+      "runAfter": {}
+    },
+    "Control_CAS": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "content",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('siteUrl')",
+          "parameters/method": "POST",
+          "parameters/uri": "@variables('ProtectedControlUri')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json; charset=utf-8",
+            "IF-MATCH": "@variables('ExactControlETag')",
+            "X-HTTP-Method": "MERGE"
+          },
+          "parameters/body": "@variables('CompletePlannedControl')"
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Control_Intent": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Control_Readback": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "content",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('siteUrl')",
+          "parameters/method": "GET",
+          "parameters/uri": "@variables('ProtectedControlUri')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Control_CAS": [
+          "Succeeded",
+          "Failed",
+          "TimedOut"
+        ]
+      }
+    },
+    "Control_Uncertain": {
+      "type": "Compose",
+      "inputs": "@not(equals(outputs('Control_CAS')?['statusCode'],204))",
+      "runAfter": {
+        "Control_Readback": [
+          "Succeeded"
+        ]
+      }
+    }
+  },
+  "immutable": {
+    "Admission_Create": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "content",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('siteUrl')",
+          "parameters/method": "POST",
+          "parameters/uri": "@concat('/_api/web/GetFolderByServerRelativeUrl(''',replace(parameters('rootPaths')?['Admission'],'''',''''''),''')/Files/add(url=''',concat(variables('CommandUuid'),'-admission.json'),''',overwrite=false)')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/octet-stream"
+          },
+          "parameters/body": "@variables('CompleteAdmission')"
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {}
+    },
+    "Admission_Readback": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "content",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('siteUrl')",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('/_api/web/GetFileByServerRelativeUrl(''',replace(concat(parameters('rootPaths')?['Admission'],'/',concat(variables('CommandUuid'),'-admission.json')),'''',''''''),''')/$value')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Admission_Create": [
+          "Succeeded",
+          "Failed",
+          "TimedOut"
+        ]
+      }
+    },
+    "Admission_ExactReadback": {
+      "type": "If",
+      "expression": "@equals(base64(string(body('Admission_Readback'))),base64(variables('CompleteAdmission')))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Admission_Hold": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "RecoveryHold",
+                "message": "Immutable body response conflict or uncertain readback"
+              }
+            },
+            "runAfter": {}
+          }
+        }
+      },
+      "runAfter": {
+        "Admission_Readback": [
+          "Succeeded"
+        ]
+      }
+    }
+  },
+  "acl": {
+    "PrivateDraft_Inheritance": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "acl",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('siteUrl')",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat(variables('ProtectedDraftUri'),'?$select=Id,HasUniqueRoleAssignments')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {}
+    },
+    "PrivateDraft_Roles": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "acl",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('siteUrl')",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat(variables('ProtectedDraftUri'),'/roleassignments?$select=PrincipalId,RoleDefinitionBindings/Id&$expand=RoleDefinitionBindings')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "PrivateDraft_Inheritance": [
+          "Succeeded"
+        ]
+      }
+    },
+    "PrivateDraft_NoInheritedOrPagedAcl": {
+      "type": "If",
+      "expression": "@and(equals(body('PrivateDraft_Inheritance')?['HasUniqueRoleAssignments'],true),not(contains(body('PrivateDraft_Roles'),'odata.nextLink')),not(contains(body('PrivateDraft_Roles'),'@odata.nextLink')))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "PrivateDraft_Hold": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "AclReadbackIncomplete",
+                "message": "Inherited or incomplete native role readback"
+              }
+            },
+            "runAfter": {}
+          }
+        }
+      },
+      "runAfter": {
+        "PrivateDraft_Roles": [
+          "Succeeded"
+        ]
+      }
+    }
+  }
+}

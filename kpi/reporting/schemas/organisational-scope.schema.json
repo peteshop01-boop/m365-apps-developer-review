@@ -1,0 +1,687 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kcf:org-scope:001",
+  "title": "KCF-ORG-SCOPE-001 local structural context; not issuer authentication",
+  "$ref": "#/$defs/context",
+  "$defs": {
+    "reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._|:/-]*$"
+    },
+    "hash": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64,
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "instant": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?Z$"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9999
+    },
+    "quarter": {
+      "enum": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ]
+    },
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kpiId",
+        "kpiVersionKey",
+        "definitionVersion",
+        "definitionSourceHash",
+        "pillarKey",
+        "workstreamKey",
+        "targetVersionKey",
+        "targetSourceHash",
+        "targetValueHash",
+        "effectiveFrom",
+        "effectiveTo"
+      ],
+      "properties": {
+        "kpiId": {
+          "$ref": "#/$defs/reference"
+        },
+        "kpiVersionKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "definitionVersion": {
+          "$ref": "#/$defs/version"
+        },
+        "definitionSourceHash": {
+          "$ref": "#/$defs/hash"
+        },
+        "pillarKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "workstreamKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "targetVersionKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "targetSourceHash": {
+          "$ref": "#/$defs/hash"
+        },
+        "targetValueHash": {
+          "$ref": "#/$defs/hash"
+        },
+        "effectiveFrom": {
+          "$ref": "#/$defs/instant"
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/instant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scopeVersion",
+        "sourceArtifactSha256",
+        "approvalReference",
+        "approvedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "selectionCheckpoint",
+        "selectedAsOf",
+        "complete",
+        "expectedMemberCount",
+        "members"
+      ],
+      "properties": {
+        "scopeVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "sourceArtifactSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "approvalReference": {
+          "$ref": "#/$defs/reference"
+        },
+        "approvedAt": {
+          "$ref": "#/$defs/instant"
+        },
+        "effectiveFrom": {
+          "$ref": "#/$defs/instant"
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/instant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "selectionCheckpoint": {
+          "$ref": "#/$defs/reference"
+        },
+        "selectedAsOf": {
+          "$ref": "#/$defs/instant"
+        },
+        "complete": {
+          "const": true
+        },
+        "expectedMemberCount": {
+          "$ref": "#/$defs/count"
+        },
+        "members": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/member"
+          }
+        }
+      }
+    },
+    "resultEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "goldResultKey",
+        "kpiId",
+        "kpiVersionKey",
+        "performanceYear",
+        "quarter",
+        "recordVersion",
+        "sourceVersion",
+        "aggregationVersion",
+        "calculationVersion",
+        "approvalReference",
+        "approvedAt",
+        "goldRecordSha256"
+      ],
+      "properties": {
+        "goldResultKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "kpiId": {
+          "$ref": "#/$defs/reference"
+        },
+        "kpiVersionKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "performanceYear": {
+          "$ref": "#/$defs/year"
+        },
+        "quarter": {
+          "$ref": "#/$defs/quarter"
+        },
+        "recordVersion": {
+          "$ref": "#/$defs/version"
+        },
+        "sourceVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "aggregationVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "calculationVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "approvalReference": {
+          "$ref": "#/$defs/reference"
+        },
+        "approvedAt": {
+          "$ref": "#/$defs/instant"
+        },
+        "goldRecordSha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotKey",
+        "integritySha256"
+      ],
+      "properties": {
+        "snapshotKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "integritySha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "targetSelectionVersion",
+        "targetSelectionSha256",
+        "weightingVersion",
+        "weightingSha256",
+        "boardScoringPolicySha256",
+        "resultSetVersion",
+        "resultManifestSha256",
+        "selectedAsOf",
+        "selectedResultEntries",
+        "snapshotBinding",
+        "unpublishedBatchSha256"
+      ],
+      "properties": {
+        "targetSelectionVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "targetSelectionSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "weightingVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "weightingSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "boardScoringPolicySha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "resultSetVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "resultManifestSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "selectedAsOf": {
+          "$ref": "#/$defs/instant"
+        },
+        "selectedResultEntries": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/resultEntry"
+          }
+        },
+        "snapshotBinding": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/snapshot"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unpublishedBatchSha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decisionId",
+        "decisionVersion",
+        "supersedesDecisionId",
+        "kpiId",
+        "kpiVersionKey",
+        "performanceYear",
+        "quarter",
+        "scopeVersion",
+        "decisionKind",
+        "approvedBy",
+        "approvalReference",
+        "approvalEvidenceSha256",
+        "approvedAt",
+        "reasonCode",
+        "reason",
+        "effectiveFrom",
+        "effectiveTo",
+        "recordedAt"
+      ],
+      "properties": {
+        "decisionId": {
+          "$ref": "#/$defs/reference"
+        },
+        "decisionVersion": {
+          "$ref": "#/$defs/version"
+        },
+        "supersedesDecisionId": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/reference"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kpiId": {
+          "$ref": "#/$defs/reference"
+        },
+        "kpiVersionKey": {
+          "$ref": "#/$defs/reference"
+        },
+        "performanceYear": {
+          "$ref": "#/$defs/year"
+        },
+        "quarter": {
+          "$ref": "#/$defs/quarter"
+        },
+        "scopeVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "decisionKind": {
+          "const": "RemoveFromScope"
+        },
+        "approvedBy": {
+          "const": "Sponsor"
+        },
+        "approvalReference": {
+          "$ref": "#/$defs/reference"
+        },
+        "approvalEvidenceSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "approvedAt": {
+          "$ref": "#/$defs/instant"
+        },
+        "reasonCode": {
+          "$ref": "#/$defs/reference"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024,
+          "pattern": "\\S"
+        },
+        "effectiveFrom": {
+          "$ref": "#/$defs/instant"
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/instant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recordedAt": {
+          "$ref": "#/$defs/instant"
+        }
+      }
+    },
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ledgerVersion",
+        "checkpointId",
+        "selectedAsOf",
+        "sourceArtifactSha256",
+        "completeThrough",
+        "complete",
+        "entryCount",
+        "canonicalEntrySetSha256",
+        "scopeVersion",
+        "performanceYear",
+        "quarter",
+        "decisions"
+      ],
+      "properties": {
+        "ledgerVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "checkpointId": {
+          "$ref": "#/$defs/reference"
+        },
+        "selectedAsOf": {
+          "$ref": "#/$defs/instant"
+        },
+        "sourceArtifactSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "completeThrough": {
+          "$ref": "#/$defs/instant"
+        },
+        "complete": {
+          "const": true
+        },
+        "entryCount": {
+          "$ref": "#/$defs/count"
+        },
+        "canonicalEntrySetSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "scopeVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "performanceYear": {
+          "$ref": "#/$defs/year"
+        },
+        "quarter": {
+          "$ref": "#/$defs/quarter"
+        },
+        "decisions": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/decision"
+          }
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contractVersion",
+        "policyDecisionId",
+        "policyDecisionSha256",
+        "contextId",
+        "performanceYear",
+        "quarter",
+        "periodStart",
+        "periodEnd",
+        "outputAsOf",
+        "scope",
+        "selection",
+        "removalLedger"
+      ],
+      "properties": {
+        "contractVersion": {
+          "const": "KCF-ORG-SCOPE-001"
+        },
+        "policyDecisionId": {
+          "const": "M169-CHG-001"
+        },
+        "policyDecisionSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "contextId": {
+          "$ref": "#/$defs/reference"
+        },
+        "performanceYear": {
+          "$ref": "#/$defs/year"
+        },
+        "quarter": {
+          "$ref": "#/$defs/quarter"
+        },
+        "periodStart": {
+          "$ref": "#/$defs/instant"
+        },
+        "periodEnd": {
+          "$ref": "#/$defs/instant"
+        },
+        "outputAsOf": {
+          "$ref": "#/$defs/instant"
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "selection": {
+          "$ref": "#/$defs/selection"
+        },
+        "removalLedger": {
+          "$ref": "#/$defs/ledger"
+        }
+      }
+    },
+    "acceptedSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contractVersion",
+        "policyDecisionId",
+        "policyDecisionSha256",
+        "contextId",
+        "performanceYear",
+        "quarter",
+        "periodStart",
+        "periodEnd",
+        "outputAsOf",
+        "contextSha256",
+        "scopeVersion",
+        "scopeSourceArtifactSha256",
+        "scopeSha256",
+        "scopeMemberCount",
+        "scopeMemberSetSha256",
+        "scopeSelectionCheckpoint",
+        "targetSelectionVersion",
+        "targetSelectionSha256",
+        "weightingVersion",
+        "weightingSha256",
+        "boardScoringPolicySha256",
+        "resultSetVersion",
+        "resultManifestSha256",
+        "resultSelectionSha256",
+        "snapshotBinding",
+        "unpublishedBatchSha256",
+        "ledgerVersion",
+        "ledgerSha256",
+        "ledgerSourceArtifactSha256",
+        "ledgerEntryCount",
+        "ledgerEntrySetSha256",
+        "ledgerCheckpoint",
+        "ledgerCompleteThrough",
+        "acceptanceEvidenceReference",
+        "acceptanceEvidenceSha256"
+      ],
+      "properties": {
+        "contractVersion": {
+          "const": "KCF-ORG-SCOPE-001"
+        },
+        "policyDecisionId": {
+          "const": "M169-CHG-001"
+        },
+        "policyDecisionSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "contextId": {
+          "$ref": "#/$defs/reference"
+        },
+        "performanceYear": {
+          "$ref": "#/$defs/year"
+        },
+        "quarter": {
+          "$ref": "#/$defs/quarter"
+        },
+        "periodStart": {
+          "$ref": "#/$defs/instant"
+        },
+        "periodEnd": {
+          "$ref": "#/$defs/instant"
+        },
+        "outputAsOf": {
+          "$ref": "#/$defs/instant"
+        },
+        "contextSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "scopeVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "scopeSourceArtifactSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "scopeSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "scopeMemberCount": {
+          "$ref": "#/$defs/count"
+        },
+        "scopeMemberSetSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "scopeSelectionCheckpoint": {
+          "$ref": "#/$defs/reference"
+        },
+        "targetSelectionVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "targetSelectionSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "weightingVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "weightingSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "boardScoringPolicySha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "resultSetVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "resultManifestSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "resultSelectionSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "snapshotBinding": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/snapshot"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unpublishedBatchSha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ledgerVersion": {
+          "$ref": "#/$defs/reference"
+        },
+        "ledgerSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "ledgerSourceArtifactSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "ledgerEntryCount": {
+          "$ref": "#/$defs/count"
+        },
+        "ledgerEntrySetSha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "ledgerCheckpoint": {
+          "$ref": "#/$defs/reference"
+        },
+        "ledgerCompleteThrough": {
+          "$ref": "#/$defs/instant"
+        },
+        "acceptanceEvidenceReference": {
+          "$ref": "#/$defs/reference"
+        },
+        "acceptanceEvidenceSha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    }
+  }
+}

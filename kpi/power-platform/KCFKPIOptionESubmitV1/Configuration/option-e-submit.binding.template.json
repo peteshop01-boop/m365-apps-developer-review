@@ -1,0 +1,45 @@
+{
+  "contractVersion": "kcf.kpi.option-e.submit.binding.v1",
+  "enabled": false,
+  "activated": false,
+  "environmentKind": "NonProductionTEST",
+  "environmentId": null,
+  "testSiteUrl": null,
+  "contentConnectionReference": "kcfkpi_optione_contentprocessor_sp",
+  "contentConnectionId": null,
+  "aclConnectionReference": "kcfkpi_optione_aclreconciler_sp",
+  "aclConnectionId": null,
+  "distinctAutomationIdentitiesRequired": true,
+  "nativeRolePreflightRequired": true,
+  "manifestIdentityPreflightRequired": true,
+  "listIds": {
+    "KCFKPI_WorkplanDrafts": null,
+    "KCFKPI_WorkplanSubmitRequests": null,
+    "KCFKPI_WorkplanSubmittedSnapshots": null,
+    "KCFKPI_Workplans": null,
+    "KCFKPI_WorkplanSubmitOperations": null,
+    "KCFKPI_Audit": null,
+    "KCFKPI_People": null
+  },
+  "referenceListIds": {
+    "KCFKPI_KPIMaster": null,
+    "KCFKPI_AnnualTargets": null,
+    "KCFKPI_BehaviourFrameworkSets": null,
+    "KCFKPI_BehaviourFrameworkValues": null,
+    "KCFKPI_PersonBehaviourAssignments": null,
+    "KCFKPI_BehaviourObjectiveLibrary": null
+  },
+  "principalIds": {
+    "contentProcessor": null,
+    "aclReconciler": null,
+    "recoveryAdmin": null
+  },
+  "roleIds": {
+    "itemReader": null,
+    "addReadNoEdit": null,
+    "draftEditor": null,
+    "mutatorNoDelete": null,
+    "aclReconciler": null,
+    "fullControl": null
+  }
+}

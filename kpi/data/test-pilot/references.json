@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "kcf.test-pilot.v3",
+  "performanceYear": 2027,
+  "rowRepresentation": "Existing local model DTOs; not physical deployment rows",
+  "config": [
+    {
+      "id": -1,
+      "key": "PerformanceYear.Current",
+      "valueType": "Text",
+      "textValue": "2027",
+      "active": true
+    },
+    {
+      "id": -2,
+      "key": "Period.Q1",
+      "valueType": "Text",
+      "textValue": "Nov–Jan",
+      "active": true
+    },
+    {
+      "id": -3,
+      "key": "Period.Q2",
+      "valueType": "Text",
+      "textValue": "Feb–Apr",
+      "active": true
+    },
+    {
+      "id": -4,
+      "key": "Period.Q3",
+      "valueType": "Text",
+      "textValue": "May–Jul",
+      "active": true
+    },
+    {
+      "id": -5,
+      "key": "Period.Q4",
+      "valueType": "Text",
+      "textValue": "Aug–Oct",
+      "active": true
+    },
+    {
+      "id": -6,
+      "key": "Retention.PolicyStatus",
+      "valueType": "Text",
+      "textValue": "LOCAL TEST ONLY; retention unassessed",
+      "active": true
+    },
+    {
+      "id": -7,
+      "key": "PerformanceYear.Start",
+      "valueType": "Date",
+      "dateValue": "2026-11-01",
+      "active": true
+    },
+    {
+      "id": -8,
+      "key": "PerformanceYear.End",
+      "valueType": "Date",
+      "dateValue": "2027-10-31",
+      "active": true
+    },
+    {
+      "id": -9,
+      "key": "Workplan.Weight.Core",
+      "valueType": "Number",
+      "numberValue": 70,
+      "active": true
+    },
+    {
+      "id": -10,
+      "key": "Workplan.Weight.LocalPersonal",
+      "valueType": "Number",
+      "numberValue": 20,
+      "active": true
+    },
+    {
+      "id": -11,
+      "key": "Workplan.Weight.Behaviours",
+      "valueType": "Number",
+      "numberValue": 10,
+      "active": true
+    },
+    {
+      "id": -12,
+      "key": "RAG.GreenThresholdPct",
+      "valueType": "Number",
+      "numberValue": 100,
+      "active": true
+    },
+    {
+      "id": -13,
+      "key": "RAG.AmberThresholdPct",
+      "valueType": "Number",
+      "numberValue": 80,
+      "active": true
+    },
+    {
+      "id": -14,
+      "key": "QuarterEarlyReviewReminderDays",
+      "valueType": "Number",
+      "numberValue": 14,
+      "active": true
+    },
+    {
+      "id": -15,
+      "key": "QuarterPreparationReminderDays",
+      "valueType": "Number",
+      "numberValue": 7,
+      "active": true
+    },
+    {
+      "id": -16,
+      "key": "QuarterFinalReminderDays",
+      "valueType": "Number",
+      "numberValue": 1,
+      "active": true
+    },
+    {
+      "id": -17,
+      "key": "EmployeeSubmissionDaysAfterQuarter",
+      "valueType": "Number",
+      "numberValue": 7,
+      "active": true
+    },
+    {
+      "id": -18,
+      "key": "ManagerReviewDaysAfterSubmissionDeadline",
+      "valueType": "Number",
+      "numberValue": 7,
+      "active": true
+    },
+    {
+      "id": -19,
+      "key": "Aggregation.PermittedMethods",
+      "valueType": "JSON",
+      "jsonValue": "[\"Sum\"]",
+      "active": true
+    }
+  ],
+  "kpis": [
+    {
+      "kpiId": "LOCAL-KPI-01",
+      "kpiVersionKey": "LOCAL-KPI-01|2027|LOCAL-V1",
+      "targetVersionKey": "LOCAL-KPI-01|2027|LOCAL-T1",
+      "wording": "Synthetic completed sessions",
+      "pillar": "LOCAL-PILLAR",
+      "workstream": "LOCAL-WORKSTREAM",
+      "scoringDirection": "HigherIsBetter",
+      "metricType": "Number",
+      "unitLabel": "sessions",
+      "aggregationMethod": "Sum",
+      "yearEndTargetValue": 40,
+      "q1TargetValue": 10,
+      "q2TargetValue": 10,
+      "q3TargetValue": 10,
+      "q4TargetValue": 10
+    }
+  ],
+  "annualTargets": [
+    {
+      "targetVersionKey": "LOCAL-KPI-01|2027|LOCAL-T1",
+      "kpiVersionKey": "LOCAL-KPI-01|2027|LOCAL-V1",
+      "performanceYear": 2027,
+      "approvalStatus": "Approved",
+      "annual": 40,
+      "Q1": 10,
+      "Q2": 10,
+      "Q3": 10,
+      "Q4": 10
+    }
+  ],
+  "behaviours": [
+    {
+      "behaviourId": "BHV-01",
+      "behaviourVersionKey": "BHV-01|2027|LOCAL-V1",
+      "title": "Work as One Team",
+      "description": "Fixed approved heading; synthetic TEST reference.",
+      "defaultWorkplanWeight": 20,
+      "displayOrder": 1,
+      "lifecycleStatus": "Published"
+    },
+    {
+      "behaviourId": "BHV-02",
+      "behaviourVersionKey": "BHV-02|2027|LOCAL-V1",
+      "title": "Improve and Move Forward",
+      "description": "Fixed approved heading; synthetic TEST reference.",
+      "defaultWorkplanWeight": 20,
+      "displayOrder": 2,
+      "lifecycleStatus": "Published"
+    },
+    {
+      "behaviourId": "BHV-03",
+      "behaviourVersionKey": "BHV-03|2027|LOCAL-V1",
+      "title": "Show Respect and Listen",
+      "description": "Fixed approved heading; synthetic TEST reference.",
+      "defaultWorkplanWeight": 20,
+      "displayOrder": 3,
+      "lifecycleStatus": "Published"
+    },
+    {
+      "behaviourId": "BHV-04",
+      "behaviourVersionKey": "BHV-04|2027|LOCAL-V1",
+      "title": "Bring Energy and Commitment",
+      "description": "Fixed approved heading; synthetic TEST reference.",
+      "defaultWorkplanWeight": 20,
+      "displayOrder": 4,
+      "lifecycleStatus": "Published"
+    },
+    {
+      "behaviourId": "BHV-05",
+      "behaviourVersionKey": "BHV-05|2027|LOCAL-V1",
+      "title": "Own It and Put It Right",
+      "description": "Fixed approved heading; synthetic TEST reference.",
+      "defaultWorkplanWeight": 20,
+      "displayOrder": 5,
+      "lifecycleStatus": "Published"
+    }
+  ],
+  "behaviourLibrary": [],
+  "kpiStages": [],
+  "optionalDependencyRule": "Empty library and stages permitted only for numeric Core and fixed Published behaviours; no library/stage reference is present.",
+  "excludedIncomplete": [
+    "Core Custom (AWP-009)",
+    "Category overrides (AWP-011)",
+    "All-category runtime",
+    "Admin runtime",
+    "Actual backend grants/revocation"
+  ]
+}

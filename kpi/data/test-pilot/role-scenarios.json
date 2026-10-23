@@ -1,0 +1,127 @@
+{
+  "version": 3,
+  "caseCount": 30,
+  "status": "LOCAL MODEL SCENARIOS; backend NOT_EXECUTED",
+  "cases": [
+    {
+      "id": "C1-ROLE-01",
+      "case": "employee own business all-category policy allow; other employee deny"
+    },
+    {
+      "id": "C1-ROLE-02",
+      "case": "direct manager Core read allow"
+    },
+    {
+      "id": "C1-ROLE-03",
+      "case": "direct manager Personal read allow"
+    },
+    {
+      "id": "C1-ROLE-04",
+      "case": "direct manager Behaviour read allow"
+    },
+    {
+      "id": "C1-ROLE-05",
+      "case": "direct manager applicable review/progress/evidence allow"
+    },
+    {
+      "id": "C1-ROLE-06",
+      "case": "actor13 analogue actor10 deny despite both under actor04"
+    },
+    {
+      "id": "C1-ROLE-07",
+      "case": "actor13 own direct report allow"
+    },
+    {
+      "id": "C1-ROLE-08",
+      "case": "actor18 non-SLT direct reports allow"
+    },
+    {
+      "id": "C1-ROLE-09",
+      "case": "actor02 non-SLT actor18 allow but actor20 grand-report deny"
+    },
+    {
+      "id": "C1-ROLE-10",
+      "case": "four explicit SLT analogues all-staff business read allow"
+    },
+    {
+      "id": "C1-ROLE-11",
+      "case": "actor05 hierarchy-only all-staff deny"
+    },
+    {
+      "id": "C1-ROLE-12",
+      "case": "SLT unrelated-team approval/write deny"
+    },
+    {
+      "id": "C1-ROLE-13",
+      "case": "AppAdmin alone all-staff read deny"
+    },
+    {
+      "id": "C1-ROLE-14",
+      "case": "actor04 AppAdmin plus SLT combined capabilities"
+    },
+    {
+      "id": "C1-ROLE-15",
+      "case": "authorised AppAdmin adds synthetic future AppAdmin without SLT/site elevation"
+    },
+    {
+      "id": "C1-ROLE-16",
+      "case": "ordinary actor self-promotes to SLT deny"
+    },
+    {
+      "id": "C1-ROLE-17",
+      "case": "SLT-only adds AppAdmin deny"
+    },
+    {
+      "id": "C1-ROLE-18",
+      "case": "inactive actor deny"
+    },
+    {
+      "id": "C1-ROLE-19",
+      "case": "unmapped/ambiguous actor deny"
+    },
+    {
+      "id": "C1-ROLE-20",
+      "case": "inactive target deny"
+    },
+    {
+      "id": "C1-ROLE-21",
+      "case": "promote low actor02 to SLT; revision change then new reads allow only on confirmed effects"
+    },
+    {
+      "id": "C1-ROLE-22",
+      "case": "demote actor02; unrelated/grand-report reads revoke but direct/own reads retained"
+    },
+    {
+      "id": "C1-ROLE-23",
+      "case": "stale cached capability or late old-revision response denied/discarded"
+    },
+    {
+      "id": "C1-ROLE-24",
+      "case": "direct backend bypass remains deny in fixture model; actual ACL proof NOT_EXECUTED"
+    },
+    {
+      "id": "C1-ROLE-25",
+      "case": "unknown revoke or delayed prior grant holds change; no success/successor release"
+    },
+    {
+      "id": "C1-ROLE-26",
+      "case": "cross-actor profile/status/private audit/journal deny even SLT"
+    },
+    {
+      "id": "C1-ROLE-27",
+      "case": "stale role-change expected revision and replay conflict deny"
+    },
+    {
+      "id": "C1-ROLE-28",
+      "case": "actor01 null manager does not invent reciprocal edge; separate manager-required save denied"
+    },
+    {
+      "id": "C1-ROLE-29",
+      "case": "Personal policy allowed but runtime Unimplemented distinct from permanent deny"
+    },
+    {
+      "id": "C1-ROLE-30",
+      "case": "future admin grant does not confer unrestricted business amendment or Owners/processor rights"
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "version": "kcf.test-pilot.v3",
+  "status": "LOCAL PROPOSAL; field IDs and deployment unbound",
+  "profile": [
+    {
+      "name": "Title",
+      "internalName": "Title",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ProfileKey",
+      "internalName": "ProfileKey",
+      "type": "Text",
+      "required": true,
+      "indexed": true,
+      "unique": true
+    },
+    {
+      "name": "PersonKey",
+      "internalName": "PersonKey",
+      "type": "Text",
+      "required": true,
+      "indexed": true,
+      "unique": false
+    },
+    {
+      "name": "Email",
+      "internalName": "Email",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "Active",
+      "internalName": "Active",
+      "type": "Boolean",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "PerformanceYear",
+      "internalName": "PerformanceYear",
+      "type": "Number (integer)",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ManagerPersonKey",
+      "internalName": "ManagerPersonKey",
+      "type": "Text",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ManagerDisplayName",
+      "internalName": "ManagerDisplayName",
+      "type": "Text",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ManagerEmail",
+      "internalName": "ManagerEmail",
+      "type": "Text",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ManagerMappingValid",
+      "internalName": "ManagerMappingValid",
+      "type": "Boolean",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "MappingRevision",
+      "internalName": "MappingRevision",
+      "type": "Number (positive integer)",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SchemaVersion",
+      "internalName": "SchemaVersion",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    }
+  ],
+  "statusFields": [
+    {
+      "name": "Title",
+      "internalName": "Title",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "StatusKey",
+      "internalName": "StatusKey",
+      "type": "Text",
+      "required": true,
+      "indexed": true,
+      "unique": true
+    },
+    {
+      "name": "PersonKey",
+      "internalName": "PersonKey",
+      "type": "Text",
+      "required": true,
+      "indexed": true,
+      "unique": false
+    },
+    {
+      "name": "CommandKey",
+      "internalName": "CommandKey",
+      "type": "Text",
+      "required": true,
+      "indexed": true,
+      "unique": false
+    },
+    {
+      "name": "CommandType",
+      "internalName": "CommandType",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SourceListId",
+      "internalName": "SourceListId",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SourceItemId",
+      "internalName": "SourceItemId",
+      "type": "Number (positive integer)",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SourceItemVersion",
+      "internalName": "SourceItemVersion",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SourceItemETag",
+      "internalName": "SourceItemETag",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ActorEmail",
+      "internalName": "ActorEmail",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ActorPersonKey",
+      "internalName": "ActorPersonKey",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "EffectiveRole",
+      "internalName": "EffectiveRole",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SubjectType",
+      "internalName": "SubjectType",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SubjectKey",
+      "internalName": "SubjectKey",
+      "type": "Text",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "PerformanceYear",
+      "internalName": "PerformanceYear",
+      "type": "Number (integer)",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "WorkplanKey",
+      "internalName": "WorkplanKey",
+      "type": "Text",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "WorkplanVersion",
+      "internalName": "WorkplanVersion",
+      "type": "Number (positive integer)",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "RowVersionToken",
+      "internalName": "RowVersionToken",
+      "type": "Number (integer)",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "ResultKeysJSON",
+      "internalName": "ResultKeysJSON",
+      "type": "Note (strict allowlisted key array)",
+      "required": false,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "Outcome",
+      "internalName": "Outcome",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "EventCode",
+      "internalName": "EventCode",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SafeMessage",
+      "internalName": "SafeMessage",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "EventAt",
+      "internalName": "EventAt",
+      "type": "DateTime (UTC)",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "SchemaVersion",
+      "internalName": "SchemaVersion",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    },
+    {
+      "name": "CorrelationKey",
+      "internalName": "CorrelationKey",
+      "type": "Text",
+      "required": true,
+      "indexed": false,
+      "unique": false
+    }
+  ],
+  "resultRule": "Accepted requires all result fields and stable canonical proof. Rejected excludes all result fields.",
+  "privateFullRowDeny": [
+    "ContributionAuditReference",
+    "AuditKey",
+    "PayloadDigest",
+    "ProcessorEmail",
+    "FlowUrl",
+    "BeforeAfterJSON",
+    "ConnectionIdentity",
+    "RawException"
+  ]
+}

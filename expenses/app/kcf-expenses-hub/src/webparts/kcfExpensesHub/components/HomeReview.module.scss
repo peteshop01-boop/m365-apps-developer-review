@@ -1,0 +1,164 @@
+.homeWorkspace,
+.reviewWorkspace {
+  color: #152f47;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  font-size: 17px;
+  line-height: 1.45;
+  overflow: hidden;
+  h2, h3, p { margin: 0; }
+  h2 { font-size: 25px; }
+  h3 { font-size: 20px; }
+  button, select { font: inherit; }
+  button, select { min-height: 44px; }
+  button { cursor: pointer; }
+  button:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+    outline: 3px solid #9a4400;
+    outline-offset: 3px;
+  }
+}
+.notice {
+  background: #fff1ef;
+  color: #8e191d;
+  border: 1px solid #a82b2b;
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  flex-shrink: 0;
+  font-size: 15px;
+  strong { background: #a51c30; color: #fff; padding: 4px 8px; border-radius: 5px; }
+}
+.homeColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  min-height: 0;
+  gap: 16px;
+  flex: 1;
+  overflow: auto;
+  padding: 4px;
+}
+.currentCard, .historyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  border: 1px solid #b6c8d3;
+  border-radius: 16px;
+  padding: 22px;
+  align-self: start;
+}
+.currentCard { background: #e8f0f5; }
+.historyCard { background: #f0f3f6; }
+.eyebrow { font-size: 14px; letter-spacing: .08em; font-weight: 700; }
+.metaRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.statusBadge { color: #12314b; background: #d4e4ee; border: 1px solid #839dae; padding: 5px 10px; border-radius: 8px; font-weight: 700; }
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  > div { padding: 12px; display: flex; gap: 6px; flex-direction: column; border-radius: 10px; background: #fff; border: 1px solid #b6c8d3; min-width: 0; }
+  span { font-size: 15px; }
+  strong { font-size: 23px; overflow-wrap: anywhere; }
+  .summaryGrand { background: #153c59; color: #fff; }
+}
+.primaryActions { display: flex; flex-direction: column; gap: 10px; }
+.primaryButton, .secondaryButton {
+  border: 1px solid #345d77;
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+}
+.primaryButton { background: #174d70; color: #fff; }
+.secondaryButton { background: #fff; color: #173d58; }
+.primaryButton:hover { background: #103b57; }
+.secondaryButton:hover, .receiptButton:hover { background: #e3edf4; }
+.smallText { font-size: 15px; color: #344f61; }
+.selectorRow {
+  display: flex; flex-direction: column; gap: 12px;
+  > div { display: flex; flex-direction: column; gap: 5px; }
+  label { font-weight: 700; }
+  select { width: 100%; color: #152f47; background: #fff; border: 1px solid #658295; border-radius: 8px; padding: 8px 10px; }
+}
+.historyPreview { display: flex; flex-direction: column; gap: 12px; padding: 14px; background: #fff; border: 1px solid #b6c8d3; border-radius: 10px; }
+.historyTotals {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  > div { display: flex; justify-content: space-between; gap: 12px; }
+  dd { font-weight: 700; margin: 0; }
+}
+.feedback { font-size: 15px; background: #e5edf3; color: #18394f; border-radius: 8px; padding: 10px 12px; }
+.reviewToolbar {
+  flex-shrink: 0;
+  display: grid;
+  gap: 8px 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  > .feedback { grid-column: 1 / -1; }
+  > div p { font-size: 15px; }
+  > button { align-self: start; }
+}
+.reviewColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(165px, .6fr);
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+  padding: 4px;
+}
+.expensePanel, .mileagePanel {
+  display: flex; flex-direction: column; min-width: 0; min-height: 0;
+  border: 1px solid #aabfcd; border-radius: 13px; overflow: hidden;
+}
+.expensePanel { background: #edf3f7; }
+.mileagePanel { background: #e2ecf3; }
+.panelHeader {
+  padding: 14px; border-bottom: 1px solid #aabfcd;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; flex-shrink: 0;
+  strong { font-size: 22px; }
+}
+.lineList {
+  margin: 0; padding: 12px; list-style: none; overflow: auto; flex: 1; min-height: 0;
+  > li { margin-bottom: 12px; padding: 14px; background: #fff; border: 1px solid #b6c8d3; border-radius: 10px; overflow-wrap: anywhere; }
+  > li:last-child { margin-bottom: 0; }
+  p { margin-top: 7px; }
+}
+.lineHeading { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.lineMeta { color: #365165; }
+.receiptReason { background: #fff1ef; color: #86212b; border-radius: 5px; padding: 8px; }
+.receiptButton { display: block; width: 100%; background: #edf3f7; color: #183e5a; border: 1px solid #829cad; border-radius: 7px; padding: 8px; margin-top: 8px; text-align: left; overflow-wrap: anywhere; }
+.empty { color: #344f61; }
+.grandTotalBox {
+  background: #153c59; color: #fff; border: 1px solid #153c59; border-radius: 13px; padding: 20px 14px;
+  display: flex; flex-direction: column; align-self: start; gap: 12px; min-width: 0;
+  span { font-weight: 700; }
+  strong { font-size: 29px; overflow-wrap: anywhere; }
+}
+@media (min-width: 701px) {
+  .homeColumns { overflow: visible; }
+  .currentCard, .historyCard { align-self: stretch; min-height: 0; overflow: auto; }
+}
+@media (max-width: 700px) {
+  .homeWorkspace, .reviewWorkspace { height: auto; overflow: visible; font-size: 17px; gap: 10px; }
+  .notice { font-size: 14px; }
+  .homeColumns { grid-template-columns: minmax(0, 1fr); gap: 12px; overflow: visible; }
+  .currentCard, .historyCard { padding: 16px; gap: 14px; }
+  .summary { gap: 6px; > div { padding: 10px 6px; } span { font-size: 14px; } strong { font-size: 20px; } }
+  .reviewToolbar { grid-template-columns: minmax(0, 1fr); }
+  .reviewColumns { display: flex; flex-direction: column; overflow: visible; gap: 12px; }
+  .expensePanel, .mileagePanel { flex-shrink: 0; overflow: visible; }
+  .lineList { overflow: visible; flex: none; }
+  .grandTotalBox { align-self: stretch; flex-shrink: 0; }
+}

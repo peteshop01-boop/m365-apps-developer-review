@@ -1,0 +1,446 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "requests",
+    "operations",
+    "results",
+    "audit",
+    "expenses",
+    "claims",
+    "people",
+    "months",
+    "nominals",
+    "fixtureActorId",
+    "processorActorId",
+    "fixtureParentId",
+    "requestRoot",
+    "acl"
+  ],
+  "properties": {
+    "requests": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "operations": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "results": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "audit": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "expenses": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "claims": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "people": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "months": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "nominals": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$"
+    },
+    "fixtureActorId": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "processorActorId": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "fixtureParentId": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "requestRoot": {
+      "type": "string",
+      "maxLength": 200,
+      "pattern": "^/sites/REVIEW-TEST-SITE/[A-Za-z0-9_-]+$"
+    },
+    "acl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requests",
+        "operations",
+        "results",
+        "audit",
+        "expenses",
+        "claims",
+        "people",
+        "months",
+        "nominals"
+      ],
+      "properties": {
+        "requests": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "results": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "audit": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "expenses": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "claims": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "people": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "months": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        },
+        "nominals": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "principalId",
+              "roleId",
+              "high",
+              "low"
+            ],
+            "properties": {
+              "principalId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "roleId": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "high": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              },
+              "low": {
+                "type": "string",
+                "maxLength": 10,
+                "pattern": "^\\d{1,10}$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

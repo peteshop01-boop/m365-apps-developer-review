@@ -1,0 +1,752 @@
+{
+  "state": "Disabled",
+  "binding": "Unbound",
+  "purpose": "DeclarationOnly",
+  "declaration": {
+    "capability": {
+      "protocol": "kcf.kpi.option-e.submit.v4",
+      "integrity": "exact-body/v1",
+      "wire": "canonical-draft/v1",
+      "storage": "kcf.kpi.option-e.storage.v4",
+      "receipt": "immutable-receipt/v4"
+    },
+    "maxUtf8Bytes": 56000,
+    "chunks": false,
+    "requestSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "capability",
+        "command",
+        "person",
+        "referenceBody",
+        "source",
+        "workplan",
+        "year"
+      ],
+      "properties": {
+        "capability": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "integrity",
+            "protocol",
+            "receipt",
+            "storage",
+            "wire"
+          ],
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "kcf.kpi.option-e.submit.v4"
+            },
+            "integrity": {
+              "type": "string",
+              "const": "exact-body/v1"
+            },
+            "wire": {
+              "type": "string",
+              "const": "canonical-draft/v1"
+            },
+            "storage": {
+              "type": "string",
+              "const": "kcf.kpi.option-e.storage.v4"
+            },
+            "receipt": {
+              "type": "string",
+              "const": "immutable-receipt/v4"
+            }
+          }
+        },
+        "action": {
+          "type": "string",
+          "const": "Submit"
+        },
+        "command": {
+          "type": "string"
+        },
+        "person": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2000,
+          "maximum": 9999
+        },
+        "workplan": {
+          "type": "string"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "body",
+            "etag",
+            "itemId",
+            "schema",
+            "version"
+          ],
+          "properties": {
+            "itemId": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "etag": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "schema": {
+              "type": "string",
+              "const": "kcf.workplan-draft/v1"
+            },
+            "body": {
+              "type": "string"
+            }
+          }
+        },
+        "referenceBody": {
+          "type": "string"
+        }
+      }
+    },
+    "draftSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "behaviours",
+        "core",
+        "impact",
+        "schemaVersion"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "kcf.workplan-draft/v1",
+          "type": "string"
+        },
+        "core": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "entries",
+            "weightingMode"
+          ],
+          "properties": {
+            "weightingMode": {
+              "type": "string",
+              "enum": [
+                "Equal",
+                "Custom"
+              ]
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "annual",
+                  "contributionMethod",
+                  "coreId",
+                  "kpiId",
+                  "kpiVersionKey",
+                  "q1",
+                  "q2",
+                  "q3",
+                  "q4",
+                  "role",
+                  "targetVersionKey",
+                  "weightPercent"
+                ],
+                "properties": {
+                  "coreId": {
+                    "type": "string"
+                  },
+                  "kpiId": {
+                    "type": "string"
+                  },
+                  "kpiVersionKey": {
+                    "type": "string"
+                  },
+                  "targetVersionKey": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "Owner",
+                      "Delivery",
+                      "Support"
+                    ]
+                  },
+                  "contributionMethod": {
+                    "type": "string",
+                    "enum": [
+                      "AdditiveDirect",
+                      "SharedTarget",
+                      "WeightedDenominator",
+                      "AccountableOwner",
+                      "CompletionOversight"
+                    ]
+                  },
+                  "weightPercent": {
+                    "type": "number",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "annual": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          }
+                        ]
+                      },
+                      "success": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "q1": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          }
+                        ]
+                      },
+                      "success": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "q2": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          }
+                        ]
+                      },
+                      "success": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "q3": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          }
+                        ]
+                      },
+                      "success": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "q4": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [],
+                    "properties": {
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          }
+                        ]
+                      },
+                      "success": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "impact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "impactId",
+              "measure",
+              "success",
+              "unit",
+              "wording"
+            ],
+            "properties": {
+              "impactId": {
+                "type": "string"
+              },
+              "wording": {
+                "type": "string"
+              },
+              "measure": {
+                "type": "string"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "success": {
+                "type": "string"
+              },
+              "annual": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                ]
+              },
+              "q1": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                ]
+              },
+              "q2": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                ]
+              },
+              "q3": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                ]
+              },
+              "q4": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "behaviours": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "entries",
+            "frameworkVersion",
+            "roleTier"
+          ],
+          "properties": {
+            "frameworkVersion": {
+              "const": "KCCC-BEHAVIOUR|v02",
+              "type": "string"
+            },
+            "roleTier": {
+              "type": "string"
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "commitment",
+                  "descriptorKey",
+                  "guidancePromptKeys",
+                  "periodCommitments",
+                  "selectedPromptKeys",
+                  "valueId"
+                ],
+                "properties": {
+                  "valueId": {
+                    "type": "string"
+                  },
+                  "descriptorKey": {
+                    "type": "string"
+                  },
+                  "guidancePromptKeys": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "selectedPromptKeys": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "commitment": {
+                    "type": "string"
+                  },
+                  "periodCommitments": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "Q1",
+                      "Q2",
+                      "Q3",
+                      "Q4"
+                    ],
+                    "properties": {
+                      "Q1": {
+                        "type": "string"
+                      },
+                      "Q2": {
+                        "type": "string"
+                      },
+                      "Q3": {
+                        "type": "string"
+                      },
+                      "Q4": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "governedExtension": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "authority",
+                "deliveryArithmeticAffected",
+                "headlines",
+                "immutableSelectionSnapshots",
+                "legacyTargetRatingWeightFieldsWritten",
+                "roleLevelCode",
+                "schemaVersion"
+              ],
+              "properties": {
+                "schemaVersion": {
+                  "type": "string",
+                  "const": "kcf.option-e.behaviours/v02"
+                },
+                "authority": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "approvalReference",
+                    "catalogueContentSha256",
+                    "catalogueEtag",
+                    "catalogueId",
+                    "catalogueRevision",
+                    "catalogueVersion"
+                  ],
+                  "properties": {
+                    "catalogueId": {
+                      "type": "string"
+                    },
+                    "catalogueVersion": {
+                      "type": "string"
+                    },
+                    "catalogueRevision": {
+                      "type": "number",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "catalogueEtag": {
+                      "type": "string"
+                    },
+                    "catalogueContentSha256": {
+                      "type": "string"
+                    },
+                    "approvalReference": {
+                      "type": "string",
+                      "const": "KCF-KPI-Sponsor-BEH-V02-001"
+                    }
+                  }
+                },
+                "roleLevelCode": {
+                  "type": "string",
+                  "enum": [
+                    "L1",
+                    "L2",
+                    "L3"
+                  ]
+                },
+                "headlines": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "behaviourKey",
+                      "headlineTitle",
+                      "selections"
+                    ],
+                    "properties": {
+                      "behaviourKey": {
+                        "type": "string"
+                      },
+                      "headlineTitle": {
+                        "type": "string"
+                      },
+                      "selections": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "behaviourKey",
+                            "catalogueContentSha256",
+                            "catalogueEtag",
+                            "catalogueId",
+                            "catalogueRevision",
+                            "catalogueVersion",
+                            "focusKey",
+                            "focusTitle",
+                            "headlineTitle",
+                            "howWillWeKnow",
+                            "myCommitment",
+                            "roleLevelCode",
+                            "selectedWording",
+                            "selectionKey",
+                            "source"
+                          ],
+                          "properties": {
+                            "selectionKey": {
+                              "type": "string"
+                            },
+                            "source": {
+                              "type": "string",
+                              "enum": [
+                                "Catalogue",
+                                "Own"
+                              ]
+                            },
+                            "behaviourKey": {
+                              "type": "string"
+                            },
+                            "headlineTitle": {
+                              "type": "string"
+                            },
+                            "focusKey": {
+                              "type": "string"
+                            },
+                            "focusTitle": {
+                              "type": "string"
+                            },
+                            "roleLevelCode": {
+                              "type": "string",
+                              "enum": [
+                                "L1",
+                                "L2",
+                                "L3"
+                              ]
+                            },
+                            "selectedWording": {
+                              "type": "string"
+                            },
+                            "catalogueId": {
+                              "type": "string"
+                            },
+                            "catalogueVersion": {
+                              "type": "string"
+                            },
+                            "catalogueRevision": {
+                              "type": "number",
+                              "minimum": -9007199254740991,
+                              "maximum": 9007199254740991
+                            },
+                            "catalogueEtag": {
+                              "type": "string"
+                            },
+                            "catalogueContentSha256": {
+                              "type": "string"
+                            },
+                            "myCommitment": {
+                              "type": "string"
+                            },
+                            "howWillWeKnow": {
+                              "type": "string"
+                            },
+                            "targetKey": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "immutableSelectionSnapshots": {
+                  "type": "boolean",
+                  "const": true
+                },
+                "legacyTargetRatingWeightFieldsWritten": {
+                  "type": "boolean",
+                  "const": false
+                },
+                "deliveryArithmeticAffected": {
+                  "type": "boolean",
+                  "const": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "guards": {
+      "Protocol": "@and(contains(outputs('Protocol'), 'kcf.kpi.option-e.submit.v4'), contains('kcf.kpi.option-e.submit.v4', outputs('Protocol')), equals(length(outputs('Protocol')), 26))",
+      "TypedPresence": "@and(contains(outputs('RequiredKeys'), 'source'), contains(outputs('RequiredKeys'), 'referenceBody'))",
+      "NativeActor": "@equals(outputs('NativeCreatedById'), outputs('ProtectedActorPrincipalId'))",
+      "CurrentManager": "@and(equals(outputs('ProtectedManagerId'), outputs('CurrentManagerId')), equals(outputs('AdmittedHierarchyEpoch'), outputs('CurrentHierarchyEpoch')))",
+      "ExactSourceCoordinates": "@and(equals(outputs('SourceItemId'), outputs('DraftItemId')), contains(outputs('SourceETag'), outputs('DraftETag')), contains(outputs('DraftETag'), outputs('SourceETag')), equals(length(outputs('SourceETag')), length(outputs('DraftETag'))))",
+      "CompleteCanonicalBody": "@and(equals(length(outputs('OriginalBody')), length(outputs('ReconstructedBody'))), contains(outputs('OriginalBody'), outputs('ReconstructedBody')), contains(outputs('ReconstructedBody'), outputs('OriginalBody')))",
+      "Utf8Roundtrip": "@and(equals(length(outputs('Scalar')), length(base64ToString(base64(outputs('Scalar'))))), contains(outputs('Scalar'), base64ToString(base64(outputs('Scalar')))), contains(base64ToString(base64(outputs('Scalar'))), outputs('Scalar')))",
+      "ByteCapNoChunks": "@and(lessOrEquals(outputs('Utf8ByteCount'), 56000), equals(outputs('ChunkInputPresent'), false))",
+      "DoubleRead": "@and(equals(length(outputs('AuthorityFirst')), length(outputs('AuthoritySecond'))), contains(outputs('AuthorityFirst'), outputs('AuthoritySecond')), contains(outputs('AuthoritySecond'), outputs('AuthorityFirst')))",
+      "CompleteReference": "@and(equals(length(outputs('ReferenceBody')), length(outputs('ProtectedReferenceBody'))), contains(outputs('ReferenceBody'), outputs('ProtectedReferenceBody')), contains(outputs('ProtectedReferenceBody'), outputs('ReferenceBody')))",
+      "UniqueCommandFullTuple": "@and(equals(length(outputs('AdmittedTuple')), length(outputs('DurableTuple'))), contains(outputs('AdmittedTuple'), outputs('DurableTuple')), contains(outputs('DurableTuple'), outputs('AdmittedTuple')))",
+      "ExactETagCAS": "@and(equals(outputs('ETagPresent'), true), equals(outputs('WildcardETag'), false))",
+      "ImmutableSnapshotReceipt": "@and(equals(outputs('SnapshotReadbackExact'), true), equals(outputs('ReceiptReadbackExact'), true), equals(outputs('NativeCreatedClockBound'), true))",
+      "CheckpointRecovery": "@and(equals(outputs('CheckpointReadbackExact'), true), equals(outputs('SameAdmission'), true))",
+      "ControlAclCompletion": "@and(equals(outputs('ControlReadbackExact'), true), equals(outputs('CompleteAclReadbackExact'), true), equals(outputs('CurrentManagerEpochExact'), true))",
+      "StorageHostAdmission": "@and(equals(outputs('VersionedStorageAdmitted'), true), equals(outputs('HostedWireParityAdmitted'), true))"
+    }
+  },
+  "actions": {
+    "Protocol": {
+      "type": "Compose",
+      "inputs": "@and(contains(outputs('Protocol'), 'kcf.kpi.option-e.submit.v4'), contains('kcf.kpi.option-e.submit.v4', outputs('Protocol')), equals(length(outputs('Protocol')), 26))"
+    },
+    "TypedPresence": {
+      "type": "Compose",
+      "inputs": "@and(contains(outputs('RequiredKeys'), 'source'), contains(outputs('RequiredKeys'), 'referenceBody'))"
+    },
+    "NativeActor": {
+      "type": "Compose",
+      "inputs": "@equals(outputs('NativeCreatedById'), outputs('ProtectedActorPrincipalId'))"
+    },
+    "CurrentManager": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('ProtectedManagerId'), outputs('CurrentManagerId')), equals(outputs('AdmittedHierarchyEpoch'), outputs('CurrentHierarchyEpoch')))"
+    },
+    "ExactSourceCoordinates": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('SourceItemId'), outputs('DraftItemId')), contains(outputs('SourceETag'), outputs('DraftETag')), contains(outputs('DraftETag'), outputs('SourceETag')), equals(length(outputs('SourceETag')), length(outputs('DraftETag'))))"
+    },
+    "CompleteCanonicalBody": {
+      "type": "Compose",
+      "inputs": "@and(equals(length(outputs('OriginalBody')), length(outputs('ReconstructedBody'))), contains(outputs('OriginalBody'), outputs('ReconstructedBody')), contains(outputs('ReconstructedBody'), outputs('OriginalBody')))"
+    },
+    "Utf8Roundtrip": {
+      "type": "Compose",
+      "inputs": "@and(equals(length(outputs('Scalar')), length(base64ToString(base64(outputs('Scalar'))))), contains(outputs('Scalar'), base64ToString(base64(outputs('Scalar')))), contains(base64ToString(base64(outputs('Scalar'))), outputs('Scalar')))"
+    },
+    "ByteCapNoChunks": {
+      "type": "Compose",
+      "inputs": "@and(lessOrEquals(outputs('Utf8ByteCount'), 56000), equals(outputs('ChunkInputPresent'), false))"
+    },
+    "DoubleRead": {
+      "type": "Compose",
+      "inputs": "@and(equals(length(outputs('AuthorityFirst')), length(outputs('AuthoritySecond'))), contains(outputs('AuthorityFirst'), outputs('AuthoritySecond')), contains(outputs('AuthoritySecond'), outputs('AuthorityFirst')))"
+    },
+    "CompleteReference": {
+      "type": "Compose",
+      "inputs": "@and(equals(length(outputs('ReferenceBody')), length(outputs('ProtectedReferenceBody'))), contains(outputs('ReferenceBody'), outputs('ProtectedReferenceBody')), contains(outputs('ProtectedReferenceBody'), outputs('ReferenceBody')))"
+    },
+    "UniqueCommandFullTuple": {
+      "type": "Compose",
+      "inputs": "@and(equals(length(outputs('AdmittedTuple')), length(outputs('DurableTuple'))), contains(outputs('AdmittedTuple'), outputs('DurableTuple')), contains(outputs('DurableTuple'), outputs('AdmittedTuple')))"
+    },
+    "ExactETagCAS": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('ETagPresent'), true), equals(outputs('WildcardETag'), false))"
+    },
+    "ImmutableSnapshotReceipt": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('SnapshotReadbackExact'), true), equals(outputs('ReceiptReadbackExact'), true), equals(outputs('NativeCreatedClockBound'), true))"
+    },
+    "CheckpointRecovery": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('CheckpointReadbackExact'), true), equals(outputs('SameAdmission'), true))"
+    },
+    "ControlAclCompletion": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('ControlReadbackExact'), true), equals(outputs('CompleteAclReadbackExact'), true), equals(outputs('CurrentManagerEpochExact'), true))"
+    },
+    "StorageHostAdmission": {
+      "type": "Compose",
+      "inputs": "@and(equals(outputs('VersionedStorageAdmitted'), true), equals(outputs('HostedWireParityAdmitted'), true))"
+    }
+  }
+}

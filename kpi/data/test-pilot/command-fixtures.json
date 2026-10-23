@@ -1,0 +1,100 @@
+{
+  "source": {
+    "listId": "3e05ec37-95ce-4a30-a56c-ff2437bf9bed",
+    "itemId": 900001,
+    "version": "1.0",
+    "etag": "\"1\"",
+    "commandKey": "LOCAL-CMD-01",
+    "commandType": "UpsertCoreContributionV2",
+    "actorKey": "LOCAL-P10",
+    "actorEmail": "actor10@example.invalid",
+    "year": 2027,
+    "correlationKey": "LOCAL-CORR-01",
+    "subjectType": "WorkplanItem",
+    "subjectKey": "LOCAL-ITEM-01",
+    "workplanKey": "LOCAL-P10|2027",
+    "resultKeys": [
+      "LOCAL-ITEM-01"
+    ]
+  },
+  "header": {
+    "id": 900002,
+    "etag": "\"1\"",
+    "workplanKey": "LOCAL-P10|2027",
+    "personKey": "LOCAL-P10",
+    "year": 2027,
+    "workplanVersion": 1,
+    "rowVersionToken": 0,
+    "transition": "Ready",
+    "access": "EmployeeEdit",
+    "correlation": null
+  },
+  "rows": [
+    {
+      "key": "LOCAL-ITEM-01",
+      "naturalKey": "LOCAL-P10|2027|CoreGold|LOCAL-KPI-01",
+      "workplanKey": "LOCAL-P10|2027",
+      "personKey": "LOCAL-P10",
+      "year": 2027,
+      "category": "CoreGold",
+      "referenceKey": "LOCAL-KPI-01",
+      "active": true,
+      "weight": 100,
+      "target": 40,
+      "BehaviourSelectedSuggestionKeysJ": "[]",
+      "BehaviourCustomObjective": ""
+    }
+  ],
+  "request": {
+    "commandKey": "LOCAL-CMD-01",
+    "commandType": "UpsertCoreContributionV2",
+    "personKey": "LOCAL-P10",
+    "performanceYear": 2027,
+    "workplanKey": "LOCAL-P10|2027",
+    "expectedToken": 0,
+    "expectedETag": "\"1\"",
+    "payload": {
+      "referenceKey": "LOCAL-KPI-01",
+      "activeInWorkplan": true,
+      "target": 40
+    }
+  },
+  "negativePatches": [
+    {
+      "name": "otherActor",
+      "patch": {
+        "personKey": "LOCAL-P09"
+      }
+    },
+    {
+      "name": "wrongYear",
+      "patch": {
+        "performanceYear": 2026
+      }
+    },
+    {
+      "name": "wildcard",
+      "patch": {
+        "expectedETag": "*"
+      }
+    },
+    {
+      "name": "staleToken",
+      "patch": {
+        "expectedToken": 3
+      }
+    },
+    {
+      "name": "unsupportedCommand",
+      "patch": {
+        "commandType": "ApproveWorkplan"
+      }
+    },
+    {
+      "name": "clientRole",
+      "patch": {
+        "role": "AppAdmin"
+      }
+    }
+  ]
+}

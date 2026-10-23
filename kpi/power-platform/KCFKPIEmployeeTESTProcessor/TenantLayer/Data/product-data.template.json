@@ -1,0 +1,27 @@
+{
+  "contractVersion": "kcf.kpi.wib12.tenant-layer.v1",
+  "productAuthority": {
+    "authorityReference": null,
+    "productDataSha256": null,
+    "frameworkVersion": null,
+    "catalogueDigestSha256": null,
+    "fixtureRange": null,
+    "actorPrincipalMapSha256": null,
+    "historicEvidenceReferences": []
+  },
+  "approvalReference": null,
+  "dateBoundaryRule": null,
+  "frameworkSets": [],
+  "frameworkValues": [],
+  "personAssignments": [],
+  "behaviourObjectiveLibrary": [],
+  "peopleBindings": [],
+  "historicEvidence": [],
+  "roleLevelBindings": [],
+  "principalBindings": [],
+  "positiveActors": [],
+  "negativeActors": [],
+  "fixtureRange": null,
+  "fixtureAuthorityReference": null,
+  "catalogueBinding": null
+}

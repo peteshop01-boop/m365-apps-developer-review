@@ -1,0 +1,10 @@
+.people {
+  color: #153650;
+  button { min-height: 44px; border: 1px solid #7897aa; border-radius: 8px; padding: 10px 14px; background: #edf5f8; color: #153650; }
+  button:disabled { color: #526675; background: #edf1f4; cursor: not-allowed; }
+  button:focus-visible, h3:focus { outline: 3px solid #008c95; outline-offset: 3px; }
+}
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 20px; margin-top: 20px; }
+.records { list-style: none; padding: 0; margin: 0; li { margin-bottom: 8px; } button { width: 100%; text-align: left; overflow-wrap: anywhere; } span { display: block; } button[aria-pressed='true'] { border: 2px solid #008c95; } }
+.detail { min-width: 0; padding: 18px; background: #f3f8fb; border: 1px solid #c4d4df; border-radius: 12px; overflow-wrap: anywhere; dt { font-weight: 600; } dd { margin: 0 0 12px; } }
+@media (max-width: 700px) { .layout { grid-template-columns: minmax(0, 1fr); } }

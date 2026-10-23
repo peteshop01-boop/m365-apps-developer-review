@@ -1,0 +1,14 @@
+node_modules/
+.tools/
+lib/
+lib-commonjs/
+temp/
+dist/
+release/
+sharepoint/solution/
+coverage/
+*.log
+*.tsbuildinfo
+.env
+.env.*
+.DS_Store

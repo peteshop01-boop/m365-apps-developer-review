@@ -1,0 +1,88 @@
+{
+  "contractVersion": "kcf.kpi.behaviour-framework.synthetic.v2",
+  "synthetic": true,
+  "productionSafe": false,
+  "governedContentApproved": false,
+  "effectiveFrom": null,
+  "framework": {
+    "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+    "published": true,
+    "immutable": true,
+    "ratingOptions": [
+      { "value": 1, "label": "Developing", "displayLabel": "1 Developing" },
+      { "value": 2, "label": "Effective", "displayLabel": "2 Effective" },
+      { "value": 3, "label": "Exceptional", "displayLabel": "3 Exceptional" }
+    ],
+    "values": [
+      {
+        "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+        "valueId": "BHV-01",
+        "title": "SYNTHETIC TEST VALUE 01 — NOT GOVERNED WORDING",
+        "corporateValue": "SYNTHETIC TEST CORPORATE VALUE 01 — NOT GOVERNED WORDING",
+        "descriptors": {
+          "IC_OFFICER": "SYNTHETIC TEST ONLY BHV-01 IC_OFFICER descriptor — not approved wording.",
+          "PEOPLE_MANAGER": "SYNTHETIC TEST ONLY BHV-01 PEOPLE_MANAGER descriptor — not approved wording.",
+          "SENIOR_LEADER": "SYNTHETIC TEST ONLY BHV-01 SENIOR_LEADER descriptor — not approved wording."
+        }
+      },
+      {
+        "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+        "valueId": "BHV-02",
+        "title": "SYNTHETIC TEST VALUE 02 — NOT GOVERNED WORDING",
+        "corporateValue": "SYNTHETIC TEST CORPORATE VALUE 02 — NOT GOVERNED WORDING",
+        "descriptors": {
+          "IC_OFFICER": "SYNTHETIC TEST ONLY BHV-02 IC_OFFICER descriptor — not approved wording.",
+          "PEOPLE_MANAGER": "SYNTHETIC TEST ONLY BHV-02 PEOPLE_MANAGER descriptor — not approved wording.",
+          "SENIOR_LEADER": "SYNTHETIC TEST ONLY BHV-02 SENIOR_LEADER descriptor — not approved wording."
+        }
+      },
+      {
+        "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+        "valueId": "BHV-03",
+        "title": "SYNTHETIC TEST VALUE 03 — NOT GOVERNED WORDING",
+        "corporateValue": "SYNTHETIC TEST CORPORATE VALUE 03 — NOT GOVERNED WORDING",
+        "descriptors": {
+          "IC_OFFICER": "SYNTHETIC TEST ONLY BHV-03 IC_OFFICER descriptor — not approved wording.",
+          "PEOPLE_MANAGER": "SYNTHETIC TEST ONLY BHV-03 PEOPLE_MANAGER descriptor — not approved wording.",
+          "SENIOR_LEADER": "SYNTHETIC TEST ONLY BHV-03 SENIOR_LEADER descriptor — not approved wording."
+        }
+      },
+      {
+        "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+        "valueId": "BHV-04",
+        "title": "SYNTHETIC TEST VALUE 04 — NOT GOVERNED WORDING",
+        "corporateValue": "SYNTHETIC TEST CORPORATE VALUE 04 — NOT GOVERNED WORDING",
+        "descriptors": {
+          "IC_OFFICER": "SYNTHETIC TEST ONLY BHV-04 IC_OFFICER descriptor — not approved wording.",
+          "PEOPLE_MANAGER": "SYNTHETIC TEST ONLY BHV-04 PEOPLE_MANAGER descriptor — not approved wording.",
+          "SENIOR_LEADER": "SYNTHETIC TEST ONLY BHV-04 SENIOR_LEADER descriptor — not approved wording."
+        }
+      },
+      {
+        "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+        "valueId": "BHV-05",
+        "title": "SYNTHETIC TEST VALUE 05 — NOT GOVERNED WORDING",
+        "corporateValue": "SYNTHETIC TEST CORPORATE VALUE 05 — NOT GOVERNED WORDING",
+        "descriptors": {
+          "IC_OFFICER": "SYNTHETIC TEST ONLY BHV-05 IC_OFFICER descriptor — not approved wording.",
+          "PEOPLE_MANAGER": "SYNTHETIC TEST ONLY BHV-05 PEOPLE_MANAGER descriptor — not approved wording.",
+          "SENIOR_LEADER": "SYNTHETIC TEST ONLY BHV-05 SENIOR_LEADER descriptor — not approved wording."
+        }
+      }
+    ]
+  },
+  "assignments": [
+    {
+      "personKey": "SYNTHETIC-PHASE1-PERSON-001",
+      "email": "synthetic.phase1.001@example.invalid",
+      "frameworkVersion": "KCCC-BEHAVIOUR|v02",
+      "roleTier": "IC_OFFICER",
+      "cadence": "Quarterly",
+      "periodKeys": ["Q1", "Q2", "Q3", "Q4"]
+    }
+  ],
+  "cadenceRepresentations": [
+    { "cadence": "Quarterly", "periodKeys": ["Q1", "Q2", "Q3", "Q4"] },
+    { "cadence": "TwiceYearly", "periodKeys": ["H1", "H2"], "populationCreated": false }
+  ]
+}

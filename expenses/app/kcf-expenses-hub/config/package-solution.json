@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "kcf-expenses-hub-client-side-solution",
+    "id": "a6b5c483-add9-4479-a8d1-275bb948713f",
+    "version": "0.0.5.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": false,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Kent Cricket Foundation",
+      "websiteUrl": "https://example.invalid/private-development-repository",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "KCF Expenses Hub — synthetic DEMO foundation"
+      },
+      "longDescription": {
+        "default": "D03/S03-A optional fictional Profile to Mileage Use home, with receipt previews and TEST landing. In-memory mock only; no SharePoint data operations."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "kcf-expenses-hub Feature",
+        "description": "The feature that activates elements of the kcf-expenses-hub solution.",
+        "id": "75281189-7e74-4957-a671-d227859fd723",
+        "version": "0.0.5.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/KCFExpenses-SPFx-D03-0.0.5-demo.sppkg"
+  }
+}

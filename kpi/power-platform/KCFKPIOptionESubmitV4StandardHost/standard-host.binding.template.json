@@ -1,0 +1,115 @@
+{
+  "state": "Unbound",
+  "enabled": false,
+  "activated": false,
+  "nativeAdmission": false,
+  "hostParityAdmission": false,
+  "storageAdmission": false,
+  "environmentId": null,
+  "tenantId": null,
+  "siteUrl": null,
+  "siteId": null,
+  "webId": null,
+  "requestListId": null,
+  "privateDraftSource": {
+    "contract": "kcf.option-e.private-draft-list-origin/v4",
+    "state": "UNBOUND",
+    "admitted": false,
+    "existingListTitle": "KCFKPI_WorkplanDrafts",
+    "tenantId": null,
+    "siteId": null,
+    "webId": null,
+    "siteUrl": null,
+    "listId": null,
+    "nativeRowSchemaAndRightsAdmission": false,
+    "nativeVersionAuthorReadbackAdmission": false,
+    "genuineHashReadback": {
+      "admitted": false,
+      "itemId": null,
+      "etag": null,
+      "version": null,
+      "sha256": null
+    },
+    "historicalSource": "Original saved version/date/creator/readback remains separately admitted; no current metadata backfill"
+  },
+  "cataloguePublisher": {
+    "admitted": false,
+    "listId": null,
+    "itemId": null,
+    "producerPrincipal": null
+  },
+  "historicalSelection": {
+    "admitted": false,
+    "listId": null,
+    "itemId": null,
+    "producerPrincipal": null,
+    "originalDraftReadbackAdmission": false
+  },
+  "supplementalGovernance": {
+    "admitted": false,
+    "listId": null
+  },
+  "rootListIds": {
+    "Request": null,
+    "Draft": null,
+    "Admission": null,
+    "Snapshot": null,
+    "Receipt": null,
+    "History": null,
+    "Operation": null,
+    "Control": null
+  },
+  "rootPaths": {
+    "Request": null,
+    "Admission": null,
+    "Snapshot": null,
+    "Receipt": null,
+    "History": null
+  },
+  "peopleListId": null,
+  "protectedWorkplanListId": null,
+  "catalogueStoreListId": null,
+  "catalogueStoreItemId": null,
+  "referenceListIds": {
+    "Kpi": null,
+    "Target": null,
+    "Framework": null,
+    "Assignment": null,
+    "Value": null,
+    "Prompt": null
+  },
+  "principalIds": {
+    "content": null,
+    "acl": null,
+    "recovery": null
+  },
+  "roleIds": {
+    "Read": null,
+    "AppendOnly": null,
+    "MutatorNoDelete": null,
+    "AclReconciler": null,
+    "FullControl": null
+  },
+  "installedReady": "NOT_ADMITTED",
+  "nativeMappings": "UNKNOWN",
+  "sourceDependencies": [
+    {
+      "id": "TARGET-PRODUCER-V4",
+      "state": "EXISTING_PRIVATE_DRAFT_LIST_ROW_SOURCE_EMITTED_NOT_NATIVE_ADMITTED",
+      "missing": "Existing private Draft list-row exact native tenant/site/web/list route, effective rights/schema/version/Author/Created/genuine hash readback and corresponding supplemental schema/rights/version/readback binding admission remain",
+      "clearing": "The dedicated existing-list-row reader retains full raw before/after rows and canonical payload alongside genuine hash/native tuple; separate independent gates and native admissions remain. Preserve private Save/complete Draft/organisational/rule origins and closed wire. No new Target publisher or original capture producer."
+    },
+    {
+      "id": "ADM-STANDARD-CODEC",
+      "state": "BOUNDED_SOURCE_GUARDS_IMPLEMENTED_NOT_NATIVE_ADMITTED",
+      "missing": "Native genuine publisher/hash/count/body/readback/immutability mapping and hosted UTF8/status/version/codec parity remain",
+      "clearing": "Continue the distinct exact-body reader; genuine old SHA golden envelope/history path is developer PASS. Preserve unchanged old digest-validating API, genuine callbacks/Required SHA/StateChunk01..16. No fake digest callback or claimed SHA recomputation by this reader."
+    },
+    {
+      "id": "ADM-PROVENANCE-V4",
+      "state": "BOUNDED_SOURCE_GUARDS_IMPLEMENTED_NOT_NATIVE_ADMITTED",
+      "missing": "Native original saved-Draft/version readback, governed historical date, existing admitted producer and immutable tuple-resolution mapping remain",
+      "clearing": "Source validates complete original saved-Draft canonical bodies, full original publisher/readback receipt and unchanged annual selection snapshots; guarded capture producer mapping is proposed only. Unknown native origin facts hold. No current ETag/utcNow/Draft Modified/createdAt substitution or business-clock policy."
+    }
+  ]
+}

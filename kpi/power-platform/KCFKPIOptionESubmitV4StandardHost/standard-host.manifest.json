@@ -1,0 +1,127 @@
+{
+  "implementationStatus": "BOUNDED_PM79_EXISTING_PRIVATE_DRAFT_LIST_ORIGIN_SOURCE_ONLY_NATIVE_ADMISSION_HELD",
+  "enabled": false,
+  "installedReady": "NOT_ADMITTED",
+  "sourceDependencies": [
+    {
+      "id": "TARGET-PRODUCER-V4",
+      "state": "EXISTING_PRIVATE_DRAFT_LIST_ROW_SOURCE_EMITTED_NOT_NATIVE_ADMITTED",
+      "missing": "Existing private Draft list-row exact native tenant/site/web/list route, effective rights/schema/version/Author/Created/genuine hash readback and corresponding supplemental schema/rights/version/readback binding admission remain",
+      "clearing": "The dedicated existing-list-row reader retains full raw before/after rows and canonical payload alongside genuine hash/native tuple; separate independent gates and native admissions remain. Preserve private Save/complete Draft/organisational/rule origins and closed wire. No new Target publisher or original capture producer."
+    },
+    {
+      "id": "ADM-STANDARD-CODEC",
+      "state": "BOUNDED_SOURCE_GUARDS_IMPLEMENTED_NOT_NATIVE_ADMITTED",
+      "missing": "Native genuine publisher/hash/count/body/readback/immutability mapping and hosted UTF8/status/version/codec parity remain",
+      "clearing": "Continue the distinct exact-body reader; genuine old SHA golden envelope/history path is developer PASS. Preserve unchanged old digest-validating API, genuine callbacks/Required SHA/StateChunk01..16. No fake digest callback or claimed SHA recomputation by this reader."
+    },
+    {
+      "id": "ADM-PROVENANCE-V4",
+      "state": "BOUNDED_SOURCE_GUARDS_IMPLEMENTED_NOT_NATIVE_ADMITTED",
+      "missing": "Native original saved-Draft/version readback, governed historical date, existing admitted producer and immutable tuple-resolution mapping remain",
+      "clearing": "Source validates complete original saved-Draft canonical bodies, full original publisher/readback receipt and unchanged annual selection snapshots; guarded capture producer mapping is proposed only. Unknown native origin facts hold. No current ETag/utcNow/Draft Modified/createdAt substitution or business-clock policy."
+    }
+  ],
+  "sourceInventory": [
+    {
+      "path": "Tools/build-standard-host.mjs",
+      "sha256": "375E0037876F5866443F9719A6016F846553456F62B6F497365D884817C089E7"
+    },
+    {
+      "path": "Tools/canonical-wdl.mjs",
+      "sha256": "A8564E6708946EFF7CC28D5C90B04BEF8616EED3246BF4BAA28A22484C8B4306"
+    },
+    {
+      "path": "Tools/storage-native.mjs",
+      "sha256": "8BA7D3D864730310A8179DFD1D56F67BB9F09381AAC6A7DB82757CC5F8B02F55"
+    },
+    {
+      "path": "Tools/host-machine.mjs",
+      "sha256": "ECA4FD3D4EBCB567C7309FBEAB740F96EA021CABCAFB305DEB93F6821EE69605"
+    },
+    {
+      "path": "Tools/reference-projections.mjs",
+      "sha256": "627DA2C6842D8CF34192064E1ACAF04E08AEB839DD428DAB6D2ECA978001420B"
+    },
+    {
+      "path": "Tools/domain-projection.mjs",
+      "sha256": "E7ABDA8A5FE8FCBF89301E4F606CF5BA00BF610A9D2EFD09604F6D5A3764AD4A"
+    },
+    {
+      "path": "Tools/PersonTargetAdmissionV4.mjs",
+      "sha256": "AE1D39B0EED36FEF203E1994FAF7D29EF05C6B9E4012A757C309F4D38EFA6920"
+    },
+    {
+      "path": "Tools/CatalogueExactBodyReaderV4.mjs",
+      "sha256": "063256E842278B6171E708DCA305FB8E690A51A642208942907F4FFB86D6624A"
+    },
+    {
+      "path": "Tools/HistoricalSelectionProvenanceV4.mjs",
+      "sha256": "69867DBF9006CB413013E568B46A8F662957EA94D1262B32D31562B9ABFDB67E"
+    },
+    {
+      "path": "Tools/PrivateDraftListOriginV4.mjs",
+      "sha256": "112C285D048B702452461807FE47F47C9D7299FE1E706B20A3CB40AB433E0912"
+    }
+  ],
+  "protectedInputs": [
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanSubmitExactBodyV4Wire.ts",
+      "sha256": "11E7314D97950D34EE525636D21E2A42E1E29959E6B3B203678A39D7F93BE0C8"
+    },
+    {
+      "path": "src/webparts/performanceHub/models/OptionEWorkplanSubmitExactBodyV4Models.ts",
+      "sha256": "5FDB032E37CCF4E5C0C4ED34971545007D591AEF14B0932FD40DE1F506860183"
+    },
+    {
+      "path": "src/webparts/performanceHub/models/OptionEWorkplanDraftModels.ts",
+      "sha256": "77AF1BC3A3945D7D4488A3D8760DDA77301E7CDAA2F4C971283990B1A4BB8EEC"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanSubmitExactBodyV4.ts",
+      "sha256": "8E45A93CE6E3BE35F4F1852F81EE8591E96826F15456038A0AAB3E3DBB9C97BB"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanSubmitExactBodyV4PackageContract.ts",
+      "sha256": "590593AF3DD99B84029483EBE6A69D8A609AB8FE9594A0FF8BB6625FD8D6B2D8"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEDraftSharePointGateway.ts",
+      "sha256": "D2772B1672B02A898A90E1B3A378AD1BBBA01CDE43B0532AC5CFA32F8A9EC02D"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEProtectedDraftGateway.ts",
+      "sha256": "4BD0646BA4C1519C127133445CEA6C3BD2F61B043F5F636CFB65DBEE0ECB1CB6"
+    },
+    {
+      "path": "src/webparts/performanceHub/services/OptionEWorkplanListBindings.ts",
+      "sha256": "321BE61F27EEC457DB8E8FFDC025EB06080A4792FC228579A394F3A5E2772536"
+    }
+  ],
+  "files": [
+    {
+      "path": "standard-host.disabled.definition.json",
+      "sha256": "3516BA4AE606CAB4FF24DD9CFBC23FEAB9804AD39CDF29A27838A29F61239315"
+    },
+    {
+      "path": "standard-host.binding.template.json",
+      "sha256": "FDF5852EB0A4A8923568973FA7C5D1C847BD15A467C3ADE1356CA47BB51A35C6"
+    },
+    {
+      "path": "v4-storage-native-map.proposal.json",
+      "sha256": "38CB4EDDF075CCA846595A74BE1DA0129632A8BF22ED36BC9AC484A823188E41"
+    },
+    {
+      "path": "standard-host.native.fragments.json",
+      "sha256": "4EFAA2761FAFA9810B57E9F10BEBE23DE62B053D119FAFF5ED7744D62C75373A"
+    },
+    {
+      "path": "standard-host.action-inventory.json",
+      "sha256": "69589F148AD1CC58A03AEDC83BC574749CF632324961924BC96AB434FE3B9F3B"
+    },
+    {
+      "path": "standard-host.disabled.source.zip",
+      "sha256": "005F45CA801785226B84E65DFF8D8F9AF4F8D5947C9CAACAA2011DD3379963D6"
+    }
+  ]
+}
