@@ -1,0 +1,123 @@
+{
+    "CheckedUtc":  "2026-10-23T23:29:54.0330583Z",
+    "Repository":  "https://github.com/peteshop01-boop/m365-apps-developer-review",
+    "ReviewedContentCommit":  "cc78ca28f0ca6534faee5b973018313bc254a6b2",
+    "GitHubAuthenticationUsed":  false,
+    "CookiesUsed":  false,
+    "DefaultCredentialsUsed":  false,
+    "ArchiveFiles":  1173,
+    "ManifestFilesVerified":  1172,
+    "Mismatches":  0,
+    "Details":  [
+
+                ],
+    "UnlistedFiles":  [
+
+                      ],
+    "ImportantFilesVerified":  16,
+    "ExcludedFilesVerifiedAbsent":  2,
+    "Requests":  [
+                     {
+                         "Url":  "https://github.com/peteshop01-boop/m365-apps-developer-review",
+                         "Status":  200,
+                         "Bytes":  283180
+                     },
+                     {
+                         "Url":  "https://codeload.github.com/peteshop01-boop/m365-apps-developer-review/zip/cc78ca28f0ca6534faee5b973018313bc254a6b2",
+                         "Status":  200,
+                         "Bytes":  5214077
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/README.md",
+                         "Status":  200,
+                         "Bytes":  4279
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/BLOG_POST.md",
+                         "Status":  200,
+                         "Bytes":  5640
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/REVIEW_GUIDE.md",
+                         "Status":  200,
+                         "Bytes":  6190
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/ARCHITECTURE_REVIEW.md",
+                         "Status":  200,
+                         "Bytes":  6594
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/CURRENT_BLOCKERS.md",
+                         "Status":  200,
+                         "Bytes":  5710
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/SECURITY_REVIEW.md",
+                         "Status":  200,
+                         "Bytes":  10101
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/REVIEW_LIMITATIONS.md",
+                         "Status":  200,
+                         "Bytes":  5517
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/KPI_TO_EXPENSES_REUSE.md",
+                         "Status":  200,
+                         "Bytes":  5043
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/TEST_PLAN.md",
+                         "Status":  200,
+                         "Bytes":  3102
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/DELIVERY_REVIEW.md",
+                         "Status":  200,
+                         "Bytes":  3624
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/kpi/src/webparts/performanceHub/PerformanceHubWebPart.ts",
+                         "Status":  200,
+                         "Bytes":  14992
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/kpi/save-path/src/webparts/performanceHub/services/OptionEDraftSharePointGateway.ts",
+                         "Status":  200,
+                         "Bytes":  18525
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/expenses/app/kcf-expenses-hub/src/processor/SharePointStandardStore.ts",
+                         "Status":  200,
+                         "Bytes":  28914
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/expenses/app/kcf-expenses-hub/flow/actor-writer.cjs",
+                         "Status":  200,
+                         "Bytes":  23466
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/expenses/requirements/traceability_v1.csv",
+                         "Status":  200,
+                         "Bytes":  48875
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/review/SCANNER_FINDINGS_REVIEW.csv",
+                         "Status":  200,
+                         "Bytes":  25110
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/expenses/app/kcf-expenses-hub/flow/D01ExpenseProcessor.json",
+                         "Status":  404,
+                         "Expected":  404
+                     },
+                     {
+                         "Url":  "https://raw.githubusercontent.com/peteshop01-boop/m365-apps-developer-review/cc78ca28f0ca6534faee5b973018313bc254a6b2/expenses/app/kcf-expenses-hub/src/webparts/kcfExpensesHub/components/approvedNominals.ts",
+                         "Status":  404,
+                         "Expected":  404
+                     }
+                 ],
+    "ApplicationTestsExecuted":  false,
+    "Scope":  "Anonymous public access and exact-file identity only; not runtime acceptance or erasure of old cached copies."
+}
