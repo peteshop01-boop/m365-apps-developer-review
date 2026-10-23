@@ -1,4 +1,4 @@
-﻿{
+{
     "CheckedUtc":  "2026-10-23T23:21:12.7564133Z",
     "SourceWarnings":  75,
     "FullTreeWarnings":  151,
@@ -10,5 +10,7 @@
     "IndependentExternalHumanAudit":  false,
     "PreparedPackagesReused":  true,
     "LiveApplicationsChanged":  false,
-    "Decision":  "PASS FOR THIS SOURCE-REVIEW SNAPSHOT ONLY; no runtime security or historical-cache erasure certification"
+    "Decision":  "PASS FOR THIS SOURCE-REVIEW SNAPSHOT ONLY; no runtime security or historical-cache erasure certification",
+    "LineEndingReconciliations":  754,
+    "NonLineEndingDifferences":  0
 }

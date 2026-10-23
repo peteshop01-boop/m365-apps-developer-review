@@ -77,3 +77,7 @@ An earlier public staging commit, present before this final owner review, retain
 This removes the earlier draft from the maintained main-branch history. It cannot recall pre-existing external clones, cached pages or commits still addressable by an old identifier. Complete removal of hosted cached references may require GitHub Support. The company name and KCF copyright are intentionally permitted by the owner. No claim of total anonymity or erasure of past public copies is made.
 
 The final verification record will identify the exact post-publication commit and anonymous access results. Earlier verification records remain dated evidence for their own snapshots, not proof of a newer tree. No LIVE application, operational source worktree, tenant permission, workflow or credential was changed.
+
+### Exact-byte verification correction
+
+The first anonymous archive comparison detected Windows-versus-Git line-ending differences in 754 files. Each differing file was compared after line-ending normalisation and no non-line-ending difference was found. The manifest and warning-file digests were corrected to the actual published bytes; this was not an application-code repair or a new security bypass. The failed first verification remains in the private audit. Only the subsequent matching archive verification counts as PASS.
