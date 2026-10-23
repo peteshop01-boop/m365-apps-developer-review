@@ -20,9 +20,9 @@ Both use SharePoint Framework, React and TypeScript. The KPI design updates a pr
 
 ## What is in the repository
 
-There is actual application source, not just a description or screenshots. The [review guide](REVIEW_GUIDE.md) points to the screen composition, Save controllers, SharePoint gateways, permission code, workflow generators and relevant tests.
+There is actual application source, not just a description or screenshots. The [review guide](https://github.com/peteshop01-boop/m365-apps-developer-review/blob/main/REVIEW_GUIDE.md) points to the screen composition, Save controllers, SharePoint gateways, permission code, workflow generators and relevant tests.
 
-The [architecture diagrams](ARCHITECTURE_REVIEW.md) show the intended Save and approval processes. The [current issues](CURRENT_BLOCKERS.md) distinguish missing code connections, unfinished setup, unexecuted tests and missing installation evidence. There are data/schema notes, test journeys, the Expenses requirements and sprint plan, and a [delivery-process review](DELIVERY_REVIEW.md).
+The [architecture diagrams](https://github.com/peteshop01-boop/m365-apps-developer-review/blob/main/ARCHITECTURE_REVIEW.md) show the intended Save and approval processes. The [current issues](https://github.com/peteshop01-boop/m365-apps-developer-review/blob/main/CURRENT_BLOCKERS.md) distinguish missing code connections, unfinished setup, unexecuted tests and missing installation evidence. There are data/schema notes, test journeys, the Expenses requirements and sprint plan, and a [delivery-process review](https://github.com/peteshop01-boop/m365-apps-developer-review/blob/main/DELIVERY_REVIEW.md).
 
 The two supplied source snapshots have different histories and are not necessarily the newest installed or integrated versions. A later focused KPI repair is linked separately. The guide explains that distinction rather than pretending every passing test belongs to one current release.
 
